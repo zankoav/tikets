@@ -1,0 +1,35 @@
+@import "fonts";
+@import "reset";
+@import "constants";
+
+/**
+
+    Add Swiper styles
+    @import "./../../node_modules/swiper/dist/css/swiper.min.css";
+
+    Add Fontawesome styles
+    @import '~@fortawesome/fontawesome-free/css/all';
+
+*/
+
+body, html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+@include loader();
+@include container();
+
+/**
+    Add Editor
+    @include editor-content();
+*/
+
+@include customize-support {
+    /**
+        Add any css
+     */
+}
