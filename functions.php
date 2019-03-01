@@ -1,27 +1,26 @@
 <?php
-	/**
-	 * Created by PhpStorm.
-	 * User: alexandrzanko
-	 * Date: 12/4/18
-	 * Time: 5:00 PM
-	 */
+/**
+ * Created by PhpStorm.
+ * User: alexandrzanko
+ * Date: 12/4/18
+ * Time: 5:00 PM
+ */
 
-	if( ! defined('ABSPATH') ) exit();
+if (!defined('ABSPATH')) exit();
 
-	define( 'THEME_NAME', get_template() );
-	define( 'BASE_URL', '/wp-content/themes/' . THEME_NAME );
-	date_default_timezone_set("Europe/Minsk");
+define('THEME_NAME', get_template());
+define('BASE_URL', '/wp-content/themes/' . THEME_NAME);
 
-	require_once __DIR__ . '/utils/Assets.php';
-	require_once __DIR__ . '/utils/SingletonOptions.php';
-	require_once __DIR__ . '/core/init_theme.php';
-	require_once __DIR__ . '/core/custom-types/worker.php';
-	require_once __DIR__ . '/core/custom-types/project.php';
-	require_once __DIR__ . '/core/menu.php';
-	require_once __DIR__ . '/core/styles.php';
-	require_once __DIR__ . '/core/scripts.php';
-	require_once __DIR__ . '/core/hooks.php';
-	require_once __DIR__ . '/core/cmb2/common.php';
-	require_once __DIR__ . '/core/cmb2/worker.php';
-	require_once __DIR__ . '/core/cmb2/project.php';
-	require_once __DIR__ . '/core/ajax.php';
+//date_default_timezone_set("Europe/Minsk");
+
+
+require_once __DIR__ . '/utils/Assets.php';
+require_once __DIR__ . '/utils/SingletonOptions.php';
+require_once __DIR__ . '/core/init_theme.php';
+require_once __DIR__ . '/core/custom-types/index.php';
+require_once __DIR__ . '/core/menu.php';
+require_once __DIR__ . '/core/styles.php';
+require_once __DIR__ . '/core/scripts.php';
+require_once __DIR__ . '/core/hooks.php';
+require_once __DIR__ . '/core/cmb2/index.php';
+require_once __DIR__ . '/core/ajax.php';
