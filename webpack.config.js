@@ -37,9 +37,6 @@ const NODE_ENV = process.env.NODE_ENV;
 const DEV_MODE = NODE_ENV == 0;
 const WP = NODE_ENV === "wp-production";
 
-console.log(WP);
-
-
 if (!WP) {
 
     entries['zanko'] = './zanko.js';
