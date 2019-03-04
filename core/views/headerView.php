@@ -1,6 +1,6 @@
 <?php
 
-$options = SingletonOptions::getOptions();
+	$options = SingletonOptions::getOptions();
 
-get_template_part("/core/views/mainMenu");
-get_template_part("/core/views/rightMenu");
+	get_template_part( "/core/views/mainMenu" );
+	get_template_part( "/core/views/rightMenu" );

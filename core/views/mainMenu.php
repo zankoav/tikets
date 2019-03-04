@@ -1,6 +1,6 @@
 <?php
 
-$mainMenuArgs = [
+	$mainMenuArgs = [
 		'theme_location' => 'main_menu',
 		'container'      => false,
 		'menu_class'     => 'header__list',
@@ -13,7 +13,7 @@ $mainMenuArgs = [
 		'link_after'     => '',
 		'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 		'depth'          => 5,
-];
+	];
 ?>
 
 
