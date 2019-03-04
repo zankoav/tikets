@@ -2,10 +2,10 @@ $BGC_LOADER: #fff;
 $C_SPINNER: #000;
 
 @mixin loader() {
-    $SVG_LOADER_DEFAULT : './images/default.svg';
-    $SVG_LOADER_MTB : './images/mtb.svg';
-    $SVG_LOADER_EGG : './images/egg.svg';
-    $SVG_LOADER_ZANKOAV : './images/zankoav.svg';
+    $SVG_LOADER_DEFAULT: './images/default.svg';
+    $SVG_LOADER_MTB: './images/mtb.svg';
+    $SVG_LOADER_EGG: './images/egg.svg';
+    $SVG_LOADER_ZANKOAV: './images/zankoav.svg';
 
     $LOADER: $SVG_LOADER_EGG;
 

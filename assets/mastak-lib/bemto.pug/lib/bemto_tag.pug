@@ -17,7 +17,7 @@ mixin bemto_tag(tag, tagMetadata)
   //- Checks for contexts if no tag given
   if !tag
     if bemto_chain_contexts[contextIndex-1] === 'inline'
-      - newTag = 'span'
+      - newTag = 'div'
     else if bemto_chain_contexts[contextIndex-1] === 'list'
       - newTag = 'li'
     else if bemto_chain_contexts[contextIndex-1] === 'optionlist'
