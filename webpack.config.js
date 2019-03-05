@@ -24,12 +24,16 @@ const THEME_NAME = 'zankoav';
 
 
 let entries = {
-    home: './home.js'
+    home: './home.js',
+    program: './program.js'
 };
 
 let pugs = {
     home: {
         title: "home title"
+    },
+    program: {
+        title: "program title"
     }
 };
 
