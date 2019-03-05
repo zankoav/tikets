@@ -119,3 +119,13 @@ $COLUMNS : 12;
         }
     }
 }
+
+@mixin col-offset($i, $media) {
+
+    .col-offset-#{$media}-#{$i} {
+
+        @media (min-width : map_get($MEDIA, #{$media})) {
+            margin-left : (100% /  $COLUMNS) * $i;
+        }
+    }
+}
