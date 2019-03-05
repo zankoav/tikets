@@ -1,0 +1,66 @@
+@import "./../../common/constants";
+@import "./../../../node_modules/swiper/dist/css/swiper.min.css";
+
+.partners {
+
+    &__img {
+        width: 100%;
+        display: block;
+    }
+
+    &__button-next, &__button-prev {
+        background-image: url("./../../images/right.svg");
+        width: 22px;
+        height: 28px;
+        background-size: contain;
+        margin-top: 0;
+        right: 1rem;
+        top: calc(50% - 14px);
+
+        @include sm {
+            width: 46px;
+            height: 40px;
+            right: 1.25rem;
+            top: calc(50% - 20px);
+        }
+
+        @include md {
+            width: 52px;
+            height: 42px;
+            right: 1.5rem;
+            top: calc(50% - 21px);
+        }
+
+        @include lg {
+            width: 71px;
+            height: 72px;
+            right: 0;
+            top: calc(50% - 36px);
+        }
+
+        @include hd {
+            width: 88px;
+        }
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__button-prev {
+        background-image: url("./../../images/left.svg");
+        left: 1rem;
+
+        @include sm {
+            left: 1.25rem;
+        }
+
+        @include md {
+            left: 1.5rem;
+        }
+
+        @include lg {
+            left: 0;
+        }
+    }
+}
