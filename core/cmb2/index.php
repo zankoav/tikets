@@ -6,6 +6,4 @@
  * Time: 10:40 AM
  */
 
-if ( ! defined( 'ABSPATH' ) ) {
-    exit();
-}
+if ( ! defined( 'ABSPATH' ) ) {exit();}

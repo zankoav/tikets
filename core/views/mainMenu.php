@@ -17,4 +17,8 @@
 ?>
 
 
-<?php wp_nav_menu( $mainMenuArgs ); ?>
+<?php
+	if (has_nav_menu( 'main_menu' )) {
+		wp_nav_menu( $mainMenuArgs );
+	}
+?>

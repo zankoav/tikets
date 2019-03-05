@@ -16,4 +16,8 @@
 	];
 ?>
 
-<?php wp_nav_menu( $rightMenuArgs ); ?>
+<?php
+	if (has_nav_menu( 'right_menu' )) {
+		wp_nav_menu( $rightMenuArgs );
+	}
+?>
