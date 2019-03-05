@@ -1,0 +1,28 @@
+mixin partners()
+    +b.partners
+        .container
+            +e.inner.row
+                .col-1.col-sm-1.col-md-1.col-lg-1
+                .col-10.col-sm-10.col-md-10.col-lg-10
+                    +e.container.swiper-container
+                        +e.wrapper.swiper-wrapper
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/alfa.svg"), alt="alfa")
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/mtb.svg"), alt="mtb")
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/status.svg"), alt="status")
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/bate.svg"), alt="bate")
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/bsb.svg"), alt="bsb")
+                            +e.slide.swiper-slide
+                                +e.link(href="#")
+                                    +e.img(src=require("./../images/status.svg"), alt="status")
+            +e.button-next.swiper-button-next
+            +e.button-prev.swiper-button-prev
