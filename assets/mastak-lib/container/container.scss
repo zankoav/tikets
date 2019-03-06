@@ -89,6 +89,10 @@ $COLUMNS : 12;
             max-width : (100% /  $COLUMNS) * $i;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
         }
+
+        .col-offset-#{$i} {
+            margin-left : (100% /  $COLUMNS) * $i;
+        }
     }
 
     @each $key, $value in $MEDIA {
@@ -116,6 +120,13 @@ $COLUMNS : 12;
         @media (min-width : map_get($MEDIA, #{$media})) {
             max-width : (100% /  $COLUMNS) * $i;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
+        }
+    }
+
+    .col-offset-#{$media}-#{$i} {
+
+        @media (min-width : map_get($MEDIA, #{$media})) {
+            margin-left : (100% /  $COLUMNS) * $i;
         }
     }
 }

@@ -20,12 +20,13 @@
  13. npm install webpack-dev-server --save-dev
  *
  */
-const THEME_NAME = 'zankoav';
+const THEME_NAME = 'tikets';
 
 
 let entries = {
     home: './home.js',
-    program: './program.js'
+    program: './program.js',
+    category: './category.js',
 };
 
 let pugs = {
@@ -34,6 +35,9 @@ let pugs = {
     },
     program: {
         title: "program title"
+    },
+    category: {
+        title: "category title"
     }
 };
 
