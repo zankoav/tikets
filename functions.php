@@ -19,6 +19,9 @@
 
 	require_once __DIR__ . '/core/init_theme.php';
 	require_once __DIR__ . '/core/custom-types/index.php';
+	require_once __DIR__ . '/core/custom-types/partnerPostType.php';
+	require_once __DIR__ . '/core/carbon/partnerMeta.php';
+	require_once __DIR__ . '/core/custom-types/programPostType.php';
 
 	require_once __DIR__ . '/core/menu.php';
 	require_once __DIR__ . '/core/styles.php';
@@ -26,8 +29,8 @@
 	require_once __DIR__ . '/core/hooks.php';
 	require_once __DIR__ . '/core/ajax.php';
 
-	require_once __DIR__ . '/core/cmb2/index.php';
-	require_once __DIR__ . '/core/cmb2/themeSettings.php';
+//	require_once __DIR__ . '/core/cmb2/index.php';
+//	require_once __DIR__ . '/core/cmb2/themeSettings.php';
 
 	require_once  __DIR__ . '/core/carbon/optionPage.php';
 	require_once __DIR__ . '/vendor/autoload.php';

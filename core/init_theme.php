@@ -38,5 +38,7 @@ function zankoav_theme_init() {
 	 */
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 	
-	
+	function empty_content($str) {
+		return trim(str_replace('&nbsp;','',strip_tags($str))) == '';
+	}
 }

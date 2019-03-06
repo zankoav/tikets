@@ -13,19 +13,6 @@
 				Field::make( 'text', 'crb_link_to_search_page', 'ССылка на строку поиска' ),
 				Field::make( 'image', 'crb_logo_img', __( 'Image' ) )
 					->set_value_type( 'url' ),
-				Field::make( 'complex', 'crb_test' )
-					->add_fields( array(
-						Field::make( 'text', 'name' ),
-						Field::make( 'text', 'job_title' ))),
-				Field::make( 'complex', 'crb_job' )
-					->add_fields( 'driver', array(
-						Field::make( 'text', 'name' ),
-						Field::make( 'text', 'drivers_license_id' ),
-					))
-					->add_fields( 'teacher', array(
-						Field::make( 'image', 'name' ),
-						Field::make( 'image', 'years_of_experience' ),
-					))
 			] );
 	}
 	add_action('after_setup_theme', 'crb_load');
