@@ -89,6 +89,10 @@ $COLUMNS : 12;
             max-width : (100% /  $COLUMNS) * $i;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
         }
+
+        .col-offset-#{$i} {
+            margin-left : (100% /  $COLUMNS) * $i;
+        }
     }
 
     @each $key, $value in $MEDIA {
@@ -118,9 +122,6 @@ $COLUMNS : 12;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
         }
     }
-}
-
-@mixin col-offset($i, $media) {
 
     .col-offset-#{$media}-#{$i} {
 
