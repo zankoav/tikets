@@ -16,9 +16,9 @@
 
 			wp_enqueue_style( 'commons', Assets::getCss( 'common' ), false, null );
 
-//			if ( is_page_template( 'template-home.php' ) ) {
-//				wp_enqueue_style( 'home', Assets::getCss( 'home' ), false, null );
-//			}
+			if ( is_page_template( 'template-home.php' ) ) {
+				wp_enqueue_style( 'home', Assets::getCss( 'home' ), false, null );
+			}
 			if ( is_singular( 'program') ) {
 				wp_enqueue_style( 'program', Assets::getCss( 'program' ), false, null );
 			}

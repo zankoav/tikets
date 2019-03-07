@@ -13,6 +13,7 @@
 				Field::make( 'text', 'crb_link_to_search_page', 'ССылка на строку поиска' ),
 				Field::make( 'image', 'crb_logo_img', __( 'Image' ) )
 					->set_value_type( 'url' ),
+				Field::make( 'oembed', 'crb_oembed', __( 'oEmbed' ) )
 			] );
 	}
 	add_action('after_setup_theme', 'crb_load');

@@ -17,7 +17,7 @@ add_action('template_redirect', function () {
 
 //		  wp_localize_script( 'commons', 'landing_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 
-        if (is_page_template('home-template.php')) {
+        if (is_page_template('template-home.php')) {
             wp_enqueue_script('home', Assets::getJs('home'), false, null, true);
         }
         if (is_singular('program')) {
