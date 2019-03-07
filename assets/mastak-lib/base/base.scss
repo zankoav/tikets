@@ -2,7 +2,7 @@ $POSITION : (
         l:left,
         r:right,
         t:top,
-        b:bottom
+        b:bottom,
 );
 $PARTS : (
         '00':0,
@@ -17,6 +17,19 @@ $PARTS : (
         'a':auto
 );
 @mixin base() {
+
+    .pos-r {
+        position : relative;
+    }
+    .pos-a {
+        position : absolute;
+    }
+    .pos-f {
+        position : fixed;
+    }
+    .pos-s {
+        position : static;
+    }
 
     @each $part, $part_value in $PARTS {
 

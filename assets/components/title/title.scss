@@ -1,0 +1,22 @@
+@import "./../../common/constants";
+
+.title {
+    font-size      : 40px;
+    line-height    : 1;
+    text-transform : lowercase;
+    letter-spacing : 0;
+    font-weight    : 800;
+
+    @include sm {
+        font-size : 72px;
+    }
+
+    @include md {
+        letter-spacing : -.5rem;
+        font-size      : 114px;
+    }
+
+    &_white {
+        color : $WHITE;
+    }
+}
