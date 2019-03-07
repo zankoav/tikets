@@ -2,14 +2,12 @@
 @import "reset";
 @import "constants";
 
+/*    Add Swiper styles */
+@import "./../../node_modules/swiper/dist/css/swiper.min.css";
+
 /**
-
-    Add Swiper styles
-    @import "./../../node_modules/swiper/dist/css/swiper.min.css";
-
     Add Fontawesome styles
     @import '~@fortawesome/fontawesome-free/css/all';
-
 */
 
 body, html {
@@ -17,27 +15,25 @@ body, html {
 }
 
 body {
-    font-family : 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .app {
-    display     : flex;
+    display        : flex;
     flex-direction : column;
 
     header {
-        flex-shrink: 0;
+        flex-shrink : 0;
     }
 
     main {
-        flex: 1;
+        flex : 1;
     }
 
     footer {
-        flex-shrink: 0;
+        flex-shrink : 0;
     }
 }
-
-
 
 @include loader();
 @include container();
