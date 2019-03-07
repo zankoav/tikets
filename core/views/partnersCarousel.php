@@ -1,19 +1,12 @@
 <?php
 	global $post;
-	$args = [
-		'post_type' => 'partner',
-	];
-	
+	$args  = [ 'post_type' => 'partner' ];
 	$query = new WP_Query( $args );
-
 ?>
-
-
 <div class="partners">
 	<div class="container">
 		<div class="partners__inner row">
-			<div class="col-1 col-sm-1 col-md-1 col-lg-1"></div>
-			<div class="col-10 col-sm-10 col-md-10 col-lg-10">
+			<div class="col-offset-1 col-10 col-sm-10 col-md-10 col-lg-10">
 				<div class="partners__container swiper-container">
 					<div class="partners__wrapper swiper-wrapper">
 						<?php if ($query->have_posts()):

@@ -3,6 +3,6 @@
 		exit();
 	}
 
-	echo 'Error 404';
+	echo 'Error 404 co-co-co';
 
 
