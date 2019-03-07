@@ -1,0 +1,197 @@
+@import "./../../common/constants";
+
+$BGC : $DARK;
+$ORANGE : $ORANGE;
+$RED : $RED;
+
+.features {
+
+    &_mobile {
+        padding-left  : 0;
+        padding-right : 0;
+
+        @include sm {
+            padding   : {
+                left  : 1.25rem;
+                right : 1.25rem;
+            }
+        }
+
+        @include md {
+            padding   : {
+                left  : 1.5rem;
+                right : 1.5rem;
+            }
+        }
+
+        @include lg {
+            padding : 0;
+        }
+
+        @include hd {
+            padding : 0 4rem;
+        }
+    }
+
+    &__swiper {
+
+        @include sm {
+            overflow : initial;
+            height   : 340px;
+        }
+
+        @include md {
+            height : 416px;
+        }
+
+        @include lg {
+            height : 484px;
+        }
+
+        @include hd {
+            height : 546px;
+        }
+    }
+
+    &__slide {
+
+        @include sm {
+            width    : initial;
+            height   : initial;
+            position : absolute;
+
+        }
+
+        &:after {
+            content         : '';
+            position        : absolute;
+            background      : url("./../../images/arrow.svg") no-repeat;
+            background-size : cover;
+
+            @include sm {
+                width  : 112px;
+                height : 72px;
+            }
+
+            @include md {
+                width  : 144px;
+                height : 92px;
+            }
+
+            @include lg {
+                width  : 180px;
+                height : 116px;
+            }
+
+            @include hd {
+                width  : 208px;
+                height : 136px;
+            }
+
+        }
+
+        &_1 {
+            @include sm {
+                top  : 15%;
+                left : 0;
+
+                &:after {
+                    transform : translateY(55%) rotate(40deg) scale(1, -1);
+                }
+            }
+        }
+
+        &_2 {
+            @include sm {
+                top  : 65%;
+                left : 15%;
+
+                &:after {
+                    transform : translate(65%, -211%) rotate(-10deg);
+                }
+            }
+
+            @include md {
+                &:after {
+                    transform : translate(79%, -216%) rotate(-10deg);
+                }
+            }
+
+            @include lg {
+                &:after {
+                    transform : translate(79%, -203%) rotate(-10deg);
+                }
+            }
+
+            @include hd {
+                &:after {
+                    transform : translate(76%, -192%) rotate(-10deg);
+                }
+            }
+        }
+
+        &_3 {
+            @include sm {
+                top   : 30%;
+                right : 30%;
+
+                &:after {
+                    transform : translate(75%, 5%) rotate(-4deg) scaleY(-1);
+                }
+            }
+        }
+
+        &_4 {
+            @include sm {
+                top   : 50%;
+                right : 0;
+
+                &:after {
+                    content : none;
+                }
+            }
+        }
+    }
+
+    &__pagination-wrapper {
+        display         : flex;
+        justify-content : center;
+        width           : 100%;
+        bottom          : 3rem;
+    }
+
+    &__pagination {
+        width : 100%;
+
+        @include sm {
+            display : none;
+        }
+
+        .swiper-pagination-bullet {
+            border-radius : 0;
+            opacity       : 1;
+            padding       : .5rem;
+            width         : 3rem;
+            height        : 1.25rem;
+            background    : transparent;
+
+            &:after {
+                content          : '';
+                display          : block;
+                width            : 2rem;
+                height           : .25rem;
+                background-color : $ORANGE;
+            }
+
+            &:focus {
+                outline : none;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            &:after {
+                background-color : $RED;
+            }
+        }
+    }
+}

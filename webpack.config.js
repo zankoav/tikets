@@ -48,9 +48,13 @@ const WP = NODE_ENV === "wp-production";
 if (!WP) {
 
     entries['zanko'] = './zanko.js';
+    entries['masha'] = './masha.js';
 
     pugs['zanko'] = {
         title: "zanko title"
+    };
+    pugs['masha'] = {
+        title: "masha title"
     };
 }
 
