@@ -1,0 +1,49 @@
+mixin footer()
+    +b.FOOTER.footer.pt-10.pb-10.pt-sm-40.pb-sm-40
+        .container
+            .row
+                .col-12.col-sm-3
+                    +e.logo_link(href='/')
+                        +e.logo_link-image(src=require('./../images/footer-logo.png'), alt='Seminar4U')
+                .col-12.col-sm-3.pt-10.pt-sm-00
+                    +e.menu
+                        +e.title.pt-05.pb-05.pt-sm-00.pb-sm-00 Меню
+                        +e.UL.menu_list
+                            +e.menu_list-item._active
+                                +e.SPAN.menu_list-item-circle
+                                a(href="#") О компании
+                            +e.menu_list-item
+                                +e.SPAN.menu_list-item-circle
+                                a(href="#") Календарь семинаров
+                            +e.menu_list-item
+                                +e.SPAN.menu_list-item-circle
+                                a(href="#") Магазин
+                .col-12.col-sm-3.pt-10.pt-sm-00
+                    +e.contacts
+                        +e.title.pt-05.pb-05.pt-sm-00.pb-sm-00 Контакты
+                        +e.contacts_text
+                            +e.contacts_text-image(src=require('./../images/velcom.png'), alt='Velcom')
+                            a(href="tel:+375293404483") +375 (29) 340 44 83
+                        +e.contacts_text
+                            +e.contacts_text-image(src=require('./../images/mts.png'), alt='Velcom')
+                            a(href="tel:+375333004483") +375 (33) 300 44 83
+                        +e.contacts_text
+                            +e.contacts_text-image(src=require('./../images/email.png'), alt='Velcom')
+                            a(href="tel:info@spplaw.by") info@spplaw.by
+                .col-12.col-sm-3.pt-10.pt-sm-00
+                    +e.address
+                        +e.title.pt-05.pb-05.pt-sm-00.pb-sm-00 Адрес
+                        +e.address_text Республика Беларусь, 220034, г. Минск, ул. Фрунзе, 3, комн. 203.
+            +e.copyright.pt-10.pt-sm-20
+                +e.copyright_text © 2019. Все права защищены.  УНП 805090058
+                +e.copyright_development(href="#")
+                    +e.SPAN.copyright_development-text Разработка сайта
+                    +e.IMG.copyright_development-image(src=require("./../images/develop.svg"), alt="mastak")
+
+
+
+
+
+
+
+
