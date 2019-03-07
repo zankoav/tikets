@@ -5,5 +5,8 @@ import './../common/_common.scss';
  */
 import './../mastak-lib/loader/loader';
 import './../components/header/header';
+import './../components/reviews/reviews';
+import './../components/video-review/video-review';
+import './../components/title/title';
 
 

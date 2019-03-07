@@ -1,0 +1,122 @@
+@import "./../../common/constants";
+
+$BGC : $DARK;
+$ORANGE : $ORANGE;
+$RED : $RED;
+
+.reviews {
+    background-color : $BGC;
+    padding          : 4rem 0;
+
+    @include sm {
+        padding : 2rem 0;
+    }
+
+    @include md {
+        padding-bottom : 80px;
+    }
+
+    &__button-next, &__button-prev {
+        background-image : url("./../../images/right.svg");
+        width            : 22px;
+        height           : 28px;
+        background-size  : contain;
+        margin-top       : 0;
+        top              : calc(50% - 14px);
+        display          : none;
+
+        @include sm {
+            display : block;
+            width   : 46px;
+            height  : 40px;
+            right   : -54px;
+            top     : calc(50% - 20px);
+        }
+
+        @include md {
+            width  : 52px;
+            height : 42px;
+            right  : -66px;
+            top    : calc(50% - 21px);
+        }
+
+        @include lg {
+            width  : 72px;
+            height : 72px;
+            right  : -84px;
+            top    : calc(50% - 36px);
+        }
+
+        @include hd {
+            width : 88px;
+            right : -106px;
+        }
+
+        &:focus {
+            outline : none;
+        }
+    }
+
+    &__button-prev {
+        background-image : url("./../../images/left.svg");
+
+        @include sm {
+            left : -54px;
+        }
+
+        @include md {
+            left : -66px;
+        }
+
+        @include lg {
+            left : -84px;
+        }
+
+        @include hd {
+            left : -106px;
+        }
+    }
+
+    &__pagination-wrapper {
+        display         : flex;
+        justify-content : center;
+        width           : 100%;
+        bottom          : 0;
+    }
+
+    &__pagination {
+        width : 100%;
+
+        @include sm {
+            display : none;
+        }
+
+        .swiper-pagination-bullet {
+            border-radius : 0;
+            opacity       : 1;
+            padding       : .5rem;
+            width         : 3rem;
+            height        : 1.25rem;
+            background    : transparent;
+
+            &:after {
+                content          : '';
+                display          : block;
+                width            : 2rem;
+                height           : .25rem;
+                background-color : $ORANGE;
+            }
+
+            &:focus {
+                outline : none;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            &:after {
+                background-color : $RED;
+            }
+        }
+    }
+
+}
