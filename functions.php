@@ -18,10 +18,10 @@
 	require_once __DIR__ . '/utils/SingletonOptions.php';
 
 	require_once __DIR__ . '/core/init_theme.php';
-	require_once __DIR__ . '/core/custom-types/index.php';
+//	require_once __DIR__ . '/core/custom-types/index.php';
 	require_once __DIR__ . '/core/custom-types/partnerPostType.php';
 	require_once __DIR__ . '/core/carbon/partnerMeta.php';
-	require_once __DIR__ . '/core/custom-types/programPostType.php';
+//	require_once __DIR__ . '/core/custom-types/programPostType.php';
 
 	require_once __DIR__ . '/core/menu.php';
 	require_once __DIR__ . '/core/styles.php';
