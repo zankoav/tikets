@@ -3,7 +3,7 @@
 @import "constants";
 
 /*    Add Swiper styles */
-@import "./../../node_modules/swiper/dist/css/swiper.min.css";
+//@import "./../../node_modules/swiper/dist/css/swiper.min.css";
 
 /**
     Add Fontawesome styles
@@ -35,9 +35,9 @@ body {
     }
 }
 
-@include loader();
-@include container();
-@include base();
+//@include loader();
+//@include container();
+@include base-setup();
 
 /**
     Add Editor
