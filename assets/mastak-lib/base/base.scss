@@ -1,94 +1,13 @@
-$POSITION : (
-        l:left,
-        r:right,
-        t:top,
-        b:bottom,
-);
-$PARTS : (
-        '00':0,
-        '05':.5rem,
-        '10':1rem,
-        '15':1.5rem,
-        '20':2rem,
-        '25':2.5rem,
-        '30':3rem,
-        '35':3.5rem,
-        '40':4rem,
-        'a':auto
-);
-@mixin base() {
+@import "position";
+@import "padding";
+@import "margin";
+@import "display";
 
-    .pos-r {
-        position : relative;
-    }
-    .pos-a {
-        position : absolute;
-    }
-    .pos-f {
-        position : fixed;
-    }
-    .pos-s {
-        position : static;
-    }
-
-    @each $part, $part_value in $PARTS {
-
-        .m-#{$part} {
-            margin : $part_value;
-        }
-
-        @if ($part != 'a') {
-            .p-#{$part} {
-                padding : $part_value;
-            }
-        }
-
-        @each $position, $position_value in $POSITION {
-
-            .m#{$position}-#{$part} {
-                margin-#{$position_value} : $part_value;
-            }
-
-            @if ($part != 'a') {
-                .p#{$position}-#{$part} {
-                    padding-#{$position_value} : $part_value;
-                }
-            }
-        }
-    }
-
-    @each $key, $value in $MEDIA {
-
-        @each $part, $part_value in $PARTS {
-
-            @media (min-width : map_get($MEDIA, #{$key})) {
-
-                .m-#{$key}-#{$part} {
-                    margin : $part_value;
-                }
-
-                @if ($part != 'a') {
-                    .p-#{$key}-#{$part} {
-                        padding : $part_value;
-                    }
-                }
-            }
-
-            @each $position, $position_value in $POSITION {
-
-                @media (min-width : map_get($MEDIA, #{$key})) {
-
-                    .m#{$position}-#{$key}-#{$part} {
-                        margin-#{$position_value} : $part_value;
-                    }
-
-                    @if ($part != 'a') {
-                        .p#{$position}-#{$key}-#{$part} {
-                            padding-#{$position_value} : $part_value;
-                        }
-                    }
-                }
-            }
-        }
+@mixin base-setup() {
+    @each $media-key, $media-value in $MEDIA {
+        @include base-position($media-key, $media-value);
+        @include base-padding($media-key, $media-value);
+        @include base-margin($media-key, $media-value);
+        @include base-display($media-key, $media-value);
     }
 }

@@ -3,7 +3,7 @@
 @import "constants";
 
 /*    Add Swiper styles */
-@import "./../../node_modules/swiper/dist/css/swiper.min.css";
+//@import "./../../node_modules/swiper/dist/css/swiper.min.css";
 
 /**
     Add Fontawesome styles
@@ -15,12 +15,13 @@ body, html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family : 'Open Sans', sans-serif;
 }
 
 .app {
     display        : flex;
     flex-direction : column;
+    height         : 100%;
 
     header {
         flex-shrink : 0;
@@ -37,12 +38,13 @@ body {
 
 @include loader();
 @include container();
-@include base();
+@include base-setup();
 
 /**
     Add Editor
     @include editor-content();
 */
+@include editor-content();
 
 @include customize-support {
     /**
