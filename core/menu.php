@@ -34,6 +34,13 @@
 			if (in_array( 'current-menu-item', $classes )) {
 				$classes[] = 'header__categories-item_active';
 			}
+		} elseif ($args->theme_location === 'footer_menu') {
+			$classes[] = 'footer__menu';
+			$classes[] = 'footer__menu_list-item ';
+			
+			if (in_array( 'current-menu-item', $classes )) {
+				$classes[] = 'footer__menu_active';
+			}
 		}
 		return $classes;
 	}

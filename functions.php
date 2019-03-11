@@ -18,10 +18,10 @@
 	require_once __DIR__ . '/utils/SingletonOptions.php';
 
 	require_once __DIR__ . '/core/init_theme.php';
-	require_once __DIR__ . '/core/custom-types/index.php';
+//	require_once __DIR__ . '/core/custom-types/index.php';
 	require_once __DIR__ . '/core/custom-types/partnerPostType.php';
 	require_once __DIR__ . '/core/carbon/partnerMeta.php';
-	require_once __DIR__ . '/core/custom-types/programPostType.php';
+//	require_once __DIR__ . '/core/custom-types/programPostType.php';
 
 	require_once __DIR__ . '/core/menu.php';
 	require_once __DIR__ . '/core/styles.php';
@@ -34,3 +34,11 @@
 
 	require_once  __DIR__ . '/core/carbon/optionPage.php';
 	require_once __DIR__ . '/vendor/autoload.php';
+	
+//	function wpb_change_search_url() {
+//		if ( is_search() && ! empty( $_GET['s'] ) ) {
+//			wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
+//			exit();
+//		}
+//	}
+//	add_action( 'template_redirect', 'wpb_change_search_url' );
