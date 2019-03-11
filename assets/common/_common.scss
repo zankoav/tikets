@@ -15,12 +15,13 @@ body, html {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family : 'Open Sans', sans-serif;
 }
 
 .app {
     display        : flex;
     flex-direction : column;
+    height         : 100%;
 
     header {
         flex-shrink : 0;
@@ -35,14 +36,15 @@ body {
     }
 }
 
-//@include loader();
-//@include container();
+@include loader();
+@include container();
 @include base-setup();
 
 /**
     Add Editor
     @include editor-content();
 */
+@include editor-content();
 
 @include customize-support {
     /**
