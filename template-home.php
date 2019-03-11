@@ -14,40 +14,10 @@
 		<div class="features">
 			<div class="container features_mobile">
 				<div class="features__inner">
-					<div class="features__swiper swiper-container">
-						<div class="features__swiper-wrapp swiper-wrapper">
-							<div class="features__slide features__slide_1 swiper-slide">
-								<div class="feature">
-									<img class="feature__image" src="/wp-content/themes/tikets/src/icons/iso.06f530.svg"
-										 alt="icon" title=""/>
-									<h3 class="feature__title feature__title_blue">высокий стандарт качества</h3>
-								</div>
-							</div>
-							<div class="features__slide features__slide_2 swiper-slide">
-								<div class="feature">
-									<img class="feature__image"
-										 src="/wp-content/themes/tikets/src/icons/ranec.a70500.svg" alt="icon"
-										 title=""/>
-									<h3 class="feature__title feature__title_red">профессиональный фокус</h3>
-								</div>
-							</div>
-							<div class="features__slide features__slide_3 swiper-slide">
-								<div class="feature">
-									<img class="feature__image"
-										 src="/wp-content/themes/tikets/src/icons/compass.67da79.svg" alt="icon"
-										 title=""/>
-									<h3 class="feature__title feature__title_gray">выбор форматов обучения</h3>
-								</div>
-							</div>
-							<div class="features__slide features__slide_4 swiper-slide">
-								<div class="feature">
-									<img class="feature__image" src="/wp-content/themes/tikets/src/icons/box.b93106.svg"
-										 alt="icon" title=""/>
-									<h3 class="feature__title feature__title_orange">без отрыва от работы</h3>
-								</div>
-							</div>
-						</div>
-					</div>
+					
+					
+					<?php get_template_part( '/core/views/home','benefits' ); ?>
+					
 					<div class="features__pagination-wrapper pos-a">
 						<div class="features__pagination swiper-pagination">
 						</div>
