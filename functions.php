@@ -33,6 +33,7 @@
 //	require_once __DIR__ . '/core/cmb2/themeSettings.php';
 
 	require_once  __DIR__ . '/core/carbon/optionPage.php';
+	require_once  __DIR__ . '/core/carbon/homePage.php';
 	require_once __DIR__ . '/vendor/autoload.php';
 	
 //	function wpb_change_search_url() {
