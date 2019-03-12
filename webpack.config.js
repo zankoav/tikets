@@ -29,7 +29,7 @@ let entries = {
     category: './category.js',
     page: './page.js',
     single: './single.js',
-
+    p404: './p404.js',
 };
 
 let pugs = {
@@ -47,6 +47,9 @@ let pugs = {
     },
     single: {
         title: "single title"
+    },
+    p404: {
+        title: "p404 title"
     }
 };
 
@@ -58,12 +61,16 @@ if (!WP) {
 
     entries['zanko'] = './zanko.js';
     entries['masha'] = './masha.js';
+    entries['edik'] = './edik.js';
 
     pugs['zanko'] = {
         title: "zanko title"
     };
     pugs['masha'] = {
         title: "masha title"
+    };
+    pugs['edik'] = {
+        title: "edik title"
     };
 }
 

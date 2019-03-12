@@ -1,0 +1,17 @@
+mixin input(typeInput,nameInput,placeholderInput)
+    - var typeMod = typeInput ? typeInput : ''
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    input(class=`input` type=`${typeMod}` name=`${nameMod}` placeholder=`${placeholderMod}`)
+
+mixin button(text, colorButton,typeButton,nameButton)
+    - var colorMod = colorButton ? colorButton : ''
+    - var typeMod = typeButton ? typeButton : ''
+    - var nameMod = nameButton ? nameButton : ''
+    button(class= `button ${colorMod}` type=`${typeMod}` name=`${nameMod}`)= text
+
+
+mixin textarea(nameInput,placeholderInput)
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    textarea(class=`textarea` name=`${nameMod}` placeholder=`${placeholderMod}`)

@@ -1,0 +1,52 @@
+@import "./../../common/constants";
+
+$GREY : #565656;
+
+.partnership {
+
+
+    &__inner {
+
+    }
+
+    &__download {
+        color : $GREY;
+
+        &[href$=".pdf"] {
+            display : flex;
+
+            &:before {
+                content         : '';
+                background      : url('./../../images/pdf.svg');
+                display         : inline-block;
+                width           : 28px;
+                height          : 32px;
+                margin-right    : .5rem;
+                background-size : contain;
+                flex-shrink     : 0;
+                margin-top      : -.35rem;
+            }
+        }
+    }
+
+    &__input {
+
+    }
+
+    &__textarea {
+        height : 100%;
+    }
+
+
+    &__textarea_oh {
+        overflow : hidden;
+        width    : 2px;
+        height   : 2px;
+        position : absolute;
+    }
+
+
+    &__button {
+
+    }
+}
