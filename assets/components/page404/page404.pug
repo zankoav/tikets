@@ -1,0 +1,15 @@
+mixin page404()
+    +b.page404
+        .container
+            +e.inner.mt-40.mb-40.pb-20.pt-sm-20.pb-sm-40
+                .row.mb-20.mb-sm-00
+                    .col-12.col-sm-6.col-offset-md-1.col-md-5.col-offset-lg-2.pb-10.pb-sm-00.pr-sm-10.pr-md-20
+                        +e.image(src=require('./../images/p404.svg'), alt='page404')
+                    +e.mistake-wrapper.col-12.col-sm-5.col-md-6.col-lg-5
+                        +e.mistake ошибка
+                .row
+                    .col-12.col-offset-sm-5.col-sm-7.col-md-6.col-lg-7
+                        +e.text
+                            p.pb-10 УПС! Такой страницы не существует.
+                            p.pb-05 Всю информацию можно найти &nbsp;
+                                +e.link(href="#") здесь
