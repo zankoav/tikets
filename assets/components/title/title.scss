@@ -1,6 +1,6 @@
 @import "./../../common/constants";
 
-$GREY: #E4E9EE;
+$GREY : #E4E9EE;
 
 .title {
     font-size      : 40px;
@@ -23,6 +23,10 @@ $GREY: #E4E9EE;
     }
 
     &_grey {
-        color: $GREY;
+        color : $GREY;
+    }
+
+    &_default {
+        text-transform : initial;
     }
 }
