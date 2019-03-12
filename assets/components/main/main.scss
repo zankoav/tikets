@@ -1,0 +1,17 @@
+@import "./../../common/constants";
+
+.main {
+
+    &__autor {
+        color       : #565656;
+        font-size   : 20px;
+        line-height : 1;
+    }
+
+    &__description {
+        color       : #8d9bb0;
+        font-weight : 800;
+        font-size   : 26px;
+        line-height : 24px;
+    }
+}

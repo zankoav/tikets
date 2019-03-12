@@ -1,0 +1,60 @@
+@import "./../../common/constants";
+
+$GREY_LIGHT : #E4E9EE;
+$GREY_MIDDLE : #8D9BB0;
+$RED : #F64D4E;
+
+.page404 {
+    display     : flex;
+    align-items : center;
+    min-height  : 100%;
+
+    &__image {
+        width : 100%;
+    }
+
+    &__mistake {
+        color       : $GREY_LIGHT;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 40px;
+        font-weight : bold;
+        line-height : 1;
+        text-align  : center;
+
+        @include sm {
+            font-size : 70px;
+        }
+
+        @include md {
+            font-size   : 114px;
+            line-height : .8;
+        }
+    }
+
+    &__mistake-wrapper {
+        align-self : center;
+    }
+
+    &__text {
+        color       : $GREY_MIDDLE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 20px;
+        font-weight : bold;
+        line-height : 1;
+        text-align  : center;
+
+        @include sm {
+            text-align : left;
+        }
+
+        @include lg {
+            font-size   : 26px;
+            line-height : .9;
+        }
+    }
+
+    &__link {
+        color         : $RED;
+        border-bottom : 1px solid $RED;
+    }
+}
