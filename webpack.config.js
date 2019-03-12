@@ -30,6 +30,7 @@ let entries = {
     page: './page.js',
     single: './single.js',
     p404: './p404.js',
+    contacts: './contacts.js',
 };
 
 let pugs = {
@@ -50,6 +51,9 @@ let pugs = {
     },
     p404: {
         title: "p404 title"
+    },
+    contacts : {
+        title: "contacts title"
     }
 };
 
