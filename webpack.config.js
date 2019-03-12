@@ -50,12 +50,16 @@ if (!WP) {
 
     entries['zanko'] = './zanko.js';
     entries['masha'] = './masha.js';
+    entries['edik'] = './edik.js';
 
     pugs['zanko'] = {
         title: "zanko title"
     };
     pugs['masha'] = {
         title: "masha title"
+    };
+    pugs['edik'] = {
+        title: "edik title"
     };
 }
 

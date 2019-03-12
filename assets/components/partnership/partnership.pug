@@ -1,0 +1,23 @@
+mixin partnership()
+    +b.partnership
+        .container
+            +e.inner
+                +title('ПАРТНЕРСТВО','title_grey')
+                .mt-20.mb-20.mt-sm-40.mb-sm-40.pt-md-15
+                    +e.download.pb-05.pb-sm-10(href="http://tut.by/sdvbsjbdv.pdf") скачайте коммерческое предложение для партнеров скачайте коммерческое предложение для партнеров
+                    +e.download(href="http://tut.by/sdvbsjbdv.pdf") скачайте коммерческое предложение для партнеров
+            form(id="partnership__form" method='POST' action='/')
+                .row
+                    .col-12.col-sm-5.pb-sm-00
+                        +e.input.pb-10
+                            +input("text", "username","имя")
+                        +e.input.pb-10.pb-sm-00
+                            +input("text", "useremail","почта")
+                    .col-12.col-sm-7.pb-20.pb-sm-00
+                        +e.textarea
+                            +textarea("text" , "сООБЩЕНИЕ")
+                    +e.textarea_oh
+                        +textarea("usermessage")
+                    .col-12.col-sm-6.col-offset-sm-2.pt-sm-20.pt-md-40
+                        +e.button
+                            +button('Записаться','button__color_red',"submit","userbutton")
