@@ -5,3 +5,4 @@ import './../common/_common.scss';
  */
 import './../mastak-lib/loader/loader';
 
+import './../components/title/title';

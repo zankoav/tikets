@@ -27,6 +27,8 @@ let entries = {
     home: './home.js',
     program: './program.js',
     category: './category.js',
+    page: './page.js',
+    single: './single.js',
 
 };
 
@@ -39,6 +41,12 @@ let pugs = {
     },
     category: {
         title: "category title"
+    },
+    page: {
+        title: "page title"
+    },
+    single: {
+        title: "single title"
     }
 };
 
