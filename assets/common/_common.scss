@@ -1,9 +1,8 @@
 @import "fonts";
 @import "reset";
 @import "constants";
-
 /*    Add Swiper styles */
-//@import "./../../node_modules/swiper/dist/css/swiper.min.css";
+@import "./../../node_modules/swiper/dist/css/swiper.min.css";
 
 /**
     Add Fontawesome styles
@@ -44,7 +43,11 @@ body {
     Add Editor
     @include editor-content();
 */
-@include editor-content();
+@include editor-content {
+    color : #565656;
+}
+
+;
 
 @include customize-support {
     /**

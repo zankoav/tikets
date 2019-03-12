@@ -1,0 +1,45 @@
+mixin seminarforu()
+    +b.seminarforu
+        .container.mb-30.mb-sm-40.pb-lg-40
+            .row
+                .col-12.col-sm-7
+                    +e.image.d-b(src=require('./../images/hand.png'), alt='hand')
+                    .d-b.pos-r
+                        +e.SPAN.line.d-b.pos-a
+                .col-12.col-sm-5.mt-10.pos-sm-r
+                    +e.sign.pos-sm-a Запишись
+            .row.mt-20.mt-sm-40.pt-md-40.pt-lg-00.pt-hd-20
+                .col-12.col-sm-6
+                    +e.list
+                        +e.list-current.d-b(href="#") Выбрать семинар
+                        .pos-r
+                            +e.UL.list-items.pos-a
+                                +e.LI.item
+                                    +e.item-link(href="#", data-id="1")
+                                        +e.SPAN.item-link-point.mr-10(style="background-color:#f00")
+                                        +e.P.item-link-title как улучшить маркетинг в компании за 3 рабочих недели
+                                +e.LI.item
+                                    +e.item-link(href="#", data-id="2")
+                                        +e.SPAN.item-link-point.mr-10(style="background-color:#ff0")
+                                        +e.P.item-link-title как улучшить маркетинг в компании за 3 рабочих недели
+                                +e.LI.item
+                                    +e.item-link(href="#", data-id="3")
+                                        +e.SPAN.item-link-point.mr-10(style="background-color:#f0f")
+                                        +e.P.item-link-title как улучшить маркетинг в компании за 3 рабочих недели
+                                +e.LI.item
+                                    +e.item-link(href="#", data-id="4")
+                                        +e.SPAN.item-link-point.mr-10(style="background-color:#0f0")
+                                        +e.P.item-link-title как улучшить маркетинг в компании за 3 рабочих недели
+                                +e.LI.item
+                                    +e.item-link(href="#", data-id="5")
+                                        +e.SPAN.item-link-point.mr-10(style="background-color:#0ff")
+                                        +e.P.item-link-title как улучшить маркетинг в компании за 3 рабочих недели
+                .col-12.col-sm-6.mt-10.mt-sm-00
+                    +e.button-sign.d-b(href="#", target='_blank') Запиcаться
+
+
+
+
+
+
+

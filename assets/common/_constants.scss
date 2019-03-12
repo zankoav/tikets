@@ -17,3 +17,11 @@ $RED : #f85c5d;
 
 //MIXINS
 @import "./../mastak-lib/mixins";
+
+@mixin button-sign() {
+    background-color : $ORANGE;
+    color            : $RED;
+    text-transform   : uppercase;
+    font-weight      : 800;
+    letter-spacing   : 0;
+}
