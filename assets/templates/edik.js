@@ -9,3 +9,5 @@ import './../components/footer/footer';
 import './../components/title/title';
 import './../components/partnership/partnership';
 import './../components/form/form';
+import '../components/welcome/welcome';
+import './../components/orange-button/orange-button';
