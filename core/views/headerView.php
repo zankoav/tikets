@@ -13,10 +13,13 @@
 			<div class="col-7 col-sm-10 col-md-9 col-hd-10">
 				<nav class="header__navigation">
 					<div class="header__menu">
+						
 						<?php get_template_part( "/core/views/mainMenu" ); ?>
+						
 						<div class="header__search-and-login">
 							<a class="header__search" href="#">
-								<div class="header__search-title">Поиск</div>
+								<div class="header__search-title">Поиск
+								</div>
 								<img class="header__search-icon header__search-icon_mobile"
 									 src="/wp-content/themes/tikets/src/icons/search-mobile.f5e714.svg" alt="Search"
 									 title=""/>
@@ -24,7 +27,8 @@
 									 src="/wp-content/themes/tikets/src/icons/search.a0811e.svg" alt="Search" title=""/>
 							</a>
 							<a class="header__login" href="#">
-								<div class="header__login-title">Личный кабинет </div>
+								<div class="header__login-title">Личный кабинет
+								</div>
 								<img class="header__login-icon header__login-icon_mobile"
 									 src="/wp-content/themes/tikets/src/icons/login-mobile.17d2d1.svg" alt="Login"
 									 title=""/>
@@ -34,7 +38,9 @@
 						</div>
 					</div>
 					<div class="header__categories">
+						
 						<?php get_template_part( "/core/views/rightMenu" ); ?>
+						
 						<a class="header__categories-button" href="#">Список семинаров</a>
 					</div>
 					<a class="header__burger" href="#">

@@ -23,5 +23,8 @@ add_action('template_redirect', function () {
         if (is_singular('program')) {
             wp_enqueue_script('program', Assets::getJs('program'), false, null, true);
         }
+        else if (is_404()) {
+	        wp_enqueue_script('p404', Assets::getJs('p404'), false, null, true);
+        }
     });
 });

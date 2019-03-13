@@ -22,6 +22,9 @@
 			if ( is_singular( 'program') ) {
 				wp_enqueue_style( 'program', Assets::getCss( 'program' ), false, null );
 			}
+			if ( is_404() ) {
+				wp_enqueue_style( 'p404', Assets::getCss( 'p404' ), false, null );
+			}
 
 			wp_enqueue_style( 'style', BASE_URL . '/style.css', false, null );
 
