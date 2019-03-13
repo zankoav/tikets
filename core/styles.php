@@ -22,7 +22,7 @@
 			else if ( is_page_template( 'template-contacts.php' ) ) {
 				wp_enqueue_style( 'contacts', Assets::getCss( 'contacts' ), false, null );
 			}
-			else if ( is_singular( 'program') ) {
+			else if ( is_singular( 'product') ) {
 				wp_enqueue_style( 'program', Assets::getCss( 'program' ), false, null );
 			}
 			else if ( is_404() ) {

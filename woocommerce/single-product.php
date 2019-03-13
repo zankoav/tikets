@@ -20,7 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header();
+get_template_part('/core/views/headerView');
+?>
 
 	<?php
 		/**
@@ -48,14 +50,17 @@ get_header( 'shop' ); ?>
 	?>
 
 	<?php
+	get_template_part('/core/views/product','partnersCarousel');
 		/**
 		 * woocommerce_sidebar hook.
 		 *
 		 * @hooked woocommerce_get_sidebar - 10
 		 */
-		do_action( 'woocommerce_sidebar' );
+//		do_action( 'woocommerce_sidebar' );
 	?>
 
-<?php get_footer( 'shop' );
+<?php
+	get_template_part('/core/views/footerView');
+	get_footer();
 
 /* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */

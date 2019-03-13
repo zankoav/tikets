@@ -23,7 +23,7 @@ add_action('template_redirect', function () {
         elseif (is_page_template('template-home.php')) {
 		    wp_enqueue_script('home', Assets::getJs('home'), false, null, true);
 	    }
-        elseif (is_singular('program')) {
+        elseif (is_singular('product')) {
             wp_enqueue_script('program', Assets::getJs('program'), false, null, true);
         }
 	    elseif (is_singular('post')) {
