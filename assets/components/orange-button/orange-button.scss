@@ -1,0 +1,16 @@
+@import "./../../common/constants";
+
+$ORANGE : #FBBE49;
+
+.orange-button {
+    color            : $WHITE;
+    background-color : $ORANGE;
+    border-radius    : 3px;
+    display          : inline-block;
+    font-family      : 'Open Sans', sans-serif;
+    font-size        : 18px;
+    font-weight      : bold;
+    text-align       : center;
+    text-transform   : uppercase;
+    padding          : 1rem 2rem;
+}
