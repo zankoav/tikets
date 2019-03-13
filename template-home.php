@@ -25,6 +25,7 @@
 				</div>
 			</div>
 		</div>
+		<?php get_template_part('/core/views/home','seminarforu')?>
 		<?php get_template_part('/core/views/home','reviews')?>
 	</main>
 	<?php get_template_part( '/core/views/footerView' ); ?>
