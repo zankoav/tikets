@@ -34,6 +34,7 @@
 
 	require_once  __DIR__ . '/core/carbon/optionPage.php';
 	require_once  __DIR__ . '/core/carbon/homePage.php';
+	require_once  __DIR__ . '/core/carbon/postPage.php';
 	require_once __DIR__ . '/vendor/autoload.php';
 	
 //	function wpb_change_search_url() {
