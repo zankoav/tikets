@@ -33,7 +33,7 @@
 						->set_value_type( 'url' ),
 				] );
 		
-		Container::make( 'post_meta', "Список преимущств" )
+		Container::make( 'post_meta', "Отзывовы" )
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-home.php' )
 			->add_fields(
