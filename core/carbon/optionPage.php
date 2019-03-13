@@ -12,14 +12,20 @@
 			->set_icon( 'dashicons-carrot' )
 			->add_fields( [
 				Field::make( 'image', 'crb_logo_img', __( 'Logo' ) )
-					->set_value_type( 'url' ),
+					->set_value_type( 'url' )
+					->set_width( 50 ),
 				Field::make( 'image', 'crb_footer_logo_img', 'Логотип в подвале' )
-					->set_value_type( 'url' ),
-				Field::make( 'text', 'crb_phone_vel', 'Номер телефон(velcom)' ),
-				Field::make( 'text', 'crb_phone_mts', 'Номер телефон(МТС)' ),
+					->set_value_type( 'url' )
+					->set_width( 50 ),
+				Field::make( 'text', 'crb_phone_vel', 'Номер телефон(velcom)' )
+					->set_width( 50 ),
+				Field::make( 'text', 'crb_phone_mts', 'Номер телефон(МТС)' )
+					->set_width( 50 ),
 				Field::make( 'text', 'crb_email', 'Email' ),
 				Field::make( 'text', 'crb_address', __('Address') ),
 				Field::make( 'text', 'crb_unp', 'УНП' ),
+				
+				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
 				
 				//Field::make( 'oembed', 'crb_oembed', __( 'oEmbed' ) )
 			] );
