@@ -1,6 +1,7 @@
 <?php
 	
 	$reviews = carbon_get_post_meta(get_the_ID(),'crb_reviews');
+	
 	?>
 <div class="reviews">
 	<div class="container">

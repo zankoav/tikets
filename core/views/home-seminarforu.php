@@ -44,7 +44,11 @@
 												<?= get_the_title();?>
 											</p></a>
 									</li>
-								<?php endwhile;endif; ?>
+								<?php
+								endwhile;
+								wp_reset_postdata();
+								endif;
+								?>
 						</ul>
 					</div>
 				</div>
