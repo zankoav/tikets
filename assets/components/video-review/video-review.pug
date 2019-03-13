@@ -6,4 +6,5 @@ mixin video-review()
                 +e.H2.title Иван Петров
                 +e.P.position Компания SkyWall, CE Copy 3
         +e.video
-            iframe(src="https://www.youtube.com/embed/nmt0DQPUM_M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+            +e.VIDEO.sorce-video( controls poster=require('./../images/preloader.jpg'))
+                source( src=require('./../video/v.mp4') type="video/mp4")
