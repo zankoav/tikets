@@ -15,6 +15,7 @@
 							$position = $review['reviewer_position'];
 							$image = $review['reviewer_image'];
 							$video = $review['reviewer_video'];
+							$preview = $review['video_preview'];
 							?>
 							<div class="reviews__slide swiper-slide">
 								<div class="video-review">
@@ -25,11 +26,10 @@
 											<p class="video-review__position"><?= $position; ?></p>
 										</div>
 									</div>
-									<?= $video;?>
 									<div class="video-review__video">
-										<iframe src="https://www.youtube.com/embed/nmt0DQPUM_M" frameborder="0"
-												allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-												allowfullscreen></iframe>
+										<video class="video-review__sorce-video" controls poster="<?= $preview;?>">
+											<source src="<?= $video;?>" type="video/mp4">
+										</video>
 									</div>
 								</div>
 							</div>

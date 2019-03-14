@@ -51,6 +51,9 @@
 									->set_value_type( 'url' )
 									->set_type( 'video' )
 									->set_width( 50 ),
+								Field::make( 'image', 'video_preview', 'Превью' )
+									->set_value_type( 'url' )
+									->set_width( 50 ),
 							]
 						),
 				]
