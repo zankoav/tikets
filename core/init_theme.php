@@ -19,6 +19,9 @@ function zankoav_theme_init() {
 
 //		add_image_size( 'partner', 140, 70, false );
 //		add_image_size( 'project-card-m', 300, 200, true );
+	add_image_size( 'tikets-main-speaker-lg', 900, 600, true );
+	add_image_size( 'tikets-main-speaker-md', 644, 430, true );
+	add_image_size( 'tikets-main-speaker-m', 440, 294, true );
 	
 	
 	/**

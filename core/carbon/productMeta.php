@@ -8,6 +8,7 @@
 		Container::make( 'post_meta', 'Дополнительная информация')
 			->where( 'post_type', '=', 'product' )
 			->add_fields( [
+				Field::make( 'text', 'main_speaker' , 'Главный спикер'),
 				Field::make( 'complex', 'crb_partners', 'Партнеры' )
 					->add_fields( 'partner', [
 							Field::make( 'select', 'id' , 'Выберите партнера')
