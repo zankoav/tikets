@@ -1,0 +1,30 @@
+mixin news()
+    +b.news.mb-40.pb-md-20.mt-40.mt-sm-20.mt-md-40
+        .container
+            +title('Новости','title_red mb-20 mb-md-40 pb-lg-40', 'h2')
+            .row
+                .col-12.col-sm-6.col-hd-5
+                    +news-type-1()
+                    +red-news()
+                .col-12.col-sm-6.col-hd-5.col-offset-hd-2
+                    +news-type-2()
+
+
+mixin red-news()
+    +b.red-news
+        h3.news__title Lorem ipsum dolor sit amet
+        +e.P.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eaque enim itaque labore laboriosam maxime nesciunt sapiente? Asperiores ea, exercitationem quasi recusandae sint suscipit voluptate? Assumenda eligendi facere optio voluptates.
+
+mixin news-type-1()
+    +b.news-type-1
+        +e.image-wrapp
+            +e.image(src=require('./../images/man.png'), alt="man")
+        +e.text-wrapp
+            h3.news__title.news__title_red Lorem ipsum dolor sit amet
+            +e.P.description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eaque enim itaque labore laboriosam maxime nesciunt sapiente? Asperiores ea, exercitationem quasi recusandae sint suscipit voluptate? Assumenda eligendi facere optio voluptates.
+
+mixin news-type-2()
+    +b.news-type-2
+        +e.image.mb-20(src=require('./../images/preloader.jpg'), alt="type-2")
+        h3.news__title.news__title_red Lorem ipsum dolor sit
+        +e.P.description.mt-20 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus eaque enim itaque labore laboriosam maxime nesciunt sapiente? Asperiores ea, exercitationem quasi recusandae sint suscipit voluptate? Assumenda eligendi facere optio voluptates.
