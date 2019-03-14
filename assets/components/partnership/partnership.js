@@ -6,27 +6,40 @@ $('#partnership__form').submit(function (event) {
     event.preventDefault();
     let email = $(this).find("[name*='useremail']").val();
     let name = $(this).find("[name*='username']").val();
-    let spam = $(this).find("[name*='usermessage']").val();
+    let message = $(this).find("[name*='usermessage']").val();
+    let spam = $(this).find("[name*='message']").val();
 
-    if(name.length === 0) {
-        console.log(Validator.ERROR_EMPTY_FIELD);
-    } else {
-        console.log(name);
+    if (name.length === 0) {
+        console.log('username', Validator.ERROR_EMPTY_FIELD);
+        return;
     }
 
-    if (Validator.email(email)) {
-        console.log(email);
-    } else {
-        console.log(Validator.ERROR_EMAIL_FIELD);
+    if (message.length === 0) {
+        console.log('usermessage', Validator.ERROR_EMPTY_FIELD);
+        return;
     }
+
+    if (!Validator.email(email)) {
+        console.log('useremail', Validator.ERROR_EMAIL_FIELD);
+        return;
+    }
+
+    let data = {
+        name: name,
+        email: email,
+        message: message,
+        spam: spam
+    };
 
     $.ajax({
-        type: $(this).attr('method'),
-        url:  $(this).attr('action'),
-        data:  $(this).serialize()
-    }).done(function() {
-        console.log('success');
-    }).fail(function() {
-        console.log('fail');
+        type: 'POST',
+        url: tikets_ajax.url,
+        data: data,
+        success: function (response) {
+            console.log(response);
+        },
+        error: function (x, y, z) {
+            console.log(x);
+        }
     });
 });
