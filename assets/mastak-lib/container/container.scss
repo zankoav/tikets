@@ -89,9 +89,18 @@ $COLUMNS : 12;
             max-width : (100% /  $COLUMNS) * $i;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
         }
+    }
 
-        .col-offset-#{$i} {
-            margin-left : (100% /  $COLUMNS) * $i;
+    @for $i from 0 through $COLUMNS {
+
+        @if $i == 0 {
+            .col-offset-0 {
+                margin-left : 0;
+            }
+        } @else {
+            .col-offset-#{$i} {
+                margin-left : (100% /  $COLUMNS) * $i;
+            }
         }
     }
 
@@ -122,11 +131,24 @@ $COLUMNS : 12;
             flex      : 1 0 (100% /  $COLUMNS) * $i;
         }
     }
+    @if $i == 1 {
+        .col-offset-#{$media}-0 {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : 0;
+            }
+        }
 
-    .col-offset-#{$media}-#{$i} {
+        .col-offset-#{$media}-1 {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : (100% /  $COLUMNS) * 1;
+            }
+        }
 
-        @media (min-width : map_get($MEDIA, #{$media})) {
-            margin-left : (100% /  $COLUMNS) * $i;
+    } @else {
+        .col-offset-#{$media}-#{$i} {
+            @media (min-width : map_get($MEDIA, #{$media})) {
+                margin-left : (100% /  $COLUMNS) * $i;
+            }
         }
     }
 }
