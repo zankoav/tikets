@@ -36,8 +36,7 @@
 		Container::make( 'post_meta', "Отзывовы" )
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-home.php' )
-			->add_fields(
-				[
+			->add_fields( [
 					Field::make( 'complex', 'crb_reviews', 'Слидер отзывов' )
 						->add_fields( 'review', [
 								Field::make( 'text', 'reviewer_name', __( 'Имя' ) )
@@ -58,9 +57,32 @@
 						),
 				]
 			);
+		
+		Container::make( 'post_meta', "Новости" )
+			->where( 'post_type', '=', 'page' )
+			->where( 'post_template', '=', 'template-home.php' )
+			->add_fields( [
+				Field::make( 'select', 'first_new_id', 'Выберите первую новость' )
+					->add_options( 'news_selecting' ),
+				Field::make( 'select', 'second_new_id', 'Выберите вторую новость' )
+					->add_options( 'news_selecting' ),
+				Field::make( 'select', 'third_new_id', 'Выберите третью новость' )
+					->add_options( 'news_selecting' ),
+			] );
 	}
 	
 	add_action( 'after_setup_theme', 'crb_home_page_settings_load' );
 	function crb_home_page_settings_load(){
 		\Carbon_Fields\Carbon_Fields::boot();
+	}
+	
+	function news_selecting() {
+		$my_query = new WP_Query();
+		$query_news =$my_query->query(['post_type' => 'post']);
+		
+		$news_list =[];
+		foreach( $query_news  as $news ){
+			$news_list[$news->ID] = $news->post_title;
+		}
+		return $news_list ;
 	}

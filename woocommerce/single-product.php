@@ -33,9 +33,8 @@
 				 * @hooked woocommerce_breadcrumb - 20
 				 */
 				//do_action( 'woocommerce_before_main_content' );
-			?>
-			
-			<?php while(have_posts()) : the_post();
+				
+				while(have_posts()) : the_post();
 //			global $post;
 //			var_dump($post);
 				$main_speaker = carbon_get_post_meta(get_the_ID(),'main_speaker');
