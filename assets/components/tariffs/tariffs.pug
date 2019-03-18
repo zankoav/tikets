@@ -1,0 +1,93 @@
+mixin tariffs()
+    +b.tariffs
+        .container
+            +e.inner
+                +title('тарифы','title_grey')
+                .row
+                    .col-12.col-sm-10.col-offset-sm-2
+                        +e.description Выберите наиболее подходящий формат участия
+                .row
+                    .col-11.col-sm-5
+                        +standard()
+                        +vip()
+                    .col-11.col-sm-5.col-offset-sm-2
+                        +business()
+                        +platinum()
+                +seminarforu()
+
+
+mixin standard()
+    +b.standard
+        +e.title стандарт
+        +e.UL.list
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+            +e.list-item 2 кофе-брейка
+        +button-with-balls('узнать цену',null,'button-with-balls__ball_red','button-with-balls__ball_grey','button-with-balls__ball_orange')
+
+
+mixin vip()
+    +b.vip
+        +e.title vip
+        +e.UL.list
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+            +e.list-item 2 кофе-брейка
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+            +e.list-item 2 кофе-брейка
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+        +e.price 400 Br
+        +orange-button('записаться','orange-button__vip')
+
+
+mixin business()
+    +b.business
+        +e.title business
+        +e.UL.list
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+            +e.list-item 2 кофе-брейка
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+        +e.price 200 Br
+        +orange-button('записаться','orange-button__vip')
+
+
+mixin platinum()
+    +b.platinum
+        +e.title platinum
+        +e.UL.list
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+            +e.list-item 2 кофе-брейка
+            +e.list-item Рабочий материал для обучения
+            +e.list-item Места с середины зала
+            +e.list-item Общий нетворкинг
+            +e.list-item Фотоотчет события
+            +e.list-item Файл с презентацией тренинга
+        +button-with-balls('узнать цену','button-with-balls__white','button-with-balls__ball_red','button-with-balls__ball_grey','button-with-balls__ball_white')
+        //start second option
+        +e.price 400 Br
+        +orange-button('записаться','orange-button__vip')
+        //end
