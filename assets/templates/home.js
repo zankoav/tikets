@@ -15,5 +15,7 @@ import './../components/seminarforu/seminarforu';
 import './../components/news/news';
 import './../components/partnership/partnership';
 import './../components/form/form';
+import './../components/main-slider/main-slider';
+import './../components/orange-button/orange-button';
 
 

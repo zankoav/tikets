@@ -72,8 +72,8 @@
                     } @else if ($way-key == yy) {
                         @if ($part-key != auto) {
                             .my-#{$media-key}-#{$part-key} {
-                                padding-top    : $part-value;
-                                padding-bottom : $part-value;
+                                margin-top    : $part-value;
+                                margin-bottom : $part-value;
                             }
                         }
                     } @else if ($way-key == aa) {
