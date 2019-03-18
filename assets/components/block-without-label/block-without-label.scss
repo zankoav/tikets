@@ -1,0 +1,110 @@
+@import "./../../common/constants";
+
+.block-without-label {
+
+    &__label-title {
+        font-weight   : 800;
+        font-size     : 20px;
+        line-height   : 24px;
+        color         : #8d9bb0;
+        margin-bottom : 2rem;
+        width         : 100%;
+        @include sm {
+            margin-bottom : 4rem;
+        }
+        @include md {
+            font-size   : 26px;
+            line-height : 24px;
+        }
+    }
+
+    &__label-content {
+        margin-top    : 2rem;
+        background    : #f85c5d;
+        box-shadow    : 0 0 0 0px #f85c5d;
+        border        : 2px dashed #cdd6de;
+        border-radius : 11px;
+        @include sm {
+            margin-top : 4rem;
+        }
+    }
+
+    &__label-content-inner {
+        max-width     : initial;
+        margin-left   : -4px;
+        margin-right  : -4px;
+        padding-right : 12px;
+        padding-left  : 12px;
+
+        @include sm {
+            max-width     : unset;
+            width         : unset;
+            margin-left   : 0px;
+            margin-right  : 0px;
+            padding-right : 1rem;
+            padding-left  : 1rem;
+            position      : relative;
+        }
+        @include md {
+            padding-right : 2rem;
+            padding-left  : 2rem;
+        }
+        @include lg {
+            padding-right : 4rem;
+            padding-left  : 4rem;
+        }
+    }
+
+    &__label-content-inner-title {
+        font-weight : 800;
+        font-size   : 18px;
+        line-height : 24px;
+        color       : #ffffff;
+        background  : #fbbe49;
+        padding     : 0.5rem 0.5rem;
+        @include md {
+            font-size   : 22px;
+            line-height : 24px;
+        }
+
+    }
+
+    &__label-content-inner-text {
+        font-size   : 14px;
+        line-height : 19px;
+        color       : #ffffff;
+        padding-top : 1rem;
+        @include sm {
+            padding-top : 0.5rem;
+        }
+    }
+
+    &__label-content-inner-promo {
+        font-weight : 800;
+        font-size   : 14px;
+        line-height : 19px;
+        color       : #ffffff;
+        padding-top : 2rem;
+        @include sm {
+            padding-top : 1rem;
+        }
+    }
+
+    &__label-content-inner-button {
+        position : absolute;
+        bottom   : -20px;
+        right    : 12px;
+        @include sm {
+            bottom : -55px;
+            right  : 16px;
+        }
+        @include md {
+            right : 2rem;
+        }
+        @include lg {
+            right  : 4rem;
+            bottom : -85px;
+        }
+    }
+
+}
