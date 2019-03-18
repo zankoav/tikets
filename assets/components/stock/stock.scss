@@ -7,7 +7,20 @@ $RED : #F85C5D;
 $ORANGE : #FBBE49;
 
 .stock {
-    overflow : hidden;
+    overflow      : hidden;
+    margin-bottom : 3rem;
+
+    @include sm {
+        margin-bottom : 4rem;
+    }
+
+    @include md {
+        margin-bottom: -5rem;
+    }
+
+    @include lg {
+        margin-bottom : -10rem;
+    }
 
     &__banner {
         width : 244px;
@@ -34,7 +47,7 @@ $ORANGE : #FBBE49;
         color          : $GREY_LIGHT;
         font-family    : 'Open Sans', sans-serif;
         font-size      : 40px;
-        font-weight    : bold;
+        font-weight    : 800;
         line-height    : 1;
         text-transform : lowercase;
 
@@ -52,7 +65,15 @@ $ORANGE : #FBBE49;
             margin-left : 4rem;
 
             @include sm {
-                margin-left : 4.5rem;
+                margin-left : 5.5rem;
+            }
+
+            @include md {
+                margin-left : 8.5rem;
+            }
+
+            @include lg {
+                margin-left : 9.75rem;
             }
         }
     }
@@ -75,6 +96,10 @@ $ORANGE : #FBBE49;
             flex-wrap : wrap;
         }
 
+        @include md {
+            justify-content : space-between;
+        }
+
         @include lg {
             justify-content : flex-end;
         }
@@ -85,19 +110,24 @@ $ORANGE : #FBBE49;
         max-width : 100%;
 
         @include sm {
-            flex       : 1 0 48%;
-            max-width  : 48%;
+            flex       : 1 0 49%;
+            max-width  : 49%;
             margin-top : 2rem;
         }
 
         @include md {
-            flex      : 1 0 45%;
-            max-width : 45%;
+            flex      : 1 0 44%;
+            max-width : 44%;
         }
 
         @include lg {
-            flex      : 1 0 44%;
-            max-width : 44%;
+            flex      : 1 0 38%;
+            max-width : 38%;
+        }
+
+        @include hd {
+            flex      : 1 0 30%;
+            max-width : 30%;
         }
 
         &:nth-child(2n+2) {
@@ -108,6 +138,14 @@ $ORANGE : #FBBE49;
 
             @include md {
                 margin-left : 4rem;
+            }
+
+            @include lg {
+                margin-left : 8rem;
+            }
+
+            @include hd {
+                margin-left : 9.5rem;
             }
         }
     }
