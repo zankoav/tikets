@@ -14,13 +14,14 @@ $ORANGE : #fbbe49;
     padding          : 1rem 2rem;
 
     &__vip {
-        background: linear-gradient(180deg, #F44547 0%, #F85C5D 100%);
-        box-shadow: 0 5px 9px rgba(155, 184, 211, 0.5);
-      
-    &__type {
-        &_1 {
-            padding   : .75rem 3rem;
-            font-size : 16px;
+        background : linear-gradient(180deg, #F44547 0%, #F85C5D 100%);
+        box-shadow : 0 5px 9px rgba(155, 184, 211, 0.5);
+
+        &__type {
+            &_1 {
+                padding   : .75rem 3rem;
+                font-size : 16px;
+            }
         }
     }
 }
