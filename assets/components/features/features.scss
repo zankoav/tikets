@@ -27,10 +27,6 @@ $RED : $RED;
         @include lg {
             padding : 0;
         }
-
-        @include hd {
-            padding : 0 4rem;
-        }
     }
 
     &__swiper {
