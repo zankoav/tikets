@@ -11,3 +11,4 @@ import './../components/welcome/welcome';
 import './../components/video-promo/video-promo';
 import './../components/video-review/video-review';
 import './../components/seminarforu/seminarforu';
+import './../components/tabs/tabs';

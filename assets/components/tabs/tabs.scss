@@ -1,0 +1,157 @@
+@import "./../../common/constants";
+
+.tabs {
+
+    &__wrapper-list {
+        border        : 1px dashed #a9b4c3;
+        border-radius : 4px;
+        overflow      : hidden;
+
+        @include sm {
+            border        : none;
+            border-radius : 0;
+            overflow      : initial;
+        }
+    }
+
+    &__button {
+        position : absolute;
+    }
+
+    &__list {
+        position       : relative;
+        display        : flex;
+        flex-direction : column;
+
+        @include sm {
+            flex-direction : row;
+        }
+
+        &:after {
+            @include sm {
+                content          : '';
+                position         : absolute;
+                width            : 100%;
+                height           : 2px;
+                background-color : #f85c5d;
+                bottom           : 0;
+            }
+        }
+
+        &_active {
+            .tabs__list-tab {
+                display : block;
+            }
+        }
+
+    }
+
+    &__list-tab {
+        display : none;
+
+        @include sm {
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            flex            : 1;
+            margin-left     : -1px;
+        }
+
+        &:first-child {
+
+            .tabs__tab-button {
+                border-top : none;
+
+                @include sm {
+                    border-top : 1px dashed #a9b4c3;
+                }
+            }
+
+            @include sm {
+                margin-left : 4px;
+            }
+
+        }
+
+        &:last-child {
+            @include sm {
+                margin-right : 4px;
+            }
+        }
+
+        &_active + & {
+            .tabs__tab-button {
+                border-top : none;
+
+                @include sm {
+                    border-top : 1px dashed #a9b4c3;
+                }
+            }
+        }
+
+        &_active {
+            display : block;
+            .tabs__tab-button {
+                background-color : #f85c5d;
+                color            : $WHITE;
+                border-top       : none;
+                font-weight      : 700;
+
+                @include sm {
+                    border : none;
+                }
+            }
+        }
+
+    }
+
+    &__content {
+        display   : none;
+        animation : fadeIn .6s ease-out;
+
+        &_active {
+            display : block;
+        }
+    }
+
+    &__tab-button {
+        display     : block;
+        font-size   : 14px;
+        line-height : 1;
+        color       : #565656;
+        padding     : 1rem 2rem;
+        border-top  : 1px dashed #a9b4c3;
+        transition  : .4s;
+
+        @include sm {
+            height                  : 46px;
+            text-align              : center;
+            border                  : 1px dashed #a9b4c3;
+            border-bottom           : none;
+            border-top-left-radius  : 12px;
+            border-top-right-radius : 12px;
+            width                   : 100%;
+            font-size               : 13px;
+            padding                 : 1rem 0;
+        }
+
+        @include md {
+            font-size : 16px;
+            height    : 49px;
+        }
+
+        @include lg {
+            font-size : 20px;
+            height    : 53px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity : 0;
+    }
+    100% {
+        opacity : 100;
+    }
+}

@@ -148,6 +148,11 @@
         font-size   : 16px;
         line-height : 16px;
         color       : #565656;
+
+        @include sm {
+            font-size   : 20px;
+            line-height : 19px;
+        }
     }
 
     &__button-wrapper {
