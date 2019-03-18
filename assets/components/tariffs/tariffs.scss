@@ -1,0 +1,354 @@
+@import "./../../common/constants";
+
+$GREY_LIGHT : #CACFDD;
+$GREY_MIDDLE : #8D9BB0;
+$GREY_DARK : #565656;
+$RED : #F85C5D;
+$ORANGE : #FBBE49;
+
+.tariffs {
+    &__inner {
+        margin     : {
+            top    : 2rem;
+            bottom : 2rem;
+        };
+    }
+
+    &__description {
+        color       : $GREY_MIDDLE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 20px;
+        font-weight : 800;
+        line-height : 24px;
+        padding    : {
+            top    : 2rem;
+            bottom : 2rem;
+        };
+
+        @include sm {
+            font-size : 26px;
+            padding    : {
+                bottom : 4rem;
+            };
+        }
+
+        @include md {
+            padding : {
+                top : 6rem;
+            };
+        }
+    }
+}
+
+.standard {
+    border        : 1px dashed $GREY_MIDDLE;
+    border-radius : 24px;
+    padding       : 2rem 1rem;
+
+    @include md {
+        padding-left : 2rem;
+    }
+
+    @include lg {
+        padding    : {
+            top    : 4rem;
+            left   : 4rem;
+            bottom : 4rem;
+        };
+    }
+
+    &__title {
+        color            : $WHITE;
+        background-color : $RED;
+        display          : inline-block;
+        text-align       : center;
+        text-transform   : uppercase;
+        padding          : .5rem 1rem;
+        margin-bottom    : 2rem;
+        font-family      : 'Open Sans', sans-serif;
+        font-size        : 36px;
+        font-weight      : 800;
+        line-height      : 36px;
+
+        @include md {
+            font-size   : 48px;
+            line-height : 48px;
+        }
+    }
+
+    &__list-item {
+        color       : $GREY_DARK;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 16px;
+        line-height : 24px;
+        display     : flex;
+        padding     : .5rem 0;
+
+        &:before {
+            content          : '';
+            background-color : $RED;
+            display          : inline-block;
+            width            : 14px;
+            height           : 14px;
+            position         : relative;
+            top              : 4px;
+            border-radius    : 50%;
+            flex-shrink      : 0;
+            margin-right     : 1rem;
+        }
+
+        &:last-child {
+            padding-bottom : 1rem;
+
+            @include md {
+                padding-bottom : 2rem;
+            }
+        }
+    }
+}
+
+.vip {
+    border        : 2px solid $ORANGE;
+    border-radius : 24px;
+    padding       : 2.5rem 1rem 2rem;
+    margin-top    : 1rem;
+    transform     : translateX(24px);
+
+    @include sm {
+        margin-top : 2rem;
+        transform  : translateX(64px);
+    }
+
+    @include md {
+        padding-left : 2rem;
+        transform    : translateX(80px);
+    }
+
+    @include lg {
+        margin-top : 4rem;
+        padding    : {
+            top    : 4rem;
+            left   : 4rem;
+            bottom : 4rem;
+        };
+        transform  : translateX(100px);
+    }
+
+    @include hd {
+        transform : translateX(116px);
+    }
+
+    &__title {
+        color            : $WHITE;
+        background-color : $ORANGE;
+        display          : inline-block;
+        text-align       : center;
+        text-transform   : uppercase;
+        padding          : .5rem 1rem;
+        margin-bottom    : 2rem;
+        font-family      : 'Open Sans', sans-serif;
+        font-size        : 36px;
+        font-weight      : 800;
+        line-height      : 36px;
+
+        @include md {
+            font-size   : 48px;
+            line-height : 48px;
+        }
+    }
+
+    &__list-item {
+        color       : $GREY_DARK;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 16px;
+        line-height : 24px;
+        display     : flex;
+        padding     : .5rem 0;
+
+        &:before {
+            content          : '';
+            background-color : $ORANGE;
+            display          : inline-block;
+            width            : 14px;
+            height           : 14px;
+            position         : relative;
+            top              : 4px;
+            border-radius    : 50%;
+            flex-shrink      : 0;
+            margin-right     : 1rem;
+        }
+    }
+
+    &__price {
+        color       : $GREY_MIDDLE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 36px;
+        font-weight : 800;
+        line-height : 19px;
+        margin      : 2rem 0;
+    }
+}
+
+.business {
+    background-color : $GREY_MIDDLE;
+    border-radius    : 24px;
+    padding          : 2.5rem 1rem 2rem;
+    margin-top       : 1rem;
+
+    @include sm {
+        margin-top : initial;
+    }
+
+    @include md {
+        padding-left : 2rem;
+    }
+
+    @include lg {
+        padding    : {
+            top    : 4rem;
+            left   : 4rem;
+            bottom : 4rem;
+        };
+    }
+
+    &__title {
+        color            : $WHITE;
+        background-color : $GREY_LIGHT;
+        display          : inline-block;
+        text-align       : center;
+        text-transform   : uppercase;
+        padding          : .5rem 1rem;
+        margin-bottom    : 2rem;
+        font-family      : 'Open Sans', sans-serif;
+        font-size        : 36px;
+        font-weight      : 800;
+        line-height      : 36px;
+
+        @include md {
+            font-size   : 48px;
+            line-height : 48px;
+        }
+    }
+
+    &__list-item {
+        color       : $WHITE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 16px;
+        line-height : 24px;
+        display     : flex;
+        padding     : .5rem 0;
+
+        &:before {
+            content          : '';
+            background-color : $GREY_LIGHT;
+            display          : inline-block;
+            width            : 14px;
+            height           : 14px;
+            position         : relative;
+            top              : 4px;
+            border-radius    : 50%;
+            flex-shrink      : 0;
+            margin-right     : 1rem;
+        }
+    }
+
+    &__price {
+        color       : $WHITE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 36px;
+        font-weight : 800;
+        line-height : 19px;
+        margin      : 2rem 0;
+    }
+}
+
+.platinum {
+    background-color : $ORANGE;
+    border-radius    : 24px;
+    padding          : 2rem 1rem;
+    margin           : 1rem 0 2rem;
+    transform        : translateX(24px);
+
+    @include sm {
+        margin-top    : 2rem;
+        margin-bottom : initial;
+        transform     : translateX(-64px);
+    }
+
+    @include md {
+        padding-left : 2rem;
+        transform    : translateX(-84px);
+    }
+
+    @include lg {
+        margin-top : 4rem;
+        padding    : {
+            top    : 4rem;
+            left   : 4rem;
+            bottom : 4rem;
+        };
+        transform  : translateX(-104px);
+    }
+
+    @include hd {
+        transform : translateX(-118px);
+    }
+
+    &__title {
+        color            : $GREY_LIGHT;
+        background-color : $WHITE;
+        display          : inline-block;
+        text-align       : center;
+        text-transform   : uppercase;
+        padding          : .5rem 1rem;
+        margin-bottom    : 2rem;
+        font-family      : 'Open Sans', sans-serif;
+        font-size        : 36px;
+        font-weight      : 800;
+        line-height      : 36px;
+
+        @include md {
+            font-size   : 48px;
+            line-height : 48px;
+        }
+    }
+
+    &__list-item {
+        color       : $GREY_DARK;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 16px;
+        line-height : 24px;
+        display     : flex;
+        padding     : .5rem 0;
+
+        &:before {
+            content          : '';
+            background-color : $WHITE;
+            display          : inline-block;
+            width            : 14px;
+            height           : 14px;
+            position         : relative;
+            top              : 4px;
+            border-radius    : 50%;
+            flex-shrink      : 0;
+            margin-right     : 1rem;
+        }
+
+        &:last-child {
+            padding-bottom : 1rem;
+
+            @include md {
+                padding-bottom : 2rem;
+            }
+        }
+    }
+
+    &__price {
+        color       : $WHITE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 36px;
+        font-weight : 800;
+        line-height : 19px;
+        margin      : 2rem 0;
+    }
+}
