@@ -1,0 +1,66 @@
+@import "./../../common/constants";
+
+$GREY : #CACFDD;
+$RED : #F85C5D;
+$ORANGE : #FBBE49;
+
+@mixin animationItem($time) {
+    animation-delay : $time;
+}
+
+.button-with-balls {
+    display        : inline-block;
+    color          : $RED;
+    font-family    : 'Open Sans', sans-serif;
+    font-size      : 12px;
+    font-weight    : bold;
+    text-transform : uppercase;
+    line-height    : 19px;
+    cursor         : pointer;
+    padding        : .5rem 0;
+
+    &:hover {
+
+        .button-with-balls__ball {
+            animation : animationBall .6s;
+
+            &:nth-child(1) {
+                @include animationItem(.1s);
+            }
+
+            &:nth-child(2) {
+                @include animationItem(.2s);
+            }
+
+            &:nth-child(3) {
+                @include animationItem(.3s);
+            }
+        }
+
+    }
+
+    &__ball {
+        display       : inline-block;
+        width         : 8px;
+        height        : 8px;
+        border-radius : 50%;
+        margin-right  : 2px;
+
+        &:first-child {
+            margin-left : .5rem;
+        }
+
+        &_red {
+            background-color : $RED;
+        }
+
+        &_grey {
+            background-color : $GREY;
+        }
+
+        &_orange {
+            background-color : $ORANGE;
+        }
+    }
+}
+

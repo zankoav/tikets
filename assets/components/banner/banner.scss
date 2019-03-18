@@ -1,0 +1,42 @@
+@import "./../../common/constants";
+
+.banner {
+    margin     : {
+        top    : 4rem;
+        bottom : 2rem;
+    };
+
+    @include md {
+        margin  : {
+            top : 6rem;
+        };
+    }
+
+    @include lg {
+        margin     : {
+            bottom : 4rem;
+        };
+    }
+
+    &__image {
+        display : block;
+        height  : 102px;
+        width   : 100%;
+
+        @include sm {
+            height : 258px;
+        }
+
+        @include md {
+            height : 346px;
+        }
+
+        @include lg {
+            height : 426px;
+        }
+
+        @include hd {
+            height : 498px;
+        }
+    }
+}
