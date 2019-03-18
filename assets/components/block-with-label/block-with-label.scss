@@ -1,0 +1,104 @@
+@import "./../../common/constants";
+
+.block-with-label{
+
+    &__label-title{
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 24px;
+        color: #8D9BB0;
+        margin-bottom: 2rem;
+        width: 100%;
+        @include sm{
+            margin-bottom: 4rem;
+        }
+        @include md{
+            font-size: 26px;
+            line-height: 24px;
+        }
+    }
+
+    &__label-content{
+        margin-top: 2rem;
+    }
+
+    &__label-content-inner{
+         border-radius: 11px;
+        background: #F85C5D;
+        box-shadow: 0 0 0 0px #F85C5D;
+        border: 2px dashed #CDD6DE;
+        position: relative;
+        max-width: initial;
+        margin-left: -10px;
+        margin-right: -10px;
+        padding: 2rem 0.5rem 2.5rem;
+        @include sm{
+            max-width: 100%;
+            margin-left: 0px;
+            margin-right: 0px;
+            padding: 2rem 1rem 2rem;
+        }
+        @include md{
+            padding: 2rem 2rem 2rem;
+        }
+        @include lg{
+            padding: 4rem 4rem 4rem;
+        }
+    }
+
+    &__label-content-inner-title{
+        font-weight: 800;
+        font-size: 18px;
+        line-height: 18px;
+        display: inline;
+        color: #FFFFFF;
+        background: #FBBE49;
+        @include md{
+            font-size: 22px;
+            line-height: 24px;
+        }
+        @include lg{
+            font-size: 26px;
+            line-height: 36px;
+        }
+
+    }
+
+    &__label-content-inner-text{
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+        padding-top: 1rem;
+        @include sm{
+            padding-top: 0.5rem;
+        }
+    }
+
+    &__label-content-inner-promo{
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 19px;
+        color: #FFFFFF;
+        padding-top: 2rem;
+        @include sm{
+            padding-top: 1rem;
+        }
+    }
+
+    &__label-content-inner-button{
+        position: absolute;
+        bottom: -20px;
+        right: 12px;
+        @include sm{
+            right: 1rem;
+        }
+        @include md{
+            right: 2rem;
+        }
+        @include lg{
+            right: 4rem;
+        }
+    }
+
+
+}
