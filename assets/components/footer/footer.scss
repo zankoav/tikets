@@ -2,18 +2,6 @@
 
 .footer {
 
-    &__inner{
-        position: relative;
-        &::before{
-            content: "";
-            background: #979797;
-            height: 1px;
-            width: 100%;
-            position: absolute;
-            top: 0;
-        }
-    }
-
     &__logo_link {
         display: block;
         text-align: center;
