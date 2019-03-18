@@ -14,8 +14,13 @@ mixin tabs()
                         +e.tab-button(href="#") Тарифы
                     +e.LI.list-tab(data-content="4")
                         +e.tab-button(href="#") Онлайн-трансляция
-            +e.content Text Программа
-            +e.content._active Text О спикере
-            +e.content Text О чем курс
-            +e.content Text Тарифы
-            +e.content Text Онлайн-трансляция
+            +e.content
+                +programm()
+            +e.content._active
+                +about-spiker()
+            +e.content
+                +block-with-label()
+                +block-without-label()
+            +e.content
+                +tariffs()
+            +e.content Content Онлайн-трансляция
