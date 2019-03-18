@@ -13,3 +13,4 @@ import '../components/welcome/welcome';
 import './../components/orange-button/orange-button';
 import './../components/stock/stock';
 import './../components/button-with-balls/button-with-balls';
+import './../components/banner/banner';
