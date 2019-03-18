@@ -28,6 +28,7 @@
 	require_once __DIR__ . '/core/scripts.php';
 	require_once __DIR__ . '/core/hooks.php';
 	require_once __DIR__ . '/core/ajax.php';
+	require_once __DIR__ . '/core/orderCreater.php';
 
 //	require_once __DIR__ . '/core/cmb2/index.php';
 //	require_once __DIR__ . '/core/cmb2/themeSettings.php';
@@ -40,10 +41,13 @@
 	require_once  __DIR__ . '/core/carbon/productCatMeta.php';
 	require_once __DIR__ . '/vendor/autoload.php';
 	
-//	function wpb_change_search_url() {
-//		if ( is_search() && ! empty( $_GET['s'] ) ) {
-//			wp_redirect( home_url( "/search/" ) . urlencode( get_query_var( 's' ) ) );
-//			exit();
-//		}
-//	}
-//	add_action( 'template_redirect', 'wpb_change_search_url' );
+	//----get permalink to checkout page
+function getCheckoutPermaLink(){
+	$checkout_args = [
+		'post_type' => 'page',
+		'meta_key' => '_wp_page_template',
+		'meta_value' => 'template-checkout.php' ];
+	$checkout_page_query = new WP_Query( $checkout_args );
+	$checkout_page = $checkout_page_query->posts;
+	return get_permalink($checkout_page[0]->ID);
+}

@@ -53,3 +53,5 @@ function contact_form()
 
 //	add_action( 'wp_ajax_contact_form', 'contact_form' );
 //	add_action( 'wp_ajax_nopriv_contact_form', 'contact_form' );
+
+
