@@ -1,0 +1,51 @@
+@import "./../../common/constants";
+
+.programm{
+
+    &__item-date-text{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #8D9BB0;
+            @include sm{
+                font-size: 29px;
+                line-height: 29px;
+            }
+    }
+
+    &__item-content{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    &__item-content-title{
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 800;
+        font-size: 20px;
+        line-height: 20px;
+        color: #FBBE49;
+            @include sm{
+                font-size: 26px;
+                line-height: 26px;
+            }
+    }
+
+    &__item-content-text{
+        font-size: 14px;
+        line-height: 14px;
+        color: #565656;
+        padding-top: 1rem;
+            @include sm{
+                font-size: 16px;
+                line-height: 24px;
+            }
+            @include md{
+                padding-top: 2rem;
+            }
+    }
+
+
+}
