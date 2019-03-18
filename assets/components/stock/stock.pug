@@ -1,0 +1,38 @@
+mixin stock()
+    +b.stock
+        .container
+            +e.content.row
+                .col-12.col-md-3.pb-40.pb-sm-00.col-offset-1.col-offset-md-0
+                    +e.banner(src=require("./../images/banner.svg"), alt="banner")
+                .col-6.col-sm-6.col-offset-3.col-offset-sm-6.col-offset-md-3
+                    +e.text акции
+                    +e.text._mr-l недели
+                .col-12.col-md-9.col-offset-md-3.pt-40.pt-sm-00
+                    +e.container.swiper-container
+                        +e.wrapper.swiper-wrapper
+                            +e.slide.swiper-slide
+                                +e.image(src=require("./../images/preloader.jpg"), alt="people")
+                                +e.envelope.pt-20
+                                    +e.title Lorem ipsum dolor si LOREM
+                                    +e.description.pt-05.pb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio dolore ea incidunt inventore quam, quidem voluptas. Aut dignissimos dolores facilis nihil nobis nostrum numquam optio saepe veritatis voluptatem.
+                                    +button-with-balls('подробнее')
+                            +e.slide.swiper-slide
+                                +e.image(src=require("./../images/preloader.jpg"), alt="people")
+                                +e.envelope.pt-20
+                                    +e.title Lorem ipsum dolor si LOREM
+                                    +e.description.pt-05.pb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio dolore ea incidunt inventore quam, quidem voluptas. Aut dignissimos dolores facilis nihil nobis nostrum numquam optio saepe veritatis voluptatem.
+                                    +button-with-balls('подробнее')
+                            +e.slide.swiper-slide
+                                +e.image(src=require("./../images/preloader.jpg"), alt="people")
+                                +e.envelope.pt-20
+                                    +e.title Lorem ipsum dolor si LOREM
+                                    +e.description.pt-05.pb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio dolore ea incidunt inventore quam, quidem voluptas. Aut dignissimos dolores facilis nihil nobis nostrum numquam optio saepe veritatis voluptatem.
+                                    +button-with-balls('подробнее')
+                            +e.slide.swiper-slide
+                                +e.image(src=require("./../images/preloader.jpg"), alt="people")
+                                +e.envelope.pt-20
+                                    +e.title Lorem ipsum dolor si LOREM
+                                    +e.description.pt-05.pb-10 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur distinctio dolore ea incidunt inventore quam, quidem voluptas. Aut dignissimos dolores facilis nihil nobis nostrum numquam optio saepe veritatis voluptatem.
+                                    +button-with-balls('подробнее')
+                        +e.pagination-wrapper.pt-20.pb-20
+                            +e.pagination.swiper-pagination

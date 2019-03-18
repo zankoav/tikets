@@ -1,0 +1,209 @@
+@import "./../../common/constants";
+
+.seminarforu {
+
+    &__image {
+        width : 100%;
+    }
+
+    &__line {
+        height           : 2px;
+        background-color : $ORANGE;
+        bottom           : 0;
+        left             : 0;
+        z-index          : 1;
+        width            : 100%;
+
+        @include sm {
+            width : 350px;
+            left  : 170px;
+        }
+
+        @include md {
+            width : 300px;
+            left  : 300px;
+        }
+
+        @include lg {
+            height : 4px;
+            width  : 580px;
+            left   : 260px;
+        }
+
+        @include hd {
+            width : 688px;
+            left  : 300px;
+        }
+    }
+
+    &__sign {
+        color          : #e4e9ee;
+        font-weight    : 800;
+        font-size      : 50px;
+        text-align     : right;
+        text-transform : lowercase;
+        letter-spacing : 0;
+
+        @include sm {
+            bottom : 2rem;
+        }
+
+        @include md {
+            bottom    : .75rem;
+            font-size : 70px;
+        }
+
+        @include lg {
+            bottom         : 3rem;
+            font-size      : 96px;
+            font-weight    : 900;
+            letter-spacing : -8px
+        }
+
+        @include hd {
+            bottom         : 4rem;
+            font-size      : 114px;
+            line-height    : 90px;
+            font-weight    : 900;
+            letter-spacing : -8px
+        }
+    }
+
+    &__button-sign {
+        @include button-sign();
+        width         : 100%;
+        padding       : 1rem;
+        text-align    : center;
+        font-size     : 18px;
+        border-radius : 3px;
+        background    : linear-gradient(180deg, #f8f9f9 0%, #eff0f0 100%);
+        box-shadow    : 0 2px 4px rgba(0, 0, 0, 0.157156);
+        color         : #7b7b7b;
+        transition    : .4s;
+        cursor        : not-allowed;
+
+        @include sm {
+            font-size : 20px;
+        }
+
+        @include md {
+            font-size : 26px;
+            padding   : 1.5rem;
+        }
+
+        &_active {
+            background : $ORANGE;
+            color      : $RED;
+            cursor     : pointer;
+        }
+    }
+
+    &__list-current {
+        padding        : 1rem;
+        text-align     : center;
+        font-size      : 18px;
+        border-radius  : 1px;
+        text-transform : uppercase;
+        font-weight    : 800;
+        background     : linear-gradient(180deg, #f8f9f9 0%, #eff0f0 100%);
+        box-shadow     : 0 2px 4px rgba(0, 0, 0, 0.157156);
+        color          : #7b7b7b;
+        position       : relative;
+        z-index        : 21;
+
+        &:after {
+            content         : '';
+            position        : absolute;
+            right           : .5rem;
+            background      : url('./../../images/arrow-bottom.svg') no-repeat;
+            background-size : contain;
+            width           : 20px;
+            height          : 10px;
+            top             : calc(50% - 5px);
+
+            @include sm {
+                width  : 24px;
+                height : 12px;
+                top    : calc(50% - 6px);
+            }
+
+            @include md {
+                width  : 32px;
+                height : 16px;
+                top    : calc(50% - 8px);
+            }
+        }
+
+        @include sm {
+            font-size : 20px;
+        }
+
+        @include md {
+            font-size : 26px;
+            padding   : 1.5rem;
+        }
+    }
+
+    &__list-items {
+        display        : none;
+        position       : absolute;
+        width          : 100%;
+        top            : 0;
+        background     : linear-gradient(180deg, #f8f9f9 0%, #eff0f0 100%);
+        z-index        : 20;
+        padding-bottom : .5rem;
+    }
+
+    &__item {
+        &:nth-child(2n) {
+            background-color : #e5edf6;
+        }
+    }
+
+    &__item-link {
+        display     : flex;
+        align-items : center;
+        padding     : 1rem;
+
+        @include sm {
+            padding : 1.5rem 1.5rem 1.5rem 1rem;
+        }
+
+        @include lg {
+            padding : 2.5rem 2.5rem 2.5rem 1.5rem;
+        }
+    }
+
+    &__item-link-point {
+        display       : block;
+        width         : 10px;
+        height        : 10px;
+        border-radius : 50%;
+        flex-shrink   : 0;
+
+        @include sm {
+            width  : 16px;
+            height : 16px;
+        }
+
+        @include lg {
+            width  : 24px;
+            height : 24px;
+        }
+    }
+
+    &__item-link-title {
+        color          : #1d1d1b;
+        font-size      : 14px;
+        letter-spacing : 0;
+        flex           : 1;
+
+        @include sm {
+            font-size : 16px;
+        }
+
+        @include md {
+            font-size : 22px;
+        }
+    }
+}

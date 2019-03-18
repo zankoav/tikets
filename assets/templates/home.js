@@ -11,5 +11,9 @@ import './../components/video-review/video-review';
 import './../components/title/title';
 import './../components/features/features';
 import './../components/feature/feature';
+import './../components/seminarforu/seminarforu';
+import './../components/news/news';
+import './../components/partnership/partnership';
+import './../components/form/form';
 
 

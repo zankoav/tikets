@@ -27,7 +27,10 @@ let entries = {
     home: './home.js',
     program: './program.js',
     category: './category.js',
+    page: './page.js',
+    single: './single.js',
     p404: './p404.js',
+    contacts: './contacts.js',
 };
 
 let pugs = {
@@ -40,8 +43,17 @@ let pugs = {
     category: {
         title: "category title"
     },
+    page: {
+        title: "page title"
+    },
+    single: {
+        title: "single title"
+    },
     p404: {
         title: "p404 title"
+    },
+    contacts : {
+        title: "contacts title"
     }
 };
 
