@@ -16,3 +16,4 @@ import './../components/button-with-balls/button-with-balls';
 import './../components/banner/banner';
 import './../components/tariffs/tariffs';
 import './../components/seminarforu/seminarforu';
+import './../components/realty/realty';
