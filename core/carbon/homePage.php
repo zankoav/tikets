@@ -115,6 +115,21 @@
 						),
 				]
 			);
+		Container::make( 'post_meta', "Партнерство" )
+			->where( 'post_type', '=', 'page' )
+			->where( 'post_template', '=', 'template-home.php' )
+			->add_fields( [
+					Field::make( 'complex', 'partnership', 'Список файлов для скачки' )
+						->add_fields( 'discount_article', [
+								Field::make( 'textarea', 'link_text', 'Текст ссылки' )
+									->set_width( 70 ),
+								Field::make( 'file', 'link_file', 'Файл' )
+									->set_value_type( 'url' )
+									->set_width( 30 ),
+							]
+						),
+				]
+			);
 	}
 	
 	add_action( 'after_setup_theme', 'crb_home_page_settings_load' );
