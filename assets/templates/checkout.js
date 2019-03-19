@@ -6,6 +6,4 @@ import './../common/_common.scss';
 import './../mastak-lib/loader/loader';
 import './../components/header/header';
 import './../components/footer/footer';
-import './../components/title/title';
-import './../components/page404/page404';
-import "./../components/points/points";
+import './../components/points/points';

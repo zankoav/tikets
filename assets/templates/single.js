@@ -8,3 +8,4 @@ import './../components/header/header';
 import './../components/footer/footer';
 import './../components/title/title';
 import './../components/main/main';
+import "./../components/points/points";

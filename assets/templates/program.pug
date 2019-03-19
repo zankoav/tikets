@@ -2,14 +2,14 @@ include ./../mixins
 doctype html
 html
     +head()
-    body(class="body_overflow_hidden")
+    body(class="body_overflow_hidden app")
         +loader('loader__spinner_egg')
-        .app
-            +header()
-            main.main
+        +header()
+        main.main
+            .program-wrapper
                 +welcome()
                 +video-promo()
                 +tabs()
                 +seminarforu()
                 +partners()
-            +footer()
+        +footer()
