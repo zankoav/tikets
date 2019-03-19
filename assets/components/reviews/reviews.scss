@@ -16,6 +16,10 @@ $RED : $RED;
         padding-bottom : 80px;
     }
 
+    &__inner {
+
+    }
+
     &__button-next, &__button-prev {
         background-image : url("./../../images/right.svg");
         width            : 22px;
