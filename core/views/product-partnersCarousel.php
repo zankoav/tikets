@@ -4,13 +4,12 @@
 		?>
 
 		<div class="partners">
-			<div class="container">
+			<div class="container mb-20 mb-sm-30 mb-lg-40 pb-lg-20">
 				<div class="partners__inner row">
 					<div class="col-offset-1 col-10 col-sm-10 col-md-10 col-lg-10">
 						<div class="partners__container swiper-container">
 							<div class="partners__wrapper swiper-wrapper">
 								<?php
-									
 									foreach($query_partners as $query_partner) :
 										
 										$buff = get_post( $query_partner[ 'id' ] );
@@ -24,7 +23,6 @@
 										<div class="partners__slide swiper-slide">
 
 											<a class="partners__link"
-
 											   href="<?= $flag ? esc_url( $url ) : get_permalink( $query_partner[ 'id' ] ); ?>">
 												<img class="partners__img"
 													 src="<?= $image_url; ?>"
