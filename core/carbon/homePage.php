@@ -69,6 +69,34 @@
 				Field::make( 'select', 'third_new_id', 'Выберите третью новость' )
 					->add_options( 'news_selecting' ),
 			] );
+		
+		Container::make( 'post_meta', "Слидер" )
+			->where( 'post_type', '=', 'page' )
+			->where( 'post_template', '=', 'template-home.php' )
+			->add_fields( [
+					Field::make( 'complex', 'crb_slides', 'Главный слидер' )
+						->add_fields( 'slide', [
+								Field::make( 'text', 'main_speaker' , 'Главный спикер')
+									->set_width( 30 ),
+								Field::make( 'text', 'slide_title', __( 'Название' ) )
+									->set_width( 70 ),
+								Field::make( 'text', 'slide_day', 'День' )
+									->set_width( 10 ),
+								Field::make( 'text', 'slide_month', 'Месяц' )
+									->set_width( 20 ),
+								Field::make( 'text', 'slide_year', 'Год' )
+									->set_width( 10 ),
+								Field::make( 'text', 'slide_address', __( 'Address' ) )
+									->set_width( 40 ),
+								Field::make( 'text', 'slide_link', 'Ссылка' )
+									->set_width( 50 ),
+								Field::make( 'image', 'slide_image', __( 'Image' ) )
+									->set_value_type( 'url' )
+									->set_width( 50 ),
+							]
+						),
+				]
+			);
 	}
 	
 	add_action( 'after_setup_theme', 'crb_home_page_settings_load' );
