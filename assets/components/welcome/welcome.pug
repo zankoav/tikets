@@ -7,14 +7,15 @@ mixin welcome()
                         +e.inner.pt-sm-30
                             +e.image-wrapper.pb-10.pb-sm-20
                                 +e.image(src=require("./../images/mann.png"), alt="mann")
+                                +e.clear
                             +e.opportunity-list
-                                +e.opportunity.col-4(href="#")
+                                +e.opportunity(href="#")
                                     +e.opportunity-image.pb-10(src=require("./../images/Star.svg"), alt="Star")
                                     +e.SPAN.opportunity-text Добавить в избранное
-                                +e.opportunity.col-4(href="#")
+                                +e.opportunity(href="#")
                                     +e.opportunity-image.pb-10(src=require("./../images/calendar.svg"), alt="calendar")
                                     +e.SPAN.opportunity-text Добавить в календарь
-                                +e.opportunity.col-4(href="#")
+                                +e.opportunity(href="#")
                                     +e.opportunity-image.pb-10(src=require("./../images/printing-tool.svg"), alt="printing-tool")
                                     +e.SPAN.opportunity-text Печать
                     .col-12.col-sm-5.pt-sm-40

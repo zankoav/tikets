@@ -9,12 +9,9 @@
     @import '~@fortawesome/fontawesome-free/css/all';
 */
 
-body, html {
-    height : 100%;
-}
-
 body {
     font-family : 'Open Sans', sans-serif;
+    position    : relative;
 }
 
 .app {
@@ -33,6 +30,12 @@ body {
     footer {
         flex-shrink : 0;
     }
+
+    .reviews__inner, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
+        position : relative;
+        z-index  : 1;
+    }
+
 }
 
 @include loader();
