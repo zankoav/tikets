@@ -76,7 +76,7 @@
 			->add_fields( [
 					Field::make( 'complex', 'crb_slides', 'Главный слидер' )
 						->add_fields( 'slide', [
-								Field::make( 'text', 'main_speaker' , 'Главный спикер')
+								Field::make( 'text', 'main_speaker', 'Главный спикер' )
 									->set_width( 30 ),
 								Field::make( 'text', 'slide_title', __( 'Название' ) )
 									->set_width( 70 ),
@@ -97,6 +97,24 @@
 						),
 				]
 			);
+		Container::make( 'post_meta', "Акции недели" )
+			->where( 'post_type', '=', 'page' )
+			->where( 'post_template', '=', 'template-home.php' )
+			->add_fields( [
+					Field::make( 'image', 'aside_banner',  'Баннер' )
+						->set_value_type( 'url' )
+						->set_width( 50 ),
+					Field::make( 'text', 'aside_banner_link', 'Ссылка баннера' )
+						->set_width( 50 ),
+					Field::make( 'complex', 'discount_articles', 'Список акций недели' )
+						->add_fields( 'discount_article', [
+								Field::make( 'select', 'first_new_id', 'Выберите первую новость' )
+									->add_options( 'discount_selecting' )
+									->set_width( 50 )
+							]
+						),
+				]
+			);
 	}
 	
 	add_action( 'after_setup_theme', 'crb_home_page_settings_load' );
@@ -104,13 +122,33 @@
 		\Carbon_Fields\Carbon_Fields::boot();
 	}
 	
-	function news_selecting() {
-		$my_query = new WP_Query();
-		$query_news =$my_query->query(['post_type' => 'post']);
+	function news_selecting(){
+		$my_query   = new WP_Query();
+		$query_news = $my_query->query( [ 'post_type' => 'post' ] );
 		
-		$news_list =[];
-		foreach( $query_news  as $news ){
-			$news_list[$news->ID] = $news->post_title;
+		$news_list = [];
+		foreach($query_news as $news) {
+			$news_list[ $news->ID ] = $news->post_title;
 		}
-		return $news_list ;
+		return $news_list;
+	}
+	function discount_selecting(){
+		$my_query   = new WP_Query();
+		$query_news = $my_query->query( [
+			'post_type' => 'post',
+			'tax_query' => [
+				'relation' => 'AND',
+				[
+					'taxonomy' => 'category',
+					'field'    => 'slug',
+					'terms'    => 'on-sale',
+				]
+			]
+		] );
+		
+		$news_list = [];
+		foreach($query_news as $news) {
+			$news_list[ $news->ID ] = $news->post_title;
+		}
+		return $news_list;
 	}
