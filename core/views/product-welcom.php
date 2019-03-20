@@ -5,7 +5,6 @@
 	$attach_srcset = wp_get_attachment_image_srcset( $attachment_id, 'tikets-main-speaker-lg' );
 	$attach_sizes  = wp_get_attachment_image_sizes( $attachment_id, 'tikets-main-speaker-lg' );
 ?>
-
 <div class="welcome">
 	<div class="container">
 		<div class="row">
@@ -18,21 +17,22 @@
 								 srcset="<?= $attach_srcset; ?>"
 								 sizes="<?= $attach_sizes; ?>"
 								 alt="mann" title=""/>
+							<div class="welcome__clear">
+							</div>
 						</div>
 						<div class="welcome__opportunity-list">
-							<a class="welcome__opportunity col-4" href="#">
+							<a class="welcome__opportunity" href="#">
 								<img class="welcome__opportunity-image pb-10"
-									 src="/wp-content/themes/tikets/src/icons/Star.455496.svg"
-									 alt="Star" title=""/>
+									 src="/wp-content/themes/tikets/src/icons/Star.455496.svg" alt="Star" title=""/>
 								<span class="welcome__opportunity-text">Добавить в избранное</span>
 							</a>
-							<a class="welcome__opportunity col-4" href="#">
+							<a class="welcome__opportunity" href="#">
 								<img class="welcome__opportunity-image pb-10"
-									 src="/wp-content/themes/tikets/src/icons/calendar.a80e12.svg"
-									 alt="calendar" title=""/>
+									 src="/wp-content/themes/tikets/src/icons/calendar.a80e12.svg" alt="calendar"
+									 title=""/>
 								<span class="welcome__opportunity-text">Добавить в календарь</span>
 							</a>
-							<a class="welcome__opportunity col-4" href="#">
+							<a class="welcome__opportunity" href="#">
 								<img class="welcome__opportunity-image pb-10"
 									 src="/wp-content/themes/tikets/src/icons/printing-tool.bd4350.svg"
 									 alt="printing-tool" title=""/>
@@ -45,12 +45,8 @@
 					<div class="welcome__envelope">
 						<div class="welcome__author pb-10 pb-sm-20"><?= $main_speaker; ?></div>
 						<div class="welcome__title pb-20"><?= get_the_title(); ?></div>
-						<div class="welcome__description pb-20">
-							<?= get_the_content(); ?>
-						</div>
-						<a class="orange-button"
-						   href="<?= $checkoutLink . '?id=' . get_the_ID() ?>">записаться
-						</a>
+						<div class="welcome__description pb-20"><?= get_the_content(); ?></div>
+						<a class="orange-button " href="<?= $checkoutLink . '?id=' . get_the_ID() ?>">записаться</a>
 					</div>
 				</div>
 			</div>

@@ -54,3 +54,21 @@ function getCheckoutPermaLink(){
 	$checkout_page = $checkout_page_query->posts;
 	return get_permalink($checkout_page[0]->ID);
 }
+
+function getMonthNameRu($index){
+	$monthNames = [
+		'января',
+		'февраля',
+		'марта',
+		'апреля',
+		'мая',
+		'июня',
+		'июля',
+		'августа',
+		'сентября',
+		'октября',
+		'ноября',
+		'декабря',
+	];
+	return $monthNames[$index-1];
+}

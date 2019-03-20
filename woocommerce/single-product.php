@@ -23,51 +23,7 @@
 					$attach_sizes  = wp_get_attachment_image_sizes( $attachment_id, 'tikets-main-speaker-lg' );
 					
 					get_template_part( '/core/views/product', 'welcom' ); ?>
-					<div class="video-promo">
-						<div class="container">
-							<div class="video-promo__inner row mt-20 mt-md-30 mb-40">
-								<div class="col-12 col-sm-6">
-									<div class="video-promo__date-time">
-										<div class="video-promo__day">15
-										</div>
-										<div class="video-promo__date">
-											<div class="video-promo__mounth">Марта
-											</div>
-											<div class="video-promo__year">2019
-											</div>
-										</div>
-									</div>
-									<div class="video-promo__start-time my-10 my-sm-20">16:00
-									</div>
-									<p class="video-promo__location mb-20 mb-hd-20">Минск, Рокоссовского, 158, гостиница
-										"Салют"
-									</p>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-5 col-hd-4">
-									<div class="video-review">
-										<div class="video-review__man mb-05">
-											<img class="video-review__image"
-												 src="/wp-content/themes/tikets/src/icons/speker.6e0d00.png"
-												 alt="speaker" title=""/>
-											<div class="video-review__wrapper">
-												<h2 class="video-review__title">Иван Петров
-												</h2>
-												<p class="video-review__position">Компания SkyWall, CE Copy 3
-												</p>
-											</div>
-										</div>
-										<div class="video-review__video">
-											<video class="video-review__sorce-video" controls
-												   poster="/wp-content/themes/tikets/src/icons/preloader.98dd08.jpg">
-												<source src="/wp-content/themes/tikets/src/video/v.8e418f.mp4"
-														type="video/mp4">
-											</video>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					<?php get_template_part( '/core/views/product', 'promo' ) ?>
 					<div class="tabs">
 						<div class="container">
 							<div class="tabs__wrapper-list">

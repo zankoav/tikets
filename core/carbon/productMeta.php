@@ -21,6 +21,7 @@
 						]
 					),
 			] );
+		
 		Container::make( 'post_meta', 'Табики' )
 			->where( 'post_type', '=', 'product' )
 			->add_tab( __( 'Программа' ), [
@@ -70,6 +71,30 @@
 								->set_value_type( 'url' ),
 						]
 					),
+			] );
+		
+		Container::make( 'post_meta', 'Дата, место и отзыв' )
+			->where( 'post_type', '=', 'product' )
+			->add_fields( [
+				Field::make( 'date_time', 'prod_date_time', 'Дата, время' )
+				->set_storage_format( 'Y-m-d H:i:s' )
+				->set_input_format( 'Y-m-d H:i:s', 'Y-m-d H:i:s'),
+				Field::make( 'text', 'prod_address', 'Адрес' ),
+				Field::make( 'separator', 'crb_promo_separator', __( 'Отзыв' ) ),
+				Field::make( 'text', 'reviewer_name', __( 'Имя' ) )
+					->set_width( 50 ),
+				Field::make( 'text', 'reviewer_position', 'Должнасть' )
+					->set_width( 50 ),
+				Field::make( 'image', 'reviewer_image', __( 'Image' ) )
+					->set_value_type( 'url' )
+					->set_width( 33 ),
+				Field::make( 'file', 'reviewer_video', __( 'Video' ) )
+					->set_value_type( 'url' )
+					->set_type( 'video' )
+					->set_width( 33 ),
+				Field::make( 'image', 'video_preview', 'Превью' )
+					->set_value_type( 'url' )
+					->set_width( 33 ),
 			] );
 	}
 	

@@ -16,8 +16,6 @@
 //		var_dump($variation);
 	}
 ?>
-
-
 <div class="tabs__content">
 	<div class="tariffs">
 		<div class="container">
@@ -31,14 +29,14 @@
 				<div class="row">
 					<div class="col-11 col-sm-5">
 						<?php if (!empty( $standard_ticket )):
-							$benefits = explode( ";", $standard_ticket[ "_ticket_benefits" ] );
+							$benefits = explode( ";", trim ($standard_ticket[ "_ticket_benefits" ]) );
 							?>
 							<div class="standard">
 								<div class="standard__title">стандарт</div>
 								<ul class="standard__list">
-									<?php foreach($benefits as $benefit) : ?>
+									<?php foreach($benefits as $benefit) : if (!empty($benefit)):?>
 										<li class="standard__list-item"><?= $benefit; ?></li>
-									<?php endforeach; ?>
+									<?php endif; endforeach; ?>
 								</ul>
 								<div class="button-with-balls">
 									узнать цену
@@ -49,14 +47,14 @@
 							</div>
 						<? endif; ?>
 						<?php if (!empty( $vip_ticket )):
-							$benefits = explode( ";", $vip_ticket[ "_ticket_benefits" ] );
+							$benefits = explode( ";", trim ($vip_ticket[ "_ticket_benefits" ] ));
 							?>
 							<div class="vip">
 								<div class="vip__title">vip</div>
 								<ul class="vip__list">
-									<?php foreach($benefits as $benefit) : ?>
+									<?php foreach($benefits as $benefit) : if (!empty($benefit)):?>
 										<li class="vip__list-item"><?= $benefit; ?></li>
-									<?php endforeach; ?>
+									<?php endif; endforeach; ?>
 								</ul>
 								<div class="vip__price">400 Br</div>
 								<a class="orange-button orange-button__vip" href="#"> записаться</a>
@@ -65,28 +63,30 @@
 					</div>
 					<div class="col-11 col-sm-5 col-offset-sm-2">
 						<?php if (!empty( $business_ticket )):
-								$benefits = explode( ";", $business_ticket[ "_ticket_benefits" ] );
+								$benefits = explode( ";", trim ($business_ticket[ "_ticket_benefits" ]) );
 								?>
 								<div class="business">
 									<div class="business__title">business</div>
 									<ul class="business__list">
-										<?php foreach($benefits as $benefit) : ?>
+										<?php foreach($benefits as $benefit) :
+											if (!empty($benefit)):?>
 											<li class="vip__list-item"><?= $benefit; ?></li>
-										<?php endforeach; ?>
+										<?php endif; endforeach; ?>
 									</ul>
 									<div class="business__price">200 Br</div>
 									<a class="orange-button orange-button__vip" href="#">записаться</a>
 								</div>
 							<? endif; ?>
 						<?php if (!empty( $platinum_ticket )):
-								$benefits = explode( ";", $platinum_ticket[ "_ticket_benefits" ] );
+								$benefits = explode( ";", trim ($platinum_ticket[ "_ticket_benefits" ] ));
 								?>
 								<div class="platinum">
 									<div class="platinum__title">platinum</div>
 									<ul class="platinum__list">
-									<?php foreach($benefits as $benefit) : ?>
+									<?php foreach($benefits as $benefit) :
+									if (!empty($benefit)):?>
 											<li class="vip__list-item"><?= $benefit; ?></li>
-										<?php endforeach; ?></ul>
+										<?php endif; endforeach; ?></ul>
 									<div class="button-with-balls button-with-balls__white">
 										узнать цену
 										<span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_red"></span>
