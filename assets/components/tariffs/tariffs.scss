@@ -96,14 +96,6 @@ $ORANGE : #FBBE49;
             flex-shrink      : 0;
             margin-right     : 1rem;
         }
-
-        &:last-child {
-            padding-bottom : 1rem;
-
-            @include md {
-                padding-bottom : 2rem;
-            }
-        }
     }
 }
 
@@ -332,14 +324,6 @@ $ORANGE : #FBBE49;
             border-radius    : 50%;
             flex-shrink      : 0;
             margin-right     : 1rem;
-        }
-
-        &:last-child {
-            padding-bottom : 1rem;
-
-            @include md {
-                padding-bottom : 2rem;
-            }
         }
     }
 
