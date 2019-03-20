@@ -45,14 +45,14 @@
 									->set_width( 50 ),
 								Field::make( 'image', 'reviewer_image', __( 'Image' ) )
 									->set_value_type( 'url' )
-									->set_width( 50 ),
+									->set_width( 33 ),
 								Field::make( 'file', 'reviewer_video', __( 'Video' ) )
 									->set_value_type( 'url' )
 									->set_type( 'video' )
-									->set_width( 50 ),
+									->set_width( 33 ),
 								Field::make( 'image', 'video_preview', 'Превью' )
 									->set_value_type( 'url' )
-									->set_width( 50 ),
+									->set_width( 33 ),
 							]
 						),
 				]
