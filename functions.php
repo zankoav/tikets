@@ -41,6 +41,9 @@
 	require_once  __DIR__ . '/core/carbon/productCatMeta.php';
 	require_once __DIR__ . '/vendor/autoload.php';
 	
+	require_once __DIR__ . '/core/addProductVarioatetionField.php';
+	
+	
 	//----get permalink to checkout page
 function getCheckoutPermaLink(){
 	$checkout_args = [
