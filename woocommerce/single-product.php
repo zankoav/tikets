@@ -1,8 +1,5 @@
 <?php
-	
-	if (!defined( 'ABSPATH' )) {
-		exit; // Exit if accessed directly
-	}
+	if (!defined( 'ABSPATH' )) { exit; }
 	get_header();
 	$checkoutLink = getCheckoutPermaLink();
 ?>
@@ -88,107 +85,14 @@
 									<li class="tabs__list-tab" data-content="3">
 										<a class="tabs__tab-button" href="#">Тарифы</a>
 									</li>
-									<li class="tabs__list-tab" data-content="4">
-										<a class="tabs__tab-button" href="#">Онлайн-трансляция</a>
-									</li>
+<!--									<li class="tabs__list-tab" data-content="4">-->
+<!--										<a class="tabs__tab-button" href="#">Онлайн-трансляция</a>-->
+<!--									</li>-->
 								</ul>
 							</div>
 							<?php get_template_part( '/core/views/product', 'program' ); ?>
 							<?php get_template_part( '/core/views/product', 'spiker' ); ?>
-							<div class="tabs__content">
-								<div class="block-with-label">
-									<div class="container">
-										<div class="block-with-label__inner mt-20 mb-20 mt-lg-40 mb-lg-40">
-											<h2 class="title title_grey">О ЧЕМ КУРС</h2>
-											<div class="block-with-label__wrapper mt-20 mt-sm-20 mt-md-40">
-												<div class="row">
-													<div class="block-with-label__label">
-														<p class="block-with-label__label-title col-12 col-sm-11 col-offset-sm-1">
-															Этот мастер-класс — самый эффективный тренинг по маркетингу.
-															Он для тех, кому всё время чего-то не хватает: рук, знаний,
-															времени… Вы придете — и мы с вами всё сделаем.
-														</p>
-														<div class="editor-content col-12 col-sm-10 col-offset-sm-2">
-															<h3>ОН ИНТЕРАКТИВНЫЙ</h3>
-															<p>Это не лекция - два спикера постоянно работают с
-																аудиторией: мозговые штурмы, тесты, чек-листы, задания,
-																упражнения, проверка, рекомендации…</p>
-															<h3>ОН СИСТЕМНЫЙ</h3>
-															<p>Вы увидите, что у вас сделано (что есть), что сделано
-																хорошо и что плохо, что вам нужно сделать (чего у вас
-																еще нет). В мастер-классе очень много полезных знаний, и
-																вы их получаете по понятной системе — от простого к
-																сложному.</p>
-															<h3>ОН ПРАКТИЧНЫЙ</h3>
-															<p>40% нужных вещей мы сделаем прямо в аудитории, другие вы
-																сможете сделать в следующие 7 дней по чек-листам,
-																которые мы вам передадим.</p>
-														</div>
-														<div class="block-with-label__label-content pt-20 pb-20 pb-sm-40 col-sm-9 col-offset-sm-1">
-															<div class="block-with-label__label-content-inner">
-																<div class="block-with-label__label-content-inner-title">
-																	Программа разделена на четыре части — от «подготовки
-																	к старту» до «выхода на орбиту».
-																</div>
-																<div class="block-with-label__label-content-inner-text">
-																	На каждом этапе вы получите все нужные знания,
-																	умения, навыки и инструменты для старта/перезапуска
-																	необходимых для бизнеса маркетинговых инструментов.
-																</div>
-																<div class="block-with-label__label-content-inner-promo">
-																	Программа тренинга по маркетингу представлена в
-																	pdf-файле (обязательно ознакомьтесь)
-																</div>
-																<div class="block-with-label__label-content-inner-button">
-																	<a class="orange-button orange-button__type_1"
-																	   href="#">Скачать
-																	</a>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="block-without-label">
-									<div class="container">
-										<div class="block-without-label__inner mt-20 mb-20 mt-lg-40 mb-lg-40">
-											<h2 class="title title_grey">кому посетить</h2>
-											<div class="block-without-label__wrapper mt-20 mt-sm-20 mt-md-40">
-												<div class="row">
-													<div class="block-without-label__label">
-														<p class="block-without-label__label-title col-12 col-sm-11 col-offset-sm-1">
-															Маркетинг нужен всем, а не только тем, кто производит и
-															продаёт
-														</p>
-														<div class="editor-content col-12 col-sm-10 col-offset-sm-2">
-															<h3>РУКОВОДИТЕЛЮ</h3>
-															<p>Важно разбираться во всех точках контакта с клиентами,
-																использовать нужные инструменты, не тратя огромный
-																бюджет на рекламу. Бизнес - это цифры. Важно следить за
-																показателями, знать, на каком этапе находится клиент.
-																Понимать стратегию комплексного маркетинга компании.</p>
-															<h3>МАРКЕТОЛОГУ</h3>
-															<p>На фундаменте имеющихся знаний и опыта, овладеть
-																комплексным видением всей стратегии построения компании.
-																Грамотно выстраивать бренд компании. Получить новые
-																инструменты, генерирующие поток заявок и клиентов.</p>
-															<h3>НАЧИНАЮЩЕМУ СПЕЦИАЛИСТУ</h3>
-															<p>Программы в ВУЗ не адаптированы под изменения в
-																экономике. Можно самостоятельно изучать, как строить
-																воронку продаж, настраивать трафик. НО! Для приобретения
-																основных знаний необходимо овладеть стратегией
-																комплексного маркетинга.</p>
-														</div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
+							<?php get_template_part( '/core/views/product', 'about_program' ); ?>
 							<div class="tabs__content">
 								<div class="tariffs">
 									<div class="container">

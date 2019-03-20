@@ -1,4 +1,6 @@
 <?php
+	if (!defined( 'ABSPATH' )) exit();
+	
 	$spikers_list = carbon_get_post_meta( get_the_ID(), 'spikers_list' );
 ?>
 <div class="tabs__content tabs__content_active">

@@ -40,9 +40,34 @@
 							Field::make( 'image', 'spiker_image', __( 'Photo' ) )
 								->set_value_type( 'url' )
 								->set_width( 30 ),
-							Field::make( 'text', 'spiker_name', __('Name') )
+							Field::make( 'text', 'spiker_name', __( 'Name' ) )
 								->set_width( 70 ),
 							Field::make( 'rich_text', 'spiker_desc', 'Информация' ),
+						]
+					),
+			] )
+			->add_tab( __( 'О чем курс' ), [
+				Field::make( 'complex', __( 'about_program' ) )
+					->add_fields( 'part', [
+							Field::make( 'text', 'part_title', __( 'Title' ) ),
+							Field::make( 'textarea', 'part_subtitle', 'Подзаголовок' ),
+							Field::make( 'rich_text', 'part_content', 'Контетн' ),
+						]
+					)
+					->add_fields( 'part_with_label', [
+							Field::make( 'text', 'part_title', __( 'Title' ) ),
+							Field::make( 'textarea', 'part_subtitle', 'Подзаголовок' ),
+							Field::make( 'rich_text', 'part_content', 'Контетн' ),
+							Field::make( 'text', 'part_label_title', 'Лэйбл заголовок' ),
+							Field::make( 'complex', 'part_label_paragraphs', 'Параграфы' )
+								->add_fields( 'paragraph', [
+									Field::make( 'textarea', 'part_label_paragraph', 'Параграф' )
+										->set_width( 90 ),
+									Field::make( 'checkbox', 'paragraph_bold', 'Жирный текст' )
+										->set_width( 10 ),
+								] ),
+							Field::make( 'file', 'part_label_file', 'Файл для скачки' )
+								->set_value_type( 'url' ),
 						]
 					),
 			] );
