@@ -40,36 +40,42 @@ $ORANGE : #FBBE49;
 
     &__image {
         position  : relative;
-        left      : -44%;
         width     : 440px;
         max-width : initial;
+        min-width : 100%;
         height    : auto;
         display   : block;
+        float     : right;
 
         @include sm {
             width : 644px;
-            left  : -56%;
         }
 
         @include md {
             width : 908px;
-            left  : -64%;
         }
 
         @include lg {
-            width : 893px;
-            left  : -28%;
+            width : 894px;
         }
     }
 
+    &__clear {
+        clear : both;
+    }
+
     &__opportunity-list {
-        display : flex;
+        display         : flex;
+        justify-content : space-around;
+        clear           : both;
     }
 
     &__opportunity {
         display        : flex;
         flex-direction : column;
         text-align     : center;
+        flex           : 1 0 25%;
+        max-width      : 25%;
 
         @include lg {
             align-items : center;
