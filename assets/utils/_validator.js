@@ -1,5 +1,9 @@
+//import Inputmask from "inputmask";
+// Inputmask({regex: String.raw`^\+375 (17|25|29|33|44) [0-9]{3} [0-9]{2} [0-9]{2}$`}).mask(reg_phone);
+
 export const Validator = {
-    ERROR_EMPTY_FIELD: 'Поле обязательно для заполнения',
+    ERROR_REQUIRE_FIELD: 'Поле обязательно для заполнения',
+    ERROR_EMPTY_PROMOCODE_FIELD: 'Введите промокод',
     ERROR_EMAIL_FIELD: 'Введите корректный email',
     ERROR_AGREE_FIELD: 'Необходимо согласие на обработку данных',
     ERROR_PHONE_FORMAT_FIELD: 'Не верный формат телефона: +375YYXXXXXXX',

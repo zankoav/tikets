@@ -3,17 +3,15 @@ import $ from 'jquery';
 import 'paroller.js';
 
 
-const NUMBER_OF_POINTS = 40;
+let bodyHeight = Math.max($(document).height(), $(window).height());
+
+
+const NUMBER_OF_POINTS = bodyHeight / 160;
 const COLORS = [
     '#fbbe49',
     '#f85c5d',
     '#CACFDD'
 ];
-
-let bodyWidth = $(window).width();
-let bodyHeight = Math.max($(document).height(), $(window).height());
-
-console.log(bodyWidth, bodyHeight);
 
 
 for (let i = 0; i < NUMBER_OF_POINTS; i++) {
@@ -26,8 +24,8 @@ function Point() {
     view.setAttribute('class', `points points_${classText}`);
     let randomColor = COLORS[getRandomArbitrary(0, COLORS.length - 1)];
     view.style.backgroundColor = randomColor;
-    view.style.top = Math.random() * 100 + '%';
-    view.style.left = Math.random() * 100 + '%';
+    view.style.top = Math.random() * 98 + '%';
+    view.style.left = Math.random() * 95 + '%';
 
 
     this.show = function () {

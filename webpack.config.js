@@ -31,11 +31,15 @@ let entries = {
     single: './single.js',
     p404: './p404.js',
     contacts: './contacts.js',
+    checkout: './checkout.js',
 };
 
 let pugs = {
     home: {
         title: "home title"
+    },
+    checkout: {
+        title: "checkout title"
     },
     program: {
         title: "program title"
@@ -52,7 +56,7 @@ let pugs = {
     p404: {
         title: "p404 title"
     },
-    contacts : {
+    contacts: {
         title: "contacts title"
     }
 };
