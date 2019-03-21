@@ -32,9 +32,14 @@ body {
         flex-shrink : 0;
     }
 
-    .reviews__inner, .program-wrapper, .contacts-wrapper, .single-wrapper, .page-wrapper, .page404, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
+    .checkout, .reviews__inner, .program-wrapper, .contacts-wrapper, .single-wrapper, .page-wrapper, .page404, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
         position : relative;
         z-index  : 1;
+    }
+
+    .program{
+        position : relative;
+        z-index  : 2;
     }
 
 }
