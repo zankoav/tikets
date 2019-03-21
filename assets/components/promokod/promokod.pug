@@ -1,0 +1,22 @@
+mixin promokod()
+    +b.promokod.pt-10.pb-10.pt-sm-20.py-md-40
+        .row
+            .col-12.col-sm-11.col-offset-sm-1.mb-20.mb-lg-40.pb-hd-10
+                +e.counter
+                    +e.iterator
+                        +e.results-count
+                            +e.minus(href="#") &ndash;
+                            +e.result 1
+                            +e.add(href="#") +
+                        +e.iterator-subtitle Билет
+                    +e.counter-description
+                        | на сумму
+                        +e.price 100,20
+                        | рублей
+        .row
+            .col-12.col-offset-sm-5.col-sm-6.mb-10.mb-md-20
+                +e.button-chekout(href="#") Оплатить
+            .col-12.col-sm-11
+                +e.P.description Нажимая на кнопку “Оплатить”, Вы принимаете условия Публичной оферты
+
+

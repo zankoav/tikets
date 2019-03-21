@@ -3,3 +3,14 @@ mixin title(text, mod ,tag)
     -var tagMod = mod ? mod : '';
     -var tagClass = `title ${tagMod}`;
     #{tagName}(class=tagClass)= text
+
+
+mixin title-autor(text, mod)
+    -var tagMod = mod ? mod : '';
+    -var tagClass = `title-autor ${tagMod}`;
+    p(class=tagClass)= text
+
+mixin sub-title(text, mod)
+    -var tagMod = mod ? mod : '';
+    -var tagClass = `sub-title ${tagMod}`;
+    p(class=tagClass)= text

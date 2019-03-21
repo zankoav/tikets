@@ -62,5 +62,4 @@ $('.tabs__button').on('click', function (event) {
             $('.tabs__list-tab').slideDown();
         }
     }
-
 });
