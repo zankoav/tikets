@@ -12,7 +12,7 @@ jQuery(function ($) {
         let form_wsb_email = $("[name='wsb_email']").val();
 
         let data = {
-            action: 'sendForm',
+            action: 'createOrder',
             product_id: form_product_id,
             item_name: form_item_name,
             item_price: form_item_price,
@@ -25,8 +25,9 @@ jQuery(function ($) {
         };
 
         console.log(data );
-        // jQuery.post( landing_ajax['url'], data, function(response) {
-        //     $('.form-result').html(response);
-        // });
+        jQuery.post( tikets_ajax['url'], data, function(response) {
+           // $('.form-result').html(response);
+            console.log(response);
+        });
     })
 });

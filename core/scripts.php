@@ -15,7 +15,7 @@ add_action('template_redirect', function () {
     add_action('wp_enqueue_scripts', function () {
         wp_enqueue_script('commons', Assets::getJs('common'), false, null, true);
 
-		  wp_localize_script( 'commons', 'landing_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
+		  wp_localize_script( 'commons', 'tikets_ajax', array( 'url' => admin_url( 'admin-ajax.php' ) ) );
 
         if (is_page_template('template-contacts.php')) {
             wp_enqueue_script('contacts', Assets::getJs('contacts'), false, null, true);

@@ -24,51 +24,72 @@
 			wp_die();
 		}
 		
-//		createOrderEntity( $form_data );
-//		echo json_encode( $response );
+		$orderInfo      = createOrderEntity( $form_data );
+		$wsb_secret_key = carbon_get_theme_option( 'wsb_secret_key' );
+		$wsb_storeid    = carbon_get_theme_option( 'wsb_storeid' );
+		$wsb_order_num  = $orderInfo[ 'orderId' ];
+		$wsb_total      = $orderInfo[ 'totalPrice' ];
+		$wsb_seed       = time();
+		
+		$wsb_signature_origin = $wsb_seed . $wsb_storeid . $wsb_order_num . '1' . 'BYN' . $wsb_total . $wsb_secret_key;
+		$wsb_signature        = md5( $wsb_signature_origin );
+		
+		$response = [
+			'wsb_order_num' => $orderInfo[ 'orderId' ],
+			'wsb_total'     => $orderInfo[ 'totalPrice' ],
+			'wsb_signature' => $wsb_signature,
+			'wsb_seed'      => $wsb_seed,
+		];
+		
+		echo json_encode( $response );
 		wp_die();
 	}
 	
 	
-	
 	function createOrderEntity($form_data){
-		$address = array(
-			'first_name' => $form_data['customer_name'],
+		$address = [
+			'first_name' => $form_data[ 'customer_name' ],
 			'last_name'  => '',
 			'company'    => '',
-			'email'      => $form_data['wsb_email'],
+			'email'      => $form_data[ 'wsb_email' ],
 			'phone'      => '',
-			'address_1'  => $form_data['customer_address'],
+			'address_1'  => $form_data[ 'customer_address' ],
 			'address_2'  => '',
 			'city'       => '',
 			'state'      => '',
 			'postcode'   => '',
-			'country'    => ''
-		);
+			'country'    => '',
+		];
 		
-		$order = wc_create_order();
+		$product_id        = (int)$form_data[ 'product_id' ];
+		$order             = wc_create_order();
+		$membershipProduct = new WC_Product_Variable( $product_id );
+		$quantity          = (int)$form_data[ 'item_quantity' ];
+		$ticket_type       = $form_data[ 'ticket_type' ];
 		
-		// add products from cart to order
-//		$items = WC()->cart->get_cart();
-		foreach($items as $values) {
-			$product_id = $values['product_id'];
-			$product = wc_get_product($product_id);
-			$var_id = $values['variation_id'];
-			$var_slug = $values['variation']['attribute_pa_weight'];
-			$quantity = (int)$values['quantity'];
-			$variationsArray = array();
-			$variationsArray['variation'] = array(
-				'pa_weight' => $var_slug
-			);
-			$var_product = new WC_Product_Variation($var_id);
-			$order->add_product($var_product, $quantity, $variationsArray);
+		$theMemberships = $membershipProduct->get_available_variations();
+		
+		$variationsArray = [];
+		foreach($theMemberships as $membership) {
+			if ($membership[ "attributes" ][ "attribute_pa_tip-bileta" ] == $ticket_type) {
+				$variationID                    = $membership[ 'variation_id' ];
+				$variationsArray[ 'variation' ] = $membership[ 'attributes' ];
+			}
 		}
 		
-		$order->set_address( $address, 'billing' );
-		$order->set_address( $address, 'shipping' );
+		if ($variationID) {
+			$varProduct = new WC_Product_Variation( $variationID );
+			
+			$order->add_product( $varProduct, $quantity, $variationsArray );
+			$order->set_address( $address, 'billing' );
+			$order->set_address( $address, 'shipping' );
+			$order->calculate_totals();
+			$order->update_status( 'processing' );
+		}
 		
-		$order->calculate_totals();
-		$order->update_status( 'processing' );
 		
-		WC()->cart->empty_cart();
+		return [
+			'orderId'    => $order->get_id(),
+			'totalPrice' => $order->get_total(),
+		];
 	}

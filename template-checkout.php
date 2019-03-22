@@ -27,11 +27,11 @@
 			];
 		}
 		$test_type = [
-			'variation'  => 'standard',
-			'$price' => 1313
+			'variation' => 'standard',
+			'$price'    => 1313,
 		];
 		
-		if (!empty($variations[ 0 ])){
+		if (!empty( $variations[ 0 ] )) {
 			$test_type = $variations[ 0 ];
 		}
 	}
@@ -81,7 +81,8 @@
 					<label for="wsb_invoice_item_name[0]">Название товара:</label>
 					<input name="wsb_invoice_item_name[0]" type="text" value="<?= $prodName; ?>">
 					<label for="wsb_invoice_item_price[0]"> Цена:</label>
-					<input name="wsb_invoice_item_price[0]" type="text" value="<?= $test_type[ 'display_regular_price' ]; ?>">
+					<input name="wsb_invoice_item_price[0]" type="text"
+						   value="<?= $test_type[ 'display_regular_price' ]; ?>">
 					<input type="hidden" name="wsb_invoice_item_quantity[0]" value="1">
 
 

@@ -28,7 +28,6 @@
 	require_once __DIR__ . '/core/scripts.php';
 	require_once __DIR__ . '/core/hooks.php';
 	require_once __DIR__ . '/core/ajax.php';
-	require_once __DIR__ . '/core/orderCreater.php';
 
 //	require_once __DIR__ . '/core/cmb2/index.php';
 //	require_once __DIR__ . '/core/cmb2/themeSettings.php';
@@ -42,6 +41,7 @@
 	require_once __DIR__ . '/vendor/autoload.php';
 	
 	require_once __DIR__ . '/core/addProductVarioatetionField.php';
+	require_once __DIR__ . '/core/myAjax/createOrder.php';
 	
 	
 	//----get permalink to checkout page
