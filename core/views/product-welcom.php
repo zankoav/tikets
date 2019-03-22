@@ -46,7 +46,7 @@
 						<div class="welcome__author pb-10 pb-sm-20"><?= $main_speaker; ?></div>
 						<div class="welcome__title pb-20"><?= get_the_title(); ?></div>
 						<div class="welcome__description pb-20"><?= get_the_content(); ?></div>
-						<a class="orange-button " href="<?= getCheckoutPermaLink() . '?id=' . get_the_ID() ?>">записаться</a>
+						<a class="orange-button " href="<?= getCheckoutPermaLink() . '?seminar=' . get_the_ID() ?>">записаться</a>
 					</div>
 				</div>
 			</div>

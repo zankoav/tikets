@@ -14,17 +14,8 @@
 			$standard_ticket = $variation;
 		}
 	}
+	$checkoutLink = getCheckoutPermaLink();
 ?>
-<!--<div class="button-with-balls button-with-balls__white">-->
-<!--	узнать цену-->
-<!--	<span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_red"></span>-->
-<!--	<span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_grey"></span>-->
-<!--	<span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_white"></span>-->
-<!--</div>-->
-<!--start second option-->
-<!--<div class="platinum__price">400 Br</div>-->
-<!--<a class="orange-button orange-button__vip" href="#">записаться</a>-->
-<!--end-->
 
 <div class="tabs__content">
 	<div class="tariffs">
@@ -44,6 +35,7 @@
 								$benefits = explode( ";", trim( $standard_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $standard_ticket[ "_display_price" ];
 								$price = $standard_ticket['display_regular_price'];
+								$tariff_id = $standard_ticket[ 'variation_id' ];
 								?>
 								<div class="standard">
 									<div class="standard__title">стандарт</div>
@@ -56,7 +48,8 @@
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
 										<div class="standard__price"><?= $price; ?></div>
-										<a class="orange-button orange-button__vip" href="#">
+										<a class="orange-button orange-button__vip"
+										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
 										<!--end-->
 									<?php elseif($displayPrice == 'no'): ?>
@@ -76,7 +69,8 @@
 							if (!empty( $vip_ticket )):
 								$benefits = explode( ";", trim( $vip_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $vip_ticket[ "_display_price" ];
-								$price = $vip_ticket['display_regular_price']; ?>
+								$price = $vip_ticket['display_regular_price'];
+								$tariff_id = $vip_ticket[ 'variation_id' ]; ?>
 								<div class="vip">
 									<div class="vip__title">vip</div>
 									<ul class="vip__list">
@@ -87,7 +81,8 @@
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
 										<div class="vip__price"><?= $price; ?></div>
-										<a class="orange-button orange-button__vip" href="#">
+										<a class="orange-button orange-button__vip"
+										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
 										<!--end-->
 									<?php elseif($displayPrice == 'no'): ?>
@@ -110,6 +105,7 @@
 								$benefits = explode( ";", trim( $business_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $business_ticket[ "_display_price" ];
 								$price = $business_ticket['display_regular_price'];
+								$tariff_id = $business_ticket[ 'variation_id' ];
 								?>
 								<div class="business">
 									<div class="business__title">business</div>
@@ -122,7 +118,8 @@
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
 										<div class="business__price"><?= $price; ?></div>
-										<a class="orange-button orange-button__vip" href="#">
+										<a class="orange-button orange-button__vip"
+										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
 										<!--end-->
 									<?php elseif($displayPrice == 'no'): ?>
@@ -141,7 +138,8 @@
 							if (!empty( $platinum_ticket )):
 								$benefits = explode( ";", trim( $platinum_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $platinum_ticket[ "_display_price" ];
-								$price = $platinum_ticket['display_regular_price']; ?>
+								$price = $platinum_ticket['display_regular_price'];
+								$tariff_id = $platinum_ticket[ 'variation_id' ];?>
 								<div class="platinum">
 									<div class="platinum__title">platinum</div>
 									<ul class="platinum__list">
@@ -153,7 +151,8 @@
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
 										<div class="platinum__price"><?= $price; ?></div>
-										<a class="orange-button orange-button__vip" href="#">
+										<a class="orange-button orange-button__vip"
+										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
 										<!--end-->
 									<?php elseif($displayPrice == 'no'): ?>

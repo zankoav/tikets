@@ -2,115 +2,175 @@
 	/**
 	 * Template Name: Checkout Order Template
 	 */
-	get_header( 'checkout' );
-	//	$wsb_secret_key = carbon_get_theme_option('wsb_secret_key');
 	
+	$productID  = $_GET[ 'seminar' ];
+	$tariffID  = $_GET[ 'tariff' ];
+	$_product   = wc_get_product( $productID );
+	$prod_exist = empty( $_product ) ? false : true;
+	
+//	if (!$prod_exist) {
+//		global $wp_query;
+//		$wp_query->set_404();
+//		status_header( 404 );
+//		get_template_part( 404 );
+//		exit();
+//	}
+	
+	get_header();
 	$wsb_store             = carbon_get_theme_option( 'wsb_store' );
 	$wsb_storeid           = carbon_get_theme_option( 'wsb_storeid' );
 	$wsb_return_url        = carbon_get_theme_option( 'wsb_return_url' );
 	$wsb_cancel_return_url = carbon_get_theme_option( 'wsb_cancel_return_url' );
 	$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
 	
-	$productID  = $_GET[ 'seminar' ];
-	$_product   = wc_get_product( $productID );
-	$prod_exist = empty( $_product ) ? false : true;
+	$main_speaker = carbon_get_post_meta( $productID, 'main_speaker' );
 	
-	if ($prod_exist) {
-		$prodName   = $_product->get_title();
-		$variations = $_product->get_available_variations();
-		
-		$variations_select = [];
-		foreach($variations as $variation) {
-			$variations_select[] = [
-				'variation' => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
-				'$price'    => $variation[ 'display_regular_price' ],
-			];
-		}
-		$test_type = [
-			'variation' => 'standard',
-			'$price'    => 1313,
+	$prodName   = $_product->get_title();
+	$variations = $_product->get_available_variations();
+	
+	$variations_select = [];
+	$currentTariff = [];
+	foreach($variations as $variation) {
+		$variations_select[] = [
+			'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
+			'$price'       => $variation[ 'display_regular_price' ],
+			'variation_id' => (int)$variation[ 'variation_id' ],
 		];
 		
-		if (!empty( $variations[ 0 ] )) {
-			$test_type = $variations[ 0 ];
+//set current tariff
+		if (!empty($tariffID)&& $variation[ 'variation_id' ] == $tariffID){
+			$currentTariff = [
+				'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
+				'$price'       => $variation[ 'display_regular_price' ],
+				'variation_id' => (int)$variation[ 'variation_id' ],
+			];
 		}
+	}
+	if (empty($currentTariff)){
+		$currentTariff  = $variations_select[0];
 	}
 
 ?>
-<div class="app">
-	<?php get_template_part( '/core/views/headerView' ); ?>
-	<main class="main">
-		<?php
-			
-			if (!$prod_exist): ?>
-				<h1>Семенар не найден</h1>
-			<?php else: ?>
-				<p id="product_id"><?= $productID; ?></p>
-				<select id="ticket_type" name="ticket_type">
-					<?php foreach($variations_select as $item) :
-						if ($item[ 'variation' ] == $test_type[ 'variation' ]):?>
-							<option selected value="<?= $item[ 'variation' ]; ?>"
-									data-price="<?= $item[ '$price' ]; ?>"><?= $item[ 'variation' ]; ?></option>
-						<?php else: ?>
-							<option value="<?= $item[ 'variation' ]; ?>"
-									data-price="<?= $item[ '$price' ]; ?>"><?= $item[ 'variation' ]; ?></option>
-						<?php
-						
-						endif; endforeach; ?>
-				</select>
-				<form action="" method="post" style="
-			  display: flex;
-			  flex-direction: column;
-			  width: 500px;
-			  margin: 1rem auto;
-">
-
-					<!--			<form action="https://securesandbox.webpay.by/" method="post" style="-->
-					<!--			  display: flex;-->
-					<!--			  flex-direction: column;-->
-					<!--			  width: 500px;-->
-					<!--			  margin: 1rem auto;-->
-					<!--">-->
-					<input type="hidden" name="*scart">
-					<input type="hidden" name="wsb_storeid" value="<?= $wsb_storeid ?>">
-					<input type="hidden" name="wsb_currency_id" value="BYN">
-					<input type="hidden" name="wsb_version" value="2">
-					<input type="hidden" name="wsb_test" value="1">
-					<!--			<input type="hidden" name="wsb_store" value="--><? //= $wsb_store?><!--">-->
-
-					<label for="wsb_invoice_item_name[0]">Название товара:</label>
-					<input name="wsb_invoice_item_name[0]" type="text" value="<?= $prodName; ?>">
-					<label for="wsb_invoice_item_price[0]"> Цена:</label>
-					<input name="wsb_invoice_item_price[0]" type="text"
-						   value="<?= $test_type[ 'display_regular_price' ]; ?>">
-					<input type="hidden" name="wsb_invoice_item_quantity[0]" value="1">
-
-
-					<label for="wsb_customer_name">Имя</label>
-					<input type="text" name="wsb_customer_name" value="sas">
-					<label for="wsb_customer_address">Адрес</label>
-					<input type="text" name="wsb_customer_address" value="ул. короля д.55">
-					<label for="wsb_email">email</label>
-					<input type="text" name="wsb_email" value="sas@sas.sas">
-
-					<input type="hidden" name="wsb_return_url" value="<?= esc_url( $wsb_return_url ); ?>">
-					<input type="hidden" name="wsb_cancel_return_url" value="<?= esc_url( $wsb_cancel_return_url ); ?>">
-					<input type="hidden" name="wsb_notify_url" value="<?= esc_url( $wsb_cancel_return_url ); ?>">
-
-
-					<!--return from back end-->
-					<input type="hidden" name="wsb_total" value="10.00">
-					<input type="hidden" name="wsb_signature" value="912702512e447846add6fa4985c7a2f271de52e6">
-					<!--create order-->
-					<input type="hidden" name="wsb_order_num" value="ORDER-12345678">
-					<input type="hidden" name="wsb_seed" value="1242649174">
-
-					<input type="submit" id="submit-button" value="Перейти к оплате">
-				</form>
-			<?php endif; ?>
-	</main>
-	<?php get_template_part( '/core/views/footerView' ); ?>
-</div>
+<?php get_template_part( '/core/views/headerView' ); ?>
+<main class="main">
+	<div class="checkout">
+		<div class="container">
+			<h2 class="title title_default title_grey mt-20 mb-20 mt-md-40 mb-lg-40">Оформление заказа</h2>
+			<p class="title-autor "><?= $main_speaker; ?></p>
+			<div class="row">
+				<div class="col-12 col-md-10 col-lg-8 col-hd-7">
+					<p class="sub-title mb-20 mb-40"><?= $prodName; ?></p>
+				</div>
+			</div>
+			<form class="checkout__form" action="/" method="post" data-program-id="<?= $productID; ?>">
+				<div class="checkout-form-group row">
+					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Телефон</label>
+					</div>
+					<div class="col-12 col-sm-8 col-hd-9">
+						<input class="checkout-form-group__input" id="user-phone" type="text" name="user-phone"
+							   required="required"/>
+						<div class="checkout-form-group__message">
+						</div>
+					</div>
+				</div>
+				<div class="checkout-form-group row">
+					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">Имя</label>
+					</div>
+					<div class="col-12 col-sm-8 col-hd-9">
+						<input class="checkout-form-group__input" id="user-name" type="text" name="user-name"
+							   required="required"/>
+						<div class="checkout-form-group__message">
+						</div>
+					</div>
+				</div>
+				<div class="checkout-form-group row">
+					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-email">Email</label>
+					</div>
+					<div class="col-12 col-sm-8 col-hd-9">
+						<input class="checkout-form-group__input" id="user-email" type="email" name="user-email"
+							   required="required"/>
+						<div class="checkout-form-group__message">
+						</div>
+					</div>
+				</div>
+				<div class="checkout-form-group row">
+					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-tariff">Тариф</label>
+					</div>
+					<div class="col-12 col-sm-8 col-hd-9">
+						<select class="checkout-form-group__select" id="user-tariff" name="user-tariff">
+							<?php foreach($variations_select as $item) :
+								$variation_name = $item[ 'variation' ];
+								$price = $item[ '$price' ];
+								$variation_id = $item[ 'variation_id' ];
+								$is_current_tariff = '';
+								if (!empty($currentTariff) && $variation_id == $currentTariff['variation_id']){
+									$is_current_tariff = 'selected';
+								}
+								?>
+								<option value="<?= $variation_id; ?>" <?= $is_current_tariff; ?>
+										data-price="<?= $price; ?>"><?= $variation_name; ?></option>
+							<?php endforeach; ?>
+						</select>
+					</div>
+					<div class="checkout-form-group__message"></div>
+				</div>
+				<div class="checkout-form-group row">
+					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-comment">Комментарий</label>
+					</div>
+					<div class="col-12 col-sm-8 col-hd-9">
+						<textarea class="checkout-form-group__textarea" id="user-comment" name="user-comment"
+								  rows="4"></textarea>
+					</div>
+					<div class="checkout-form-group__message">
+					</div>
+				</div>
+				<div class="wrapp-overflow">
+					<textarea class="textarea" name="message" placeholder=""></textarea>
+				</div>
+				<div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
+					<div class="row">
+						<div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
+							<div class="promokod__counter">
+								<div class="promokod__iterator">
+									<div class="promokod__results-count">
+										<a class="promokod__minus" href="#">&ndash;</a>
+										<div class="promokod__result">1
+										</div>
+										<a class="promokod__add" href="#">+</a>
+									</div>
+									<div class="promokod__iterator-subtitle">Билет
+									</div>
+								</div>
+								<div class="promokod__counter-description">на сумму
+									<div class="promokod__price">
+										<?= $currentTariff['$price'];?>
+									</div>
+									рублей
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20">
+							<a class="promokod__button-chekout" href="#">Оплатить</a>
+						</div>
+						<div class="col-12 col-sm-11">
+							<p class="promokod__description">
+								Нажимая на кнопку “Оплатить”, Вы принимаете условия Публичной оферты
+							</p>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</main>
+<?php get_template_part( '/core/views/footerView' ); ?>
 
 <?php
 	get_footer();
