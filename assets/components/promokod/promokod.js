@@ -170,7 +170,7 @@ function autoSubmit(data) {
         form.appendChild(element);
     }
 
-    // document.body.appendChild(form);
+    document.body.appendChild(form);
 
     form.submit();
 }
