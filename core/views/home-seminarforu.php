@@ -1,6 +1,5 @@
 <?php
 	
-	//	$reviews = carbon_get_post_meta(get_the_ID(),'crb_reviews');
 	$myQuery = new WP_Query( [ 'post_type' => 'product' ] );
 
 ?>
@@ -29,32 +28,32 @@
 							<?php if ($myQuery->have_posts()):
 								while($myQuery->have_posts()):
 									$myQuery->the_post();
-									$terms = wp_get_post_terms( get_the_ID(), 'product_cat', [ 'fields' => 'ids' ] );
-									$term_color ='';
-									foreach($terms  as $item) {
-										$term_color =  carbon_get_term_meta( $item, 'circle_color' );
+									$terms      = wp_get_post_terms( get_the_ID(), 'product_cat', [ 'fields' => 'ids' ] );
+									$term_color = '';
+									foreach($terms as $item) {
+										$term_color = carbon_get_term_meta( $item, 'circle_color' );
 										break;
 									}
 									?>
 									<li class="seminarforu__item">
-										<a class="seminarforu__item-link" href="#" data-id="<?= get_the_ID(); ?>">
-									<span class="seminarforu__item-link-point mr-10"
-										  style="background-color:<?= $term_color; ?>"></span>
-											<p class="seminarforu__item-link-title">
-												<?= get_the_title();?>
-											</p></a>
+										<a class="seminarforu__item-link" href="#"
+										   data-id="<?= get_the_ID(); ?>">
+											<span class="seminarforu__item-link-point mr-10"
+												  style="background-color:<?= $term_color; ?>"></span>
+											<p class="seminarforu__item-link-title"><?= get_the_title(); ?></p>
+										</a>
 									</li>
 								<?php
 								endwhile;
 								wp_reset_postdata();
-								endif;
-								?>
+							endif;
+							?>
 						</ul>
 					</div>
 				</div>
 			</div>
 			<div class="col-12 col-sm-6 mt-10 mt-sm-00">
-				<a class="seminarforu__button-sign d-b" href="#" target="_blank">Запиcаться</a>
+				<a class="seminarforu__button-sign d-b" href="<?= getCheckoutPermaLink(); ?>" target="_blank">Запиcаться</a>
 			</div>
 		</div>
 	</div>
