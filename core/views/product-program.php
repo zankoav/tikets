@@ -1,9 +1,4 @@
 <?php
-	$main_speaker  = carbon_get_post_meta( get_the_ID(), 'main_speaker' );
-	$attachment_id = get_post_thumbnail_id();
-	$attach_src    = wp_get_attachment_image_url( $attachment_id, 'tikets-main-speaker-lg' );
-	$attach_srcset = wp_get_attachment_image_srcset( $attachment_id, 'tikets-main-speaker-lg' );
-	$attach_sizes  = wp_get_attachment_image_sizes( $attachment_id, 'tikets-main-speaker-lg' );
 	$program       = carbon_get_post_meta( get_the_ID(), 'crb_program_points' );
 ?>
 

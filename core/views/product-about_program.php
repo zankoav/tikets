@@ -5,7 +5,9 @@
 //	var_dump( $about_program );
 ?>
 <div class="tabs__content">
-	<?php foreach($about_program as $item) :
+	<?php
+		if (!empty($about_program)):
+		foreach($about_program as $item) :
 		$part_title = $item[ 'part_title' ];
 		$part_subtitle = $item[ 'part_subtitle' ];
 		$part_content = $item[ 'part_content' ];
@@ -78,5 +80,7 @@
 					</div>
 				</div>
 			</div>
-		<?php endif;endforeach; ?>
+		<?php endif;endforeach;
+		endif;
+		?>
 </div>

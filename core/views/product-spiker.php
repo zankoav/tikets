@@ -17,8 +17,10 @@
 						<div class="about-spiker__item pb-40">
 							<div class="row">
 								<div class="about-spiker__item-look col-sm-5">
+									<?php if (!empty($image)):?>
 									<img class="about-spiker__item-look-image"
 										 src="<?= $image; ?>" alt="<?= $name; ?>" title="<?= $name; ?>"/>
+									<?php endif; ?>
 									<div class="about-spiker__item-look-line">
 									</div>
 								</div>

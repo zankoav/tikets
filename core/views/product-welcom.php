@@ -12,11 +12,13 @@
 				<div class="col-12 col-sm-7 pb-10 pb-sm-00">
 					<div class="welcome__inner pt-sm-30">
 						<div class="welcome__image-wrapper pb-10 pb-sm-20">
+							<?php if (!empty($attachment_id)):?>
 							<img class="welcome__image"
 								 src="<?= $attach_src; ?>"
 								 srcset="<?= $attach_srcset; ?>"
 								 sizes="<?= $attach_sizes; ?>"
 								 alt="mann" title=""/>
+							<?php endif;?>
 							<div class="welcome__clear">
 							</div>
 						</div>
@@ -43,7 +45,7 @@
 				</div>
 				<div class="col-12 col-sm-5 pt-sm-40">
 					<div class="welcome__envelope">
-						<div class="welcome__author pb-10 pb-sm-20"><?= $main_speaker; ?></div>
+						<div class="welcome__author pb-10 pb-sm-20"><?= !empty($main_speaker)?$main_speaker:''; ?></div>
 						<div class="welcome__title pb-20"><?= get_the_title(); ?></div>
 						<div class="welcome__description pb-20"><?= get_the_content(); ?></div>
 						<a class="orange-button " href="<?= getCheckoutPermaLink() . '?seminar=' . get_the_ID() ?>">записаться</a>
