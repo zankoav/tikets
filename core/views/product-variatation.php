@@ -47,7 +47,7 @@
 									
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
-										<div class="standard__price"><?= $price; ?></div>
+										<div class="vip__price"><?= $price; ?></div>
 										<a class="orange-button orange-button__vip"
 										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
