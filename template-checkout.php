@@ -8,13 +8,13 @@
 	$_product   = wc_get_product( $productID );
 	$prod_exist = empty( $_product ) ? false : true;
 	
-//	if (!$prod_exist) {
-//		global $wp_query;
-//		$wp_query->set_404();
-//		status_header( 404 );
-//		get_template_part( 404 );
-//		exit();
-//	}
+	if (!$prod_exist) {
+		global $wp_query;
+		$wp_query->set_404();
+		status_header( 404 );
+		get_template_part( 404 );
+		exit();
+	}
 	
 	get_header();
 	$wsb_store             = carbon_get_theme_option( 'wsb_store' );

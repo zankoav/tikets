@@ -30,6 +30,7 @@
 		
 		$wsb_secret_key        = carbon_get_theme_option( 'wsb_secret_key' );
 		$wsb_storeid           = carbon_get_theme_option( 'wsb_storeid' );
+		
 		$wsb_return_url        = carbon_get_theme_option( 'wsb_return_url' );
 		$wsb_cancel_return_url = carbon_get_theme_option( 'wsb_cancel_return_url' );
 		$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
@@ -54,9 +55,9 @@
 			'wsb_currency_id'              => 'BYN',
 			'wsb_version'                  => '2',
 			'wsb_test'                     => '1',
-			'wsb_return_url'               => $wsb_return_url,
-			'wsb_cancel_return_url'        => $wsb_cancel_return_url,
-			'wsb_notify_url'               => $wsb_notify_url,
+			'wsb_return_url'               => get_permalink($wsb_return_url ),
+			'wsb_cancel_return_url'        => get_permalink($wsb_cancel_return_url),
+			'wsb_notify_url'               => get_permalink($wsb_notify_url),
 		];
 		
 		echo json_encode( $response );
