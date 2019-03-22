@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Template Name: WEBPAY cancel Template
+	 * Template Name: WEBPAY success Template
 	 */
 	get_header();
 	
