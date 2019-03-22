@@ -12,12 +12,13 @@
 body {
     font-family : 'Open Sans', sans-serif;
     position    : relative;
+    //height      : 100%;
 }
 
 .app {
     display        : flex;
     flex-direction : column;
-    height         : 100%;
+    min-height     : 100vh;
 
     header {
         flex-shrink : 0;
@@ -31,9 +32,14 @@ body {
         flex-shrink : 0;
     }
 
-    .reviews__inner, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
+    .checkout, .reviews__inner, .program-wrapper, .contacts-wrapper, .single-wrapper, .page-wrapper, .page404, .title, footer, .partnership, .news, .seminarforu, .stock, .features {
         position : relative;
         z-index  : 1;
+    }
+
+    .program{
+        position : relative;
+        z-index  : 2;
     }
 
 }

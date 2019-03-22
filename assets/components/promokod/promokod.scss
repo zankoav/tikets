@@ -1,0 +1,140 @@
+@import "./../../common/constants";
+
+.promokod {
+
+    margin           : 2rem -12px 96px -12px;
+    background-color : #ffdea0;
+    border-radius    : 36px;
+    padding-left     : 12px;
+    padding-right    : 12px;
+    max-width        : initial;
+
+    @include sm {
+        margin        : 96px 0 128px;
+        padding-left  : 0;
+        padding-right : 0;
+    }
+
+    &__description {
+        font-size   : 14px;
+        line-height : 19px;
+        color       : #565656;
+
+        @include sm {
+            text-align : right;
+            font-size  : 16px;
+        }
+
+        @include md {
+            font-size : 20px;
+        }
+    }
+
+    &__button-chekout {
+        background-color : $ORANGE;
+        display          : block;
+        padding          : 10px 0;
+        text-align       : center;
+        border-radius    : 3px;
+        text-transform   : uppercase;
+        color            : $RED;
+        font-weight      : 800;
+        font-size        : 20px;
+        line-height      : 19px;
+
+        @include md {
+            font-size : 26px;
+            padding   : 28px 0 27px;
+        }
+    }
+
+    &__counter {
+        display : flex;
+    }
+
+    &__iterator-subtitle {
+        color          : $RED;
+        font-weight    : 800;
+        font-size      : 20px;
+        text-transform : uppercase;
+
+        @include sm {
+            font-size : 30px;
+        }
+
+        @include md {
+            font-size : 42px;
+        }
+    }
+
+    &__iterator {
+        display        : flex;
+        flex-direction : column;
+        align-items    : center;
+        flex-shrink    : 0;
+    }
+
+    &__result {
+        color       : $RED;
+        font-weight : 800;
+        font-size   : 40px;
+
+        @include sm {
+            font-size : 72px;
+        }
+
+        @include md {
+            font-size : 90px;
+        }
+    }
+
+    &__results-count {
+        display     : flex;
+        align-items : center;
+    }
+
+    &__minus, &__add {
+        color       : $ORANGE;
+        font-weight : 800;
+        font-size   : 40px;
+        padding     : 0 .5rem;
+        line-height : 1;
+
+        @include sm {
+            font-size     : 64px;
+            padding-left  : 1rem;
+            padding-right : 1rem;
+        }
+    }
+
+    &__minus {
+        padding-bottom : 12px;
+
+        @include sm {
+            padding-bottom : 18px;
+        }
+    }
+
+    &__counter-description {
+        align-self     : flex-end;
+        flex           : 1;
+        color          : #8d9bb0;
+        font-weight    : 800;
+        text-transform : uppercase;
+        font-size      : 20px;
+        max-width      : 180px;
+
+        @include sm {
+            font-size : 30px;
+            max-width : 100%;
+        }
+
+        @include md {
+            font-size : 42px;
+        }
+    }
+
+    &__price {
+        display : inline;
+    }
+}

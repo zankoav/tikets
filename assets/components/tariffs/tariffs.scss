@@ -1,17 +1,17 @@
 @import "./../../common/constants";
 
-$GREY_LIGHT : #CACFDD;
-$GREY_MIDDLE : #8D9BB0;
+$GREY_LIGHT : #cacfdd;
+$GREY_MIDDLE : #8d9bb0;
 $GREY_DARK : #565656;
-$RED : #F85C5D;
-$ORANGE : #FBBE49;
+$RED : #f85c5d;
+$ORANGE : #fbbe49;
 
 .tariffs {
     &__inner {
         margin     : {
             top    : 2rem;
             bottom : 2rem;
-        };
+        }
     }
 
     &__description {
@@ -23,21 +23,22 @@ $ORANGE : #FBBE49;
         padding    : {
             top    : 2rem;
             bottom : 2rem;
-        };
+        }
 
         @include sm {
             font-size : 26px;
             padding    : {
                 bottom : 4rem;
-            };
+            }
         }
 
         @include md {
             padding : {
                 top : 6rem;
-            };
+            }
         }
     }
+
 }
 
 .standard {
@@ -54,7 +55,7 @@ $ORANGE : #FBBE49;
             top    : 4rem;
             left   : 4rem;
             bottom : 4rem;
-        };
+        }
     }
 
     &__title {
@@ -96,14 +97,6 @@ $ORANGE : #FBBE49;
             flex-shrink      : 0;
             margin-right     : 1rem;
         }
-
-        &:last-child {
-            padding-bottom : 1rem;
-
-            @include md {
-                padding-bottom : 2rem;
-            }
-        }
     }
 }
 
@@ -130,7 +123,8 @@ $ORANGE : #FBBE49;
             top    : 4rem;
             left   : 4rem;
             bottom : 4rem;
-        };
+        }
+    ;
         transform  : translateX(100px);
     }
 
@@ -208,7 +202,8 @@ $ORANGE : #FBBE49;
             top    : 4rem;
             left   : 4rem;
             bottom : 4rem;
-        };
+        }
+    ;
     }
 
     &__title {
@@ -286,7 +281,8 @@ $ORANGE : #FBBE49;
             top    : 4rem;
             left   : 4rem;
             bottom : 4rem;
-        };
+        }
+    ;
         transform  : translateX(-104px);
     }
 
@@ -333,14 +329,6 @@ $ORANGE : #FBBE49;
             flex-shrink      : 0;
             margin-right     : 1rem;
         }
-
-        &:last-child {
-            padding-bottom : 1rem;
-
-            @include md {
-                padding-bottom : 2rem;
-            }
-        }
     }
 
     &__price {
@@ -350,5 +338,184 @@ $ORANGE : #FBBE49;
         font-weight : 800;
         line-height : 19px;
         margin      : 2rem 0;
+    }
+
+}
+
+.tarifs-contact-form {
+
+    &__form-group {
+        &_error {
+            .tarifs-contact-form__form-message {
+                display : block;
+            }
+        }
+    }
+
+    &__contact-form {
+        display          : none;
+        position         : fixed;
+        width            : 100%;
+        height           : 100%;
+        align-items      : center;
+        justify-content  : center;
+        background-color : $BLACK_06;
+        z-index          : 9999999;
+        top              : 0;
+        left             : 0;
+        animation        : fade-form .4s;
+
+        &_active {
+            display : flex;
+        }
+    }
+
+    &__glass {
+        position : absolute;
+        top      : 0;
+        left     : 0;
+        width    : 100%;
+        height   : 100%;
+    }
+
+    &__close-form {
+        position        : absolute;
+        right           : .5rem;
+        top             : .5rem;
+        width           : 2.5rem;
+        height          : 2.5rem;
+        background      : url('./../../images/close.svg') no-repeat;
+        background-size : contain;
+
+        @include md {
+            right  : .75rem;
+            top    : .75rem;
+            width  : 3rem;
+            height : 3rem;
+        }
+    }
+
+    &__form {
+        background-color : $WHITE;
+        border-radius    : 24px;
+        padding          : 32px 24px;
+        overflow         : hidden;
+        position         : relative;
+        margin-right     : 12px;
+        margin-left      : 12px;
+        animation        : translate-form .4s;
+
+        @include sm {
+            padding : 32px 64px;
+        }
+
+        @include md {
+            padding : 32px 84px;
+        }
+
+        textarea {
+            position : absolute;
+            top      : -4px;
+            left     : -4px;
+            width    : 2px;
+            height   : 2px;
+        }
+    }
+
+    &__form-title {
+        color         : $ORANGE;
+        font-size     : 36px;
+        line-height   : 1;
+        font-weight   : 800;
+        margin-bottom : 2rem;
+
+        @include sm {
+            max-width     : 240px;
+            margin-bottom : 4rem;
+        }
+
+        @include md {
+            font-size : 48px;
+            max-width : 300px;
+        }
+    }
+
+    &__form-input {
+        display            : block;
+        width              : 100%;
+        -webkit-appearance : none;
+        border             : 1px solid #979797;
+        padding            : 12px 8px;
+        color              : $RED;
+        text-transform     : lowercase;
+        font-weight        : 800;
+        font-size          : 20px;
+        line-height        : 24px;
+        border-radius      : 3px;
+
+        @include md {
+            font-size : 26px;
+            padding   : 24px 16px;
+        }
+
+        &::placeholder {
+            color : $RED;
+        }
+
+        &:focus {
+            outline : none;
+        }
+    }
+
+    &__form-message {
+        color         : $RED;
+        margin-top    : .5rem;
+        margin-bottom : 1rem;
+        display       : none;
+        font-size     : 14px;
+
+        @include sm {
+            font-size : 16px;
+        }
+    }
+
+    &__form-send {
+        background-color : $RED;
+        text-transform   : uppercase;
+        font-weight      : 800;
+        border-radius    : 3px;
+        padding          : 12px 48px;
+        display          : inline-block;
+        font-size        : 20px;
+        line-height      : 19px;
+        color            : $WHITE;
+
+        @include md {
+            font-size : 26px;
+            padding   : 20px;
+        }
+
+        @include lg {
+            padding : 20px 48px;
+        }
+
+    }
+}
+
+@keyframes fade-form {
+    0% {
+        opacity : 0;
+    }
+    100% {
+        opacity : 1;
+    }
+}
+
+@keyframes translate-form {
+    0% {
+        transform : translateY(-40px);
+    }
+    100% {
+        transform : translateY(0);
     }
 }
