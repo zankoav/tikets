@@ -1,6 +1,6 @@
 <?php
 	/**
-	 * Template Name: Checkout Order Template
+	 * Template Name: WEBPAY cancel Template
 	 */
 	get_header();
 	
