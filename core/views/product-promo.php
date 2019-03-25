@@ -1,11 +1,11 @@
 <?php
-	$prod_date_time    = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
 	$prod_address      = carbon_get_post_meta( get_the_ID(), 'prod_address' );
 	$reviewer_name     = carbon_get_post_meta( get_the_ID(), 'reviewer_name' );
 	$reviewer_image    = carbon_get_post_meta( get_the_ID(), 'reviewer_image' );
 	$reviewer_position = carbon_get_post_meta( get_the_ID(), 'reviewer_position' );
 	$reviewer_video    = carbon_get_post_meta( get_the_ID(), 'reviewer_video' );
 	$video_preview     = carbon_get_post_meta( get_the_ID(), 'video_preview' );
+	$prod_date_time    = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
 	
 	if (!empty( $prod_date_time )) {
 		$dateTime = new DateTime( $prod_date_time );

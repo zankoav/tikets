@@ -82,8 +82,9 @@
 			->where( 'post_type', '=', 'product' )
 			->add_fields( [
 				Field::make( 'date_time', 'prod_date_time', 'Дата, время' )
-				->set_storage_format( 'Y-m-d H:i:s' )
-				->set_input_format( 'Y-m-d H:i:s', 'Y-m-d H:i:s'),
+//				->set_storage_format( 'Y-m-d H:i:s' )
+//				->set_input_format( 'Y-m-d H:i:s', 'Y-m-d H:i:s')
+				,
 				Field::make( 'text', 'prod_address', 'Адрес' ),
 				Field::make( 'separator', 'crb_promo_separator', __( 'Отзыв' ) ),
 				Field::make( 'text', 'reviewer_name', __( 'Имя' ) )
