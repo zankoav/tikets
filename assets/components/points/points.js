@@ -6,7 +6,7 @@ import 'paroller.js';
 let bodyHeight = Math.max($(document).height(), $(window).height());
 
 
-const NUMBER_OF_POINTS = bodyHeight / 160;
+const NUMBER_OF_POINTS = bodyHeight / 240;
 const COLORS = [
     '#fbbe49',
     '#f85c5d',
