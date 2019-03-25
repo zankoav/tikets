@@ -25,7 +25,13 @@
 				Field::make( 'text', 'crb_address', __('Address') ),
 				Field::make( 'text', 'crb_unp', 'УНП' ),
 				
+				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
 				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
+				
+				Field::make( 'separator', 'programm_page_banner_op_sep', __( 'Баннер на страницах категории' ) ),
+				Field::make( 'image', 'prod_cat_banner_img', 'Баннер' )
+					->set_value_type( 'url' ),
+				Field::make( 'text', 'prod_cat_banner_link', 'Ссылка банера' ),
 				
 				//Field::make( 'oembed', 'crb_oembed', __( 'oEmbed' ) )
 			] );

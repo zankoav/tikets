@@ -1,22 +1,87 @@
 <?php
-/**
- * The Template for displaying products in a product category. Simply includes the archive template
- *
- * This template can be overridden by copying it to yourtheme/woocommerce/taxonomy-product_cat.php.
- *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @package 	WooCommerce/Templates
- * @version     1.6.4
- */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
-}
-
-wc_get_template( 'archive-product.php' );
+	
+	if (!defined( 'ABSPATH' )) {
+		exit; // Exit if accessed directly
+	}
+	get_header();
+	
+	$query_obj = get_queried_object();
+	
+	$prod_cat_banner_img     = carbon_get_theme_option( 'prod_cat_banner_img');
+	$prod_cat_banner_link     = carbon_get_theme_option( 'prod_cat_banner_link');
+?>
+	<div class="app">
+		<?php get_template_part( '/core/views/headerView' ); ?>
+		<main class="main">
+			<div class="realty">
+				<div class="container">
+					<div class="realty__inner">
+						<div class="realty__title"><?= $query_obj->name; ?></div>
+						<div class="realty__list">
+							<?php if (have_posts()): while(have_posts()):
+								the_post();
+								$main_speaker     = carbon_get_post_meta( get_the_ID(), 'main_speaker' );
+								$prod_address     = carbon_get_post_meta( get_the_ID(), 'prod_address' );
+								$prod_date_time   = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
+								$main_speaker_img = carbon_get_post_meta( get_the_ID(), 'main_speaker_img' );
+								
+								$dateTimeToStr = '';
+								if (!empty( $prod_date_time )) {
+									$dateTime = new DateTime( $prod_date_time );
+									$day      = $dateTime->format( 'j' );
+									if (!empty( $day ))
+										$dateTimeToStr .= $day . " ";
+									$month = getMonthNameRu( $dateTime->format( 'm' ) );
+									if (!empty( $month ))
+										$dateTimeToStr .= $month . " ";
+									$year = $dateTime->format( 'Y' );
+									if (!empty( $year ))
+										$dateTimeToStr .= $year;
+									$time = $dateTime->format( ' G:i' );
+									if (!empty( $time ))
+										$dateTimeToStr .= ", " . $time;
+								}
+								
+								?>
+								<div class="realty__item">
+									<div class="realty__speaker">
+										<img class="realty__image"
+											 src="<?= $main_speaker_img; ?>"
+											 title=""/>
+									</div>
+									<div class="realty__content">
+										<div class="realty__shell">
+											<div class="realty__envelope">
+												<div class="realty__name"><?= $main_speaker; ?></div>
+												<a href="<?= get_permalink(); ?>" class="realty__description">
+													<?= get_the_title(); ?>
+												</a>
+											</div>
+											<div class="realty__wrapper">
+												<div class="realty__date"><?= $dateTimeToStr; ?></div>
+												<div class="realty__address"><?= $prod_address; ?></div>
+											</div>
+											<img class="realty__plus"
+												 src="/wp-content/themes/tikets/src/icons/PlusIcon.1aca68.svg"
+												 alt="plus"
+												 title=""/>
+										</div>
+										<div class="realty__text"><?= get_the_content(); ?></div>
+									</div>
+								</div>
+							<?php endwhile; endif; ?>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container">
+				<a class="banner" href="<?= esc_url($prod_cat_banner_link); ?>">
+					<img class="banner__image" src="<?= esc_url($prod_cat_banner_img);?>" alt="banner"
+						 title=""/>
+				</a>
+			</div>
+		</main>
+		<?php get_template_part( '/core/views/footerView' ); ?>
+	</div>
+<?php
+	get_footer();

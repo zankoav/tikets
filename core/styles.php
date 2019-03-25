@@ -28,6 +28,9 @@
 			else if ( is_singular( 'product') ) {
 				wp_enqueue_style( 'program', Assets::getCss( 'program' ), false, null );
 			}
+			elseif (is_tax('product_cat')) {
+				wp_enqueue_style( 'category', Assets::getCss( 'category' ), false, null );
+			}
 			else if ( is_404() ) {
 				wp_enqueue_style( 'p404', Assets::getCss( 'p404' ), false, null );
 			}

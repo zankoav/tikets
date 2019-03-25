@@ -9,7 +9,12 @@
 		Container::make( 'post_meta', 'Дополнительная информация' )
 			->where( 'post_type', '=', 'product' )
 			->add_fields( [
-				Field::make( 'text', 'main_speaker', 'Главный спикер' ),
+				Field::make( 'text', 'main_speaker', 'Главный спикер' )
+					->set_width( 50 ),
+				Field::make( 'image', 'main_speaker_img', "Главный спикер(Избражение)" )
+					->set_help_text( "Отображается на странице списка программ" )
+					->set_value_type( 'url' )
+					->set_width( 50 ),
 				Field::make( 'complex', 'crb_partners', 'Партнеры' )
 					->add_fields( 'partner', [
 							Field::make( 'select', 'id', 'Выберите партнера' )
