@@ -39,14 +39,18 @@ $RED : #F85C5D;
     }
 
     &__item {
-        padding-bottom : 2rem;
+        &:not(:last-child) {
+            padding-bottom : 2rem;
+        }
 
         @include sm {
             display : flex;
         }
 
         @include md {
-            padding-bottom : 4rem;
+            &:not(:last-child) {
+                padding-bottom : 4rem;
+            }
         }
     }
 
