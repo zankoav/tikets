@@ -4,9 +4,11 @@
 		exit; // Exit if accessed directly
 	}
 	get_header();
-//wc_get_template( 'archive-product.php' );
+	
 	$query_obj = get_queried_object();
-
+	
+	$prod_cat_banner_img     = carbon_get_theme_option( 'prod_cat_banner_img');
+	$prod_cat_banner_link     = carbon_get_theme_option( 'prod_cat_banner_link');
 ?>
 	<div class="app">
 		<?php get_template_part( '/core/views/headerView' ); ?>
@@ -18,32 +20,33 @@
 						<div class="realty__list">
 							<?php if (have_posts()): while(have_posts()):
 								the_post();
-								$main_speaker = carbon_get_post_meta( get_the_ID(), 'main_speaker' );
-								$prod_address = carbon_get_post_meta( get_the_ID(), 'prod_address' );
-								$prod_date_time    = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
+								$main_speaker     = carbon_get_post_meta( get_the_ID(), 'main_speaker' );
+								$prod_address     = carbon_get_post_meta( get_the_ID(), 'prod_address' );
+								$prod_date_time   = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
+								$main_speaker_img = carbon_get_post_meta( get_the_ID(), 'main_speaker_img' );
 								
 								$dateTimeToStr = '';
 								if (!empty( $prod_date_time )) {
 									$dateTime = new DateTime( $prod_date_time );
 									$day      = $dateTime->format( 'j' );
-									if (!empty($day))
+									if (!empty( $day ))
 										$dateTimeToStr .= $day . " ";
-									$month    = getMonthNameRu( $dateTime->format( 'm' ) );
-									if (!empty($month))
+									$month = getMonthNameRu( $dateTime->format( 'm' ) );
+									if (!empty( $month ))
 										$dateTimeToStr .= $month . " ";
-									$year     = $dateTime->format( 'Y' );
-									if (!empty($year))
+									$year = $dateTime->format( 'Y' );
+									if (!empty( $year ))
 										$dateTimeToStr .= $year;
-									$time     = $dateTime->format( ' G:i' );
-									if (!empty($time))
-										$dateTimeToStr .=", " . $time;
+									$time = $dateTime->format( ' G:i' );
+									if (!empty( $time ))
+										$dateTimeToStr .= ", " . $time;
 								}
 								
 								?>
 								<div class="realty__item">
 									<div class="realty__speaker">
 										<img class="realty__image"
-											 src="/wp-content/themes/tikets/src/icons/realty.78b1a1.svg" alt="realty"
+											 src="<?= $main_speaker_img; ?>"
 											 title=""/>
 									</div>
 									<div class="realty__content">
@@ -72,8 +75,8 @@
 				</div>
 			</div>
 			<div class="container">
-				<a class="banner" href="#">
-					<img class="banner__image" src="/wp-content/themes/tikets/src/icons/banner.dfb529.png" alt="banner"
+				<a class="banner" href="<?= esc_url($prod_cat_banner_link); ?>">
+					<img class="banner__image" src="<?= esc_url($prod_cat_banner_img);?>" alt="banner"
 						 title=""/>
 				</a>
 			</div>
