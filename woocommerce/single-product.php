@@ -74,7 +74,10 @@
 		</main>
 		<?php get_template_part( '/core/views/footerView' ); ?>
 
+	</div >
+	<div style=" display: none; ">
+		<?php ifPaymentWasCorrect();?>
 	</div>
 <?php
+	
 	get_footer();
-

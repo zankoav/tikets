@@ -24,7 +24,6 @@ add_action('template_redirect', function () {
 	        wp_enqueue_script('home', Assets::getJs('home'), false, null, true);
         }
         elseif (is_page_template('template-checkout.php')) {
-//	        wp_enqueue_script( 'checkout_tickets', BASE_URL.'/core/myAjax/formManipulation.js', ['jquery'], null, true);
 	        wp_enqueue_script('checkout', Assets::getJs('checkout'), false, null, true);
         }
         elseif (is_singular('product')) {

@@ -21,7 +21,8 @@
 //	require_once __DIR__ . '/core/custom-types/index.php';
 	require_once __DIR__ . '/core/custom-types/partnerPostType.php';
 	require_once __DIR__ . '/core/carbon/partnerMeta.php';
-//	require_once __DIR__ . '/core/custom-types/programPostType.php';
+	require_once __DIR__ . '/core/carbon/shopOrderMeta.php';
+	
 
 	require_once __DIR__ . '/core/menu.php';
 	require_once __DIR__ . '/core/styles.php';
@@ -42,6 +43,7 @@
 	
 	require_once __DIR__ . '/core/addProductVarioatetionField.php';
 	require_once __DIR__ . '/core/myAjax/createOrder.php';
+	require_once __DIR__ . '/core/webpayRespons.php';
 	
 	
 	//----get permalink to checkout page

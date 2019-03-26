@@ -22,7 +22,7 @@
 				Field::make( 'text', 'crb_phone_mts', 'Номер телефон(МТС)' )
 					->set_width( 50 ),
 				Field::make( 'text', 'crb_email', 'Email' ),
-				Field::make( 'text', 'crb_address', __('Address') ),
+				Field::make( 'text', 'crb_address', __( 'Address' ) ),
 				Field::make( 'text', 'crb_unp', 'УНП' ),
 				
 				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
@@ -38,25 +38,34 @@
 		
 		// Add second options page under 'Basic Options'
 		Container::make( 'theme_options', 'Настройки WEBPAY' )
-			->set_page_parent( $basic_options_container ) // reference to a top level container
-			->add_fields( array(
+			->set_page_parent( $basic_options_container )// reference to a top level container
+			->add_fields( [
 				
-				Field::make( 'text', 'wsb_store','wsb_store' )
+				Field::make( 'text', 'wsb_store', 'Название магазина' )
 					->set_required( true ),
-				Field::make( 'text', 'wsb_secret_key','secret key' )
+				Field::make( 'text', 'wsb_storeid', 'ID магазина' )
 					->set_required( true ),
-				Field::make( 'text', 'wsb_storeid','wsb_storeid' )
+				Field::make( 'text', 'wsb_secret_key', 'Секретный ключ' )
 					->set_required( true ),
-				Field::make( 'select', 'wsb_return_url', 'Выберите страницу для удачного заказа' )
+				
+				Field::make( 'text', 'webpay_user_name', 'Имя пользователя WEBPAY' )
+					->set_required( true ),
+				Field::make( 'text', 'webpay_user_password', 'Пароль пользователя WEBPAY' )
+					->set_required( true ),
+				
+				Field::make( 'radio', 'payment_test_mode', "Оплата в теставом режиме" )
+					->set_options( [
+						'0' => 'проводить реальную оплату',
+						'1' => 'производить тестовую оплату',
+					] ),
+				
+				Field::make( 'select', 'wsb_cancel_return_url', 'Выберите страницу для неудачной оплата заказа' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
-				Field::make( 'select', 'wsb_cancel_return_url','Выберите страницу для неудачного заказа' )
+				Field::make( 'select', 'wsb_notify_url', 'Выберите страницу для извещения о оплате' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
-				Field::make( 'select', 'wsb_notify_url','Выберите страницу для извещения о оплате' )
-					->add_options( 'page_selecting' )
-					->set_required( true ),
-			) );
+			] );
 	}
 	
 	add_action( 'after_setup_theme', 'crb_load' );
@@ -64,13 +73,13 @@
 		\Carbon_Fields\Carbon_Fields::boot();
 	}
 	
-	function page_selecting() {
-		$my_query = new WP_Query();
-		$query_news =$my_query->query(['post_type' => 'page']);
+	function page_selecting(){
+		$my_query   = new WP_Query();
+		$query_news = $my_query->query( [ 'post_type' => 'page' ] );
 		
-		$news_list =[];
-		foreach( $query_news  as $news ){
-			$news_list[$news->ID] = $news->post_title;
+		$news_list = [];
+		foreach($query_news as $news) {
+			$news_list[ $news->ID ] = $news->post_title;
 		}
-		return $news_list ;
+		return $news_list;
 	}
