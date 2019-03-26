@@ -28,6 +28,9 @@
 				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
 				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
 				
+				Field::make( 'separator', 'partnership_mail_op_sep',  'Email для формы партнерства'  ),
+				Field::make( 'text', 'partnership_mail',  'Email'  ),
+				
 				Field::make( 'separator', 'programm_page_banner_op_sep', __( 'Баннер на страницах категории' ) ),
 				Field::make( 'image', 'prod_cat_banner_img', 'Баннер' )
 					->set_value_type( 'url' ),
