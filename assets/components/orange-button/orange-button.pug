@@ -1,2 +1,3 @@
-mixin orange-button(text)
-    +b.orange-button(href="#")= text
+mixin orange-button(text, modClass)
+    - var mod = modClass ? modClass: '';
+    a(class=`orange-button ${mod}`, href="#")= text

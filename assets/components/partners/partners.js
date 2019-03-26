@@ -22,4 +22,4 @@ new Swiper('.partners__container', {
             spaceBetween: 32
         }
     }
-})
+});

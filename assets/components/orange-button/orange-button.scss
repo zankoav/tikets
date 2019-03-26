@@ -1,16 +1,27 @@
 @import "./../../common/constants";
 
-$ORANGE : #FBBE49;
+$ORANGE : #fbbe49;
 
 .orange-button {
     color            : $WHITE;
     background-color : $ORANGE;
     border-radius    : 3px;
     display          : inline-block;
-    font-family      : 'Open Sans', sans-serif;
     font-size        : 18px;
-    font-weight      : bold;
+    font-weight      : 800;
     text-align       : center;
     text-transform   : uppercase;
     padding          : 1rem 2rem;
+
+    &__vip {
+        background : linear-gradient(180deg, #F44547 0%, #F85C5D 100%);
+        box-shadow : 0 5px 9px rgba(155, 184, 211, 0.5);
+
+        &__type {
+            &_1 {
+                padding   : .75rem 3rem;
+                font-size : 16px;
+            }
+        }
+    }
 }
