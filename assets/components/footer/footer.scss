@@ -112,6 +112,12 @@
         }
     }
 
+    &__address_image {
+        width: 100%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
     &__copyright_development {
         display: flex;
         align-items: center;
