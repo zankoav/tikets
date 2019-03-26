@@ -3,5 +3,5 @@
 	/**
 	 * Template Name: WEBPAY notify Template
 	 */
- 
-	 
+	
+	ifPaymentWasCorrect();

@@ -44,8 +44,12 @@
 		curl_setopt( $curl, CURLOPT_SSL_VERIFYHOST, 0 );
 		$response = curl_exec( $curl );
 		curl_close( $curl );
-		var_dump( simplexml_load_string($response));
+		$result =  simplexml_load_string($response);
 		
-		
+		if ($result->fields->payment_type == 1 || $result->fields->payment_type == 4 || $result->fields->payment_type == 10){
+			$order->update_status('completed');
+		}elseif($result->fields->payment_type == 5 || $result->fields->payment_type == 7 || $result->fields->payment_type == 9){
+			$order->update_status('failed');
+		}
 		
 	}
