@@ -67,8 +67,8 @@
 			'*scart',
 			'wsb_currency_id'              => 'BYN',
 			'wsb_version'                  => '2',
-			'wsb_test'                     => '1',
-			'wsb_return_url'               => get_permalink($wsb_return_url ),
+			'wsb_test'                     => $test_mode,
+			'wsb_return_url'               => get_permalink($form_data['product_id'] ),
 			'wsb_cancel_return_url'        => get_permalink($wsb_cancel_return_url),
 			'wsb_notify_url'               => get_permalink($wsb_notify_url),
 		];
