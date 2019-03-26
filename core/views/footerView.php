@@ -43,8 +43,11 @@
 			<div class="col-12 col-sm-3 pt-10 pt-sm-00">
 				<div class="footer__address">
 					<div class="footer__title pt-05 pb-05 pt-sm-00 pb-sm-00">Адрес</div>
-					<div class="footer__address footer__address_text"><?= $address;?>
+					<div class="footer__address footer__address_text"><?= $address;?></div>
+					<div class="footer__address footer__address_text">Режим работы: 9:00-18:00
 					</div>
+					<img class="footer__address footer__address_image"
+						 src="/wp-content/themes/tikets/src/icons/logo-payment-system.d23a68.png" alt="Payment" title=""/>
 				</div>
 			</div>
 		</div>
