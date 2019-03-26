@@ -1,7 +1,7 @@
 <?php
 	function ifPaymentWasCorrect(){
-		$passwordWP = carbon_get_theme_option('webpay_user_name');
-		$nameWP = carbon_get_theme_option('webpay_user_password');
+		$nameWP = carbon_get_theme_option('webpay_user_name');
+		$passwordWP = carbon_get_theme_option('webpay_user_password');
 		$payment_mode = carbon_get_theme_option('payment_test_mode');
 		$urlTarget = 'https://sandbox.webpay.by';
 		
@@ -44,7 +44,7 @@
 		curl_setopt( $curl, CURLOPT_SSL_VERIFYHOST, 0 );
 		$response = curl_exec( $curl );
 		curl_close( $curl );
-		var_dump($response);
+		var_dump( simplexml_load_string($response));
 		
 		
 		
