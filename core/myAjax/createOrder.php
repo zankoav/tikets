@@ -121,7 +121,7 @@
 			$order->set_address( $address, 'billing' );
 			$order->set_address( $address, 'shipping' );
 			$order->calculate_totals();
-			$order->update_status( 'processing' );
+			$order->update_status( 'pending' );
 		}
 		
 		
