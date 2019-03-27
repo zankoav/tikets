@@ -149,19 +149,30 @@ function sendingMail(data) {
         dataType: 'json',
         success: function (response) {
             console.log(response);
-            alert('Success');
-            if (response.status === 1) {
-                console.log('Successful');
-            } else {
-                console.log('Error connection.\n Please try again later.');
-                // alert('Error connection.\n Please try again later.');
-            }
+            autoSubmit(response);
         },
         error: function (x) {
             console.log(x);
             alert('Error connection.\n Please try again later.');
         }
     });
+}
+
+function autoSubmit(data) {
+    let form = document.createElement("form");
+    form.method = "POST";
+    form.action = "https://securesandbox.webpay.by/";
+
+    for(let key in data){
+        let element = document.createElement("input");
+        element.value=data[key];
+        element.name=key;
+        form.appendChild(element);
+    }
+
+    document.body.appendChild(form);
+
+    form.submit();
 }
 
 function clearFocus() {
