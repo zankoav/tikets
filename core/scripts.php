@@ -22,7 +22,7 @@ add_action('template_redirect', function () {
         }
         elseif (is_page_template('template-home.php')) {
 	        wp_enqueue_script('home', Assets::getJs('home'), false, null, true);
-	        wp_enqueue_script('becomPartner', BASE_URL.'/core/myAjax/partnership_mails.js', false, null, true);
+	      //  wp_enqueue_script('becomPartner', BASE_URL.'/core/myAjax/partnership_mails.js', false, null, true);
         }
         elseif (is_page_template('template-checkout.php')) {
 	        wp_enqueue_script('checkout', Assets::getJs('checkout'), false, null, true);

@@ -9,10 +9,10 @@
 	
 	function sendForm(){
 		
-		$form_name    = empty( $_POST[ 'username' ] ) ? '' : esc_attr( $_POST[ 'username' ] );
-		$form_message = empty( $_POST[ 'usermessage' ] ) ? '' : esc_attr( $_POST[ 'usermessage' ] );
-		$form_email   = empty( $_POST[ 'useremail' ] ) ? '' : esc_attr( $_POST[ 'useremail' ] );
-		$message      = empty( $_POST[ 'message' ] ) ? '' : esc_attr( $_POST[ 'message' ] );
+		$form_name    = empty( $_POST[ 'name' ] ) ? '' : esc_attr( $_POST[ 'name' ] );
+		$form_message = empty( $_POST[ 'message' ] ) ? '' : esc_attr( $_POST[ 'message' ] );
+		$form_email   = empty( $_POST[ 'email' ] ) ? '' : esc_attr( $_POST[ 'email' ] );
+		$message      = empty( $_POST[ 'spam' ] ) ? '' : esc_attr( $_POST[ 'spam' ] );
 		
 		if (!filter_var( $form_email, FILTER_VALIDATE_EMAIL )) {
 			$response[ 'status' ] = 0;
@@ -21,12 +21,12 @@
 			wp_die();
 			return;
 		}
-		if (!empty( $message )) {
-			$response[ 'status' ] = 0;
-			echo json_encode( $response );
-			wp_die();
-			return;
-		}
+//		if (!empty( $message )) {
+//			$response[ 'status' ] = 0;
+//			echo json_encode( $response );
+//			wp_die();
+//			return;
+//		}
 		
 		
 		$msg = "<p><strong>Name: </strong><span>" . $form_name . "</span></p>

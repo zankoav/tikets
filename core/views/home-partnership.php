@@ -15,7 +15,7 @@
 				</div>
 			</div>
 			<form id="partnership__form" method="POST" action="/">
-				<div class="row">
+				<div class="partnership__content row">
 					<div class="col-12 col-sm-5 pb-sm-00">
 						<div class="partnership__input pb-10">
 							<input class="input" type="text" name="username" placeholder="имя">
@@ -32,10 +32,11 @@
 					<div class="partnership__textarea partnership__textarea_oh">
 						<textarea class="textarea" name="message" placeholder=""></textarea>
 					</div>
-					<div class="partnership__response"></div>
-					<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-20 pt-md-40">
+					<div class="partnership__response">
+					</div>
+					<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-10">
 						<div class="partnership__button">
-							<button class="button button__color_red" type="submit" name="userbutton" id="send_partnership">Оставить заявку</button>
+							<button class="button button__color_red" type="submit" name="userbutton">Записаться</button>
 						</div>
 					</div>
 				</div>
