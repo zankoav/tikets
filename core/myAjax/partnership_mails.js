@@ -12,8 +12,8 @@ jQuery(function ($) {
             useremail: useremail,
             usermessage: usermessage,
         };
-        jQuery.post( mailAjax, data, function(response) {
-            $('.form-result').html(response);
+        jQuery.post( tikets_ajax['url'], data, function(response) {
+           // $('.form-result').html(response);
             console.log('done');
         });
     })
