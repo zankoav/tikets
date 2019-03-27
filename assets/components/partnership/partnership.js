@@ -52,9 +52,3 @@ $('#partnership__form').submit(function (event) {
     });
 });
 
-
-$('.partnership__button').click(function () {
-    $('.partnership__answer').addClass('partnership__answer_active');
-
-});
-
