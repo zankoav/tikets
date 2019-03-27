@@ -3,12 +3,6 @@
 $GREY : #565656;
 
 .partnership {
-
-
-    &__inner {
-
-    }
-
     &__download {
         color : $GREY;
 
@@ -42,25 +36,14 @@ $GREY : #565656;
         padding-left : 1rem;
     }
 
-
-    &__input {
-
-    }
-
     &__textarea {
         height : 100%;
     }
-
 
     &__textarea_oh {
         overflow : hidden;
         width    : 2px;
         height   : 2px;
         position : absolute;
-    }
-
-
-    &__button {
-
     }
 }
