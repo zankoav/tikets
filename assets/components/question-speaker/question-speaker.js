@@ -1,38 +1,43 @@
-import './partnership.scss';
+import './question-speaker.scss';
 import $ from 'jquery';
 import {Validator} from "../../utils/_validator";
 
-$('#partnership__form').submit(function (event) {
+$('#question-speaker__form').submit(function (event) {
     event.preventDefault();
     let email = $(this).find("[name*='useremail']").val();
     let name = $(this).find("[name*='username']").val();
     let message = $(this).find("[name*='usermessage']").val();
     let spam = $(this).find("[name*='message']").val();
+    let programName = $(this).find("[name*='programName']").val();
+    let speakerName = $(this).find("[name*='speakerName']").val();
+
 
     if (name.length === 0) {
         console.log('username', Validator.ERROR_EMPTY_FIELD);
-        $('.partnership__response').text('Поле обязательно для заполнения');
+        $('.question-speaker__response').text('Поле обязательно для заполнения');
         return;
     }
 
     if (message.length === 0) {
         console.log('usermessage', Validator.ERROR_EMPTY_FIELD);
-        $('.partnership__response').text('Поле обязательно для заполнения');
+        $('.question-speaker__response').text('Поле обязательно для заполнения');
         return;
     }
 
     if (!Validator.email(email)) {
         console.log('useremail', Validator.ERROR_EMAIL_FIELD);
-        $('.partnership__response').text('Некорректный e-mail');
+        $('.question-speaker__response').text('Некорректный e-mail');
         return;
     }
 
     let data = {
-        action: 'sendForm',
+        action: 'questionSpeaker',
         name: name,
         email: email,
         message: message,
-        spam: spam
+        spam: spam,
+        programName: programName,
+        speakerName: speakerName
     };
 
     $.ajax({
@@ -43,16 +48,16 @@ $('#partnership__form').submit(function (event) {
             console.log(response);
             let resp = JSON.parse(response);
             if(resp.status === 1) {
-                $('.partnership__response').text(resp.text);
+                $('.question-speaker__response').text(resp.text);
             }
             if(resp.status === 0) {
-                $('.partnership__response').text(resp.text);
+                $('.question-speaker__response').text(resp.text);
             }
-            jQuery('#partnership__form')[0].reset();
+            jQuery('#question-speaker__form')[0].reset();
         },
         error: function (x, y, z) {
             console.log(x);
-            $('.partnership__response').text('ОШИБКА!');
+            $('.question-speaker__response').text('ОШИБКА!');
         }
     });
 });
