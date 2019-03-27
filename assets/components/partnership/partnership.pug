@@ -7,7 +7,7 @@ mixin partnership()
                     +e.download.pb-05.pb-sm-10(href="http://tut.by/sdvbsjbdv.pdf") скачайте коммерческое предложение для партнеров скачайте коммерческое предложение для партнеров
                     +e.download(href="http://tut.by/sdvbsjbdv.pdf") скачайте коммерческое предложение для партнеров
             form(id="partnership__form" method='POST' action='/')
-                .row
+                +e.content.row
                     .col-12.col-sm-5.pb-sm-00
                         +e.input.pb-10
                             +input("text", "username","имя")
@@ -18,6 +18,7 @@ mixin partnership()
                             +textarea("usermessage" , "CООБЩЕНИЕ")
                     +e.textarea_oh
                         +textarea("message")
+                    +e.response
                     .col-12.col-sm-6.col-offset-sm-2.pt-sm-20.pt-md-40
                         +e.button
                             +button('Записаться','button__color_red',"submit","userbutton")
