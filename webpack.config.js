@@ -31,6 +31,7 @@ let entries = {
     single: './single.js',
     p404: './p404.js',
     contacts: './contacts.js',
+    questionSpeaker: './questionSpeaker.js',
 };
 
 let pugs = {
@@ -54,6 +55,9 @@ let pugs = {
     },
     contacts : {
         title: "contacts title"
+    },
+    questionSpeaker: {
+        title: "question speaker title"
     }
 };
 

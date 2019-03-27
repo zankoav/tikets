@@ -1,0 +1,39 @@
+@import "./../../common/constants";
+
+$GREY : #565656;
+
+.question-speaker {
+    &__content {
+        position : relative;
+    }
+
+    &__response {
+        font-family  : 'Open Sans', sans-serif;
+        font-weight  : 800;
+        font-size    : 18px;
+        width        : 100%;
+        padding-top  : 1rem;
+        padding-left : 1rem;
+    }
+
+    &__program-name {
+
+    }
+
+
+    &__speaker-name {
+
+    }
+
+
+    &__textarea {
+        height : 100%;
+    }
+
+    &__textarea_oh {
+        overflow : hidden;
+        width    : 2px;
+        height   : 2px;
+        position : absolute;
+    }
+}

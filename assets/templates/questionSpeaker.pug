@@ -4,14 +4,11 @@ html
     +head()
     body(class="body_overflow_hidden")
         +loader('loader__spinner_egg')
-        .app
+        .app.app__h_100vh
             +header()
             main.main
                 .container
-                    +title('Название новости','title_grey title_default mt-20 mt-sm-40', 'h1')
-                    .row.mt-20.mb-30.mt-sm-40.mb-sm-40.pb-sm-40
-                        .col-12.col-offset-lg-2.col-lg-8
-                            .main__autor Игорь Манн
-                            .main__description.mt-20.mb-20.mt-sm-10.mb-sm-40 как улучшить маркетинг в компании за 3 рабочих недели
-
+                    +title('Задать вопрос спикеру','title_grey title_default mt-20 mt-sm-40', 'h1')
+                    .mt-30.mb-30
+                        +question-speaker()
             +footer()
