@@ -32,11 +32,15 @@ let entries = {
     p404: './p404.js',
     contacts: './contacts.js',
     questionSpeaker: './questionSpeaker.js',
+    checkout: './checkout.js',
 };
 
 let pugs = {
     home: {
         title: "home title"
+    },
+    checkout: {
+        title: "checkout title"
     },
     program: {
         title: "program title"
@@ -53,7 +57,7 @@ let pugs = {
     p404: {
         title: "p404 title"
     },
-    contacts : {
+    contacts: {
         title: "contacts title"
     },
     questionSpeaker: {
@@ -63,7 +67,7 @@ let pugs = {
 
 const NODE_ENV = process.env.NODE_ENV;
 const DEV_MODE = NODE_ENV == 0;
-const WP = NODE_ENV === "wp-production";
+const WP = (NODE_ENV == 2)? true : false;
 
 if (!WP) {
 

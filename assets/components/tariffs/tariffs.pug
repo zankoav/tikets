@@ -13,11 +13,31 @@ mixin tariffs()
                     .col-11.col-sm-5.col-offset-sm-2
                         +business()
                         +platinum()
-                +seminarforu()
+
+
+mixin tarifs-contact-form()
+    +b.tarifs-contact-form
+        +e.contact-form
+            +e.glass
+            +e.FORM.form(action='/', method='POST')
+                +e.close-form(href='#')
+                input(type='hidden', name='tariff-name')
+                textarea(name='message')
+                +e.form-title Оставить заявку
+                +e.form-group.mb-05
+                    +e.INPUT.form-input(type='text', name='user-name', placeholder='имя')
+                    +e.form-message
+                +e.form-group.mb-05
+                    +e.INPUT.form-input(type='text', name='user-phone', placeholder='телефон')
+                    +e.form-message
+                +e.form-group.mb-20
+                    +e.INPUT.form-input(type='email', name='user-email', placeholder='почта')
+                    +e.form-message
+                +e.form-send(href="#") Записаться
 
 
 mixin standard()
-    +b.standard
+    +b.standard(data-tariff-name='standard')
         +e.title стандарт
         +e.UL.list
             +e.list-item Рабочий материал для обучения
@@ -30,7 +50,7 @@ mixin standard()
 
 
 mixin vip()
-    +b.vip
+    +b.vip(data-tariff-name='vip')
         +e.title vip
         +e.UL.list
             +e.list-item Рабочий материал для обучения
@@ -53,7 +73,7 @@ mixin vip()
 
 
 mixin business()
-    +b.business
+    +b.business(data-tariff-name='business')
         +e.title business
         +e.UL.list
             +e.list-item Рабочий материал для обучения
@@ -72,7 +92,7 @@ mixin business()
 
 
 mixin platinum()
-    +b.platinum
+    +b.platinum(data-tariff-name='platinum')
         +e.title platinum
         +e.UL.list
             +e.list-item Рабочий материал для обучения

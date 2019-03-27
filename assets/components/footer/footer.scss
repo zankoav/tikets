@@ -15,7 +15,6 @@
         border-top: 1px solid #979797;
     }
 
-
     &__title {
         font-weight: bold;
         line-height: 14px;
@@ -112,6 +111,13 @@
             text-align: left;
         }
     }
+
+    &__address_image {
+        width: 100%;
+        height: auto;
+        margin-top: 0.5rem;
+    }
+
 
     &__copyright_development {
         display: flex;

@@ -28,6 +28,7 @@ $('#partnership__form').submit(function (event) {
     }
 
     let data = {
+        action: 'sendForm',
         name: name,
         email: email,
         message: message,

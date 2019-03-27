@@ -34,3 +34,26 @@ $GREY : #e4e9ee;
         text-transform : initial;
     }
 }
+
+.title-autor {
+    font-size     : 20px;
+    line-height   : 19px;
+    color         : #565656;
+    margin-bottom : 1rem;
+
+    @include sm {
+        margin-bottom : .5rem;
+    }
+}
+
+.sub-title {
+    color          : $ORANGE;
+    text-transform : uppercase;
+    font-size      : 36px;
+    line-height    : 1;
+    font-weight    : 800;
+
+    @include sm {
+        font-size : 42px;
+    }
+}
