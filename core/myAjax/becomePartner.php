@@ -12,11 +12,18 @@
 		$form_name    = empty( $_POST[ 'username' ] ) ? '' : esc_attr( $_POST[ 'username' ] );
 		$form_message = empty( $_POST[ 'usermessage' ] ) ? '' : esc_attr( $_POST[ 'usermessage' ] );
 		$form_email   = empty( $_POST[ 'useremail' ] ) ? '' : esc_attr( $_POST[ 'useremail' ] );
+		$message      = empty( $_POST[ 'message' ] ) ? '' : esc_attr( $_POST[ 'message' ] );
 		
-		if (filter_var( $form_email, FILTER_VALIDATE_EMAIL )) {
-			//echo("$form_email is a valid email address");
-		} else {
-			echo("$form_email is not a valid email address");
+		if (!filter_var( $form_email, FILTER_VALIDATE_EMAIL )) {
+			$response[ 'status' ] = 0;
+			$response[ 'text' ]   = "$form_email is not a valid email address";
+			echo json_encode( $response );
+			wp_die();
+			return;
+		}
+		if (!empty( $message )) {
+			$response[ 'status' ] = 0;
+			echo json_encode( $response );
 			wp_die();
 			return;
 		}
@@ -28,15 +35,16 @@
 		
 		$mail_to = carbon_get_theme_option( 'partnership_mail' );
 		$subject = 'Партнерство';
-		$headers = 'From:'. $form_email .' <' . $form_email . '>' . "\r\n";
+		$headers = 'From:' . $form_email . ' <' . $form_email . '>' . "\r\n";
 		
 		if (wp_mail( $mail_to, $subject, $msg, $headers )) {
-			$response = 'сообщение отправлено';
+			$response[ 'text' ]   = 'сообщение отправлено';
+			$response[ 'status' ] = 1;
 		} else {
-			$response = 'ошибка при отправке';
+			$response[ 'text' ]   = 'ошибка при отправке';
+			$response[ 'status' ] = 0;
 		}
 		
-		
-		echo $response;
+		echo json_encode( $response );
 		wp_die();
 	}

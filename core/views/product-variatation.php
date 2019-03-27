@@ -1,18 +1,32 @@
 <?php
-	//	$main_speaker  = carbon_get_post_meta( get_the_ID(), 'main_speaker' );
-	
 	$product    = wc_get_product( get_the_ID() );
 	$variations = $product->get_available_variations();
 	foreach($variations as $variation) {
-		if ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "busines") {
-			$business_ticket = $variation;
-		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "vip") {
-			$vip_ticket = $variation;
-		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "platinum") {
-			$platinum_ticket = $variation;
-		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "standard") {
-			$standard_ticket = $variation;
+		foreach($variation[ "attributes" ] as $attribute) {
+			if ($attribute == "busines"){
+				$business_ticket = $variation;
+			}
+			if ($attribute == "vip"){
+				$vip_ticket = $variation;
+			}
+			if ($attribute == "platinum"){
+				$platinum_ticket = $variation;
+			}
+			if ($attribute == "standard"){
+//				var_dump($variation);
+				$standard_ticket = $variation;
+			}
 		}
+//		if ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "busines") {
+//			$business_ticket = $variation;
+//		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "vip") {
+//			$vip_ticket = $variation;
+//		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "platinum") {
+//			$platinum_ticket = $variation;
+//		} elseif ($variation[ "attributes" ][ "attribute_pa_tip-bileta" ] == "standard") {
+//			var_dump($variation);
+//			$standard_ticket = $variation;
+//		}
 	}
 	$checkoutLink = getCheckoutPermaLink();
 ?>
