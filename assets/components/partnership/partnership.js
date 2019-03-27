@@ -37,9 +37,24 @@ $('#partnership__form').submit(function (event) {
         data: data,
         success: function (response) {
             console.log(response);
+            let resp = JSON.parse(response);
+            if(resp.status === 1) {
+                $('.partnership__response').text(resp.text);
+            }
+            if(resp.status === 0) {
+                $('.partnership__response').text(resp.text);
+            }
         },
         error: function (x, y, z) {
             console.log(x);
+            $('.partnership__response').text('ОШИБКА!');
         }
     });
 });
+
+
+$('.partnership__button').click(function () {
+    $('.partnership__answer').addClass('partnership__answer_active');
+
+});
+
