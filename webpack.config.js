@@ -63,7 +63,7 @@ let pugs = {
 
 const NODE_ENV = process.env.NODE_ENV;
 const DEV_MODE = NODE_ENV == 0;
-const WP = NODE_ENV === "wp-production";
+const WP = (NODE_ENV == 2)? true : false;
 
 if (!WP) {
 

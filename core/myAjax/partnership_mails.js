@@ -14,16 +14,25 @@ jQuery(function ($) {
             usermessage: usermessage,
             message: message,
         };
-        jQuery.post( tikets_ajax['url'], data, function(response) {
-           // $('.form-result').html(response);
-            let a = JSON.parse(response);
-            if(a.status == 1){
-                console.log(a.text);
+
+        $.ajax({
+            type: 'POST',
+            url: tikets_ajax.url,
+            data: data,
+            success: function (response) {
+                console.log(response);
+                let resp = JSON.parse(response);
+                if(resp.status === 1) {
+                    $('.partnership__response').text(resp.text);
+                }
+                if(resp.status === 0) {
+                    $('.partnership__response').text(resp.text);
+                }
+            },
+            error: function (x, y, z) {
+                console.log(x);
+                $('.partnership__response').text('ОШИБКА!');
             }
-            if(a.status == 1){
-                console.log(a.text);
-            }
-            console.log(JSON.parse(response));
         });
     })
 });
