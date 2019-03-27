@@ -29,6 +29,20 @@ $GREY : #565656;
         }
     }
 
+    &__content {
+        position : relative;
+    }
+
+    &__response {
+        font-family  : 'Open Sans', sans-serif;
+        font-weight  : 800;
+        font-size    : 18px;
+        width        : 100%;
+        padding-top  : 1rem;
+        padding-left : 1rem;
+    }
+
+
     &__input {
 
     }
