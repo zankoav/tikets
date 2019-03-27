@@ -161,6 +161,7 @@ function sendingMail(data) {
 function autoSubmit(data) {
     let form = document.createElement("form");
     form.method = "POST";
+    console.log("check: " + data['w_t']);
     form.action = "https://securesandbox.webpay.by/";
 
     for(let key in data){
