@@ -32,6 +32,7 @@
 					<div class="partnership__textarea partnership__textarea_oh">
 						<textarea class="textarea" name="message" placeholder=""></textarea>
 					</div>
+					<div class="partnership__response"></div>
 					<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-20 pt-md-40">
 						<div class="partnership__button">
 							<button class="button button__color_red" type="submit" name="userbutton" id="send_partnership">Оставить заявку</button>
