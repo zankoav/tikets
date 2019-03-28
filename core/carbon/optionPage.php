@@ -44,6 +44,11 @@
 				Field::make( 'select', 'question_link', 'Выберите страницы' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
+				
+				Field::make( 'separator', 'crb_public_offer_link_op_sep', __( 'Страница для Публичной оферты' ) ),
+				Field::make( 'select', 'public_offer_link', 'Выберите страницы' )
+					->add_options( 'page_selecting' )
+					->set_required( true ),
 			] );
 		
 		// Add second options page under 'Basic Options'

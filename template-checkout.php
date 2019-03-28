@@ -4,7 +4,7 @@
 	 */
 	
 	$productID  = $_GET[ 'seminar' ];
-	$tariffID  = $_GET[ 'tariff' ];
+	$tariffID   = $_GET[ 'tariff' ];
 	$_product   = wc_get_product( $productID );
 	$prod_exist = empty( $_product ) ? false : true;
 	
@@ -22,6 +22,7 @@
 	$wsb_return_url        = carbon_get_theme_option( 'wsb_return_url' );
 	$wsb_cancel_return_url = carbon_get_theme_option( 'wsb_cancel_return_url' );
 	$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
+	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
 	
 	$main_speaker = carbon_get_post_meta( $productID, 'main_speaker' );
 	
@@ -29,16 +30,16 @@
 	$variations = $_product->get_available_variations();
 	
 	$variations_select = [];
-	$currentTariff = [];
+	$currentTariff     = [];
 	foreach($variations as $variation) {
 		$variations_select[] = [
 			'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
 			'$price'       => $variation[ 'display_regular_price' ],
 			'variation_id' => (int)$variation[ 'variation_id' ],
 		];
-		
+
 //set current tariff
-		if (!empty($tariffID)&& $variation[ 'variation_id' ] == $tariffID){
+		if (!empty( $tariffID ) && $variation[ 'variation_id' ] == $tariffID) {
 			$currentTariff = [
 				'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
 				'$price'       => $variation[ 'display_regular_price' ],
@@ -46,8 +47,8 @@
 			];
 		}
 	}
-	if (empty($currentTariff)){
-		$currentTariff  = $variations_select[0];
+	if (empty( $currentTariff )) {
+		$currentTariff = $variations_select[ 0 ];
 	}
 
 ?>
@@ -107,7 +108,7 @@
 								$price = $item[ '$price' ];
 								$variation_id = $item[ 'variation_id' ];
 								$is_current_tariff = '';
-								if (!empty($currentTariff) && $variation_id == $currentTariff['variation_id']){
+								if (!empty( $currentTariff ) && $variation_id == $currentTariff[ 'variation_id' ]) {
 									$is_current_tariff = 'selected';
 								}
 								?>
@@ -148,7 +149,7 @@
 								</div>
 								<div class="promokod__counter-description">на сумму
 									<div class="promokod__price">
-										<?= $currentTariff['$price'];?>
+										<?= $currentTariff[ '$price' ]; ?>
 									</div>
 									рублей
 								</div>
@@ -161,7 +162,7 @@
 						</div>
 						<div class="col-12 col-sm-11">
 							<p class="promokod__description">
-								Нажимая на кнопку “Оплатить”, Вы принимаете условия Публичной оферты
+								Нажимая на кнопку “Оплатить”, Вы принимаете условия <a href="<?= get_permalink($public_offer_link)?>">Публичной оферты</a>
 							</p>
 						</div>
 					</div>
