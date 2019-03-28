@@ -48,7 +48,7 @@
 <!--							<div class="tabs__content">Content Онлайн-трансляция</div>-->
 						</div>
 					</div>
-					<?php get_template_part( '/core/views/home', 'seminarforu' ) ?>
+					<?php get_template_part( '/core/views/product', 'seminarforu' ) ?>
 					<?php //wc_get_template_part( 'content', 'single-product' ); ?>
 				
 				<?php endwhile; // end of the loop. ?>

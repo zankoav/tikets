@@ -1,0 +1,127 @@
+
+    <main class="main">
+      <div class="checkout">
+        <div class="container">
+          <h2 class="title title_default title_grey mt-20 mb-20 mt-md-40 mb-lg-40">Оформление заказа</h2>
+          <p class="title-autor ">Игорь Манн</p>
+          <div class="row">
+            <div class="col-12 col-md-10 col-lg-8 col-hd-7">
+              <p class="sub-title mb-20 mb-40">Как улучшить маркетинг в компании за 3 рабочих недели</p>
+            </div>
+          </div>
+          <form class="checkout__form" action="/" method="post" data-program-id="10">
+            <div class="checkout-form-group row">
+              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Телефон
+                </label>
+              </div>
+              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-phone" type="text" name="user-phone" required="required"/>
+                <div class="checkout-form-group__message">
+                </div>
+              </div>
+            </div>
+            <div class="checkout-form-group row">
+              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">Имя
+                </label>
+              </div>
+              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-name" type="text" name="user-name" required="required"/>
+                <div class="checkout-form-group__message">
+                </div>
+              </div>
+            </div>
+            <div class="checkout-form-group row">
+              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-email">Email
+                </label>
+              </div>
+              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-email" type="email" name="user-email" required="required"/>
+                <div class="checkout-form-group__message">
+                </div>
+              </div>
+            </div>
+            <div class="checkout-form-group row">
+              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-tariff">Тариф
+                </label>
+              </div>
+              <div class="col-12 col-sm-8 col-hd-9">
+                <select class="checkout-form-group__select" id="user-tariff" name="user-tariff">
+                  <option value="1" data-price="100">Standart</option>
+                  <option value="2" data-price="200">Vip</option>
+                  <option value="3" data-price="300.60">Business</option>
+                  <option value="4" data-price="400.99">Platinum</option>
+                </select>
+              </div>
+              <div class="checkout-form-group__message">
+              </div>
+            </div>
+            <div class="checkout-form-group row">
+              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-comment">Комментарий
+                </label>
+              </div>
+              <div class="col-12 col-sm-8 col-hd-9"><textarea class="checkout-form-group__textarea" id="user-comment" name="user-comment" rows="4"></textarea>
+              </div>
+              <div class="checkout-form-group__message">
+              </div>
+            </div>
+            <div class="wrapp-overflow">
+              <textarea class="textarea" name="message" placeholder=""></textarea>
+            </div>
+            <div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
+              <div class="row">
+                <div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
+                  <div class="promokod__counter">
+                    <div class="promokod__iterator">
+                      <div class="promokod__results-count"><a class="promokod__minus" href="#">&ndash;</a>
+                        <div class="promokod__result">1
+                        </div><a class="promokod__add" href="#">+</a>
+                      </div>
+                      <div class="promokod__iterator-subtitle">Билет
+                      </div>
+                    </div>
+                    <div class="promokod__counter-description">на сумму
+                      <div class="promokod__price">100,20
+                      </div>рублей
+                    </div>
+                  </div>
+                  <div class="pay-type">
+                    <div class="pay-type__program">
+                      <p class="pay-type__program-title">Программа лояльности
+                      </p>
+                      <p class="pay-type__program-description">Авторизуйтесь, чтобы воспользоваться скидкой по программе лояльности
+                      </p>
+                    </div>
+                    <div class="pay-type__options">
+                      <p class="pay-type__options-title">Способ оплаты
+                      </p>
+                      <div class="pay-type__options-item">
+                        <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="1"/><span class="pay-type__options-item-check"></span>
+                          <label class="pay-type__options-item-label-text">Онлайн-оплата картой
+                          </label>
+                        </label>
+                        <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="2"/><span class="pay-type__options-item-check"></span>
+                          <label class="pay-type__options-item-label-text">Безналичный платеж
+                          </label>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20">
+                  <a class="promokod__button-chekout" href="#">Оплатить</a>
+                  <a class="promokod__button-chekout-pay" href="#">Оплатить</a>
+                </div>
+                <div class="col-12 col-sm-11">
+                  <p class="promokod__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия Публичной оферты
+                  </p>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
