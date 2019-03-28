@@ -44,6 +44,7 @@
 	require_once __DIR__ . '/core/addProductVarioatetionField.php';
 	require_once __DIR__ . '/core/myAjax/createOrder.php';
 	require_once __DIR__ . '/core/myAjax/becomePartner.php';
+	require_once __DIR__ . '/core/myAjax/askAQuestion.php';
 	require_once __DIR__ . '/core/webpayRespons.php';
 	
 	
@@ -57,6 +58,16 @@ function getCheckoutPermaLink(){
 	$checkout_page = $checkout_page_query->posts;
 	return get_permalink($checkout_page[0]->ID);
 }
+	
+	function getAskTheQuestionPermaLink(){
+		$checkout_args = [
+			'post_type' => 'page',
+			'meta_key' => '_wp_page_template',
+			'meta_value' => 'template-question.php' ];
+		$checkout_page_query = new WP_Query( $checkout_args );
+		$checkout_page = $checkout_page_query->posts;
+		return get_permalink($checkout_page[0]->ID);
+	}
 
 function getMonthNameRu($index){
 	$monthNames = [
