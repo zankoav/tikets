@@ -16,7 +16,7 @@
 			<div class="col-6 col-sm-6 col-hd-5 col-offset-3 col-offset-sm-6 col-offset-md-2 col-offset-lg-3 col-offset-hd-4">
 				<div class="stock__text">акции
 				</div>
-				<div class="stock__text stock__text_mr-l">недели
+				<div class="stock__text stock__text_mr-l">месяца
 				</div>
 			</div>
 			<div class="col-12 col-md-9 col-offset-md-3 pt-40 pt-sm-00">
