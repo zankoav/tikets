@@ -13,9 +13,11 @@ mixin promokod()
                         | на сумму
                         +e.price 100,20
                         | рублей
+                +pay-type()
         .row
             .col-12.col-offset-sm-5.col-sm-6.mb-10.mb-md-20
                 +e.button-chekout(href="#") Оплатить
+                +e.button-chekout-pay(href="#") Оплатить
             .col-12.col-sm-11
                 +e.P.description Нажимая на кнопку “Оплатить”, Вы принимаете условия Публичной оферты
 
