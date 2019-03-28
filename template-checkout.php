@@ -23,6 +23,7 @@
 	$wsb_cancel_return_url = carbon_get_theme_option( 'wsb_cancel_return_url' );
 	$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
 	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
+	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
 	
 	$main_speaker = carbon_get_post_meta( $productID, 'main_speaker' );
 	
@@ -154,15 +155,51 @@
 									рублей
 								</div>
 							</div>
+
+							<div class="pay-type">
+								<div class="pay-type__program">
+									<p class="pay-type__program-title">Программа лояльности
+									</p>
+									<p class="pay-type__program-description">Авторизуйтесь, чтобы воспользоваться
+										скидкой по программе лояльности
+									</p>
+								</div>
+								<div class="pay-type__options">
+									<p class="pay-type__options-title">Способ оплаты
+									</p>
+									<div class="pay-type__options-item">
+										<label class="pay-type__options-item-label">
+											<input class="pay-type__options-item-input" name="type" type="radio"
+												   id="1" checked/>
+											<span class="pay-type__options-item-check"></span>
+											<label class="pay-type__options-item-label-text">Онлайн-оплата картой
+											</label>
+										</label>
+										<label class="pay-type__options-item-label">
+											<input class="pay-type__options-item-input" name="type" type="radio"
+												   id="2"/>
+											<span class="pay-type__options-item-check"></span>
+											<label class="pay-type__options-item-label-text">Безналичный платеж
+											</label>
+										</label>
+									</div>
+								</div>
+							</div>
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20">
-							<a class="promokod__button-chekout" href="#">Оплатить</a>
+							<a class="promokod__button-chekout" href="">Оплатить</a>
+							<a class="promokod__button-chekout-pay"
+							   href="<?= esc_url(get_permalink( $public_offer_link ))  ;?>">Оплатить
+							</a>
+							
 						</div>
 						<div class="col-12 col-sm-11">
 							<p class="promokod__description">
-								Нажимая на кнопку “Оплатить”, Вы принимаете условия <a href="<?= get_permalink($public_offer_link)?>">Публичной оферты</a>
+								Нажимая на кнопку “Оплатить”, Вы принимаете условия
+								<a href="<?= get_permalink( $public_offer_link ) ?>">Публичной оферты</a>
 							</p>
 						</div>
 					</div>
