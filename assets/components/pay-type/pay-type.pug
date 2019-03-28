@@ -1,0 +1,16 @@
+mixin pay-type()
+    +b.pay-type
+        +e.program
+            +e.P.program-title Программа лояльности
+            +e.P.program-description Авторизуйтесь, чтобы воспользоваться скидкой по программе лояльности
+        +e.options
+            +e.P.options-title Способ оплаты
+            +e.options-item
+                +e.LABEL.options-item-label
+                    +e.INPUT.options-item-input(name='type', type='radio', id="1")
+                    +e.SPAN.options-item-check
+                    +e.LABEL.options-item-label-text Онлайн-оплата картой
+                +e.LABEL.options-item-label
+                    +e.INPUT.options-item-input(name='type', type='radio', id="2")
+                    +e.SPAN.options-item-check
+                    +e.LABEL.options-item-label-text Безналичный платеж
