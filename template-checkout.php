@@ -170,8 +170,6 @@
 		</div>
 	</div>
 </main>
-<?php get_template_part( '/core/views/footerView' ); ?>
-
-<?php
+<?php get_template_part( '/core/views/footerView' );
 	get_footer();
 ?>
