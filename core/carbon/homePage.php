@@ -37,7 +37,9 @@
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-home.php' )
 			->add_fields( [
-					Field::make( 'complex', 'crb_reviews', 'Слидер отзывов' )
+					Field::make( 'checkbox', 'crb_show_reviews', 'Показывать отзывы' )
+						->set_option_value( 'yes' ),
+					Field::make( 'complex', 'crb_reviews', 'Слайдер отзывов' )
 						->add_fields( 'review', [
 								Field::make( 'text', 'reviewer_name', __( 'Имя' ) )
 									->set_width( 50 ),
@@ -70,7 +72,7 @@
 					->add_options( 'news_selecting' ),
 			] );
 		
-		Container::make( 'post_meta', "Слидер" )
+		Container::make( 'post_meta', "Слайдер" )
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-home.php' )
 			->add_fields( [
@@ -86,7 +88,7 @@
 									->set_width( 20 ),
 								Field::make( 'text', 'slide_year', 'Год' )
 									->set_width( 10 ),
-								Field::make( 'text', 'slide_address', __( 'Address' ) )
+								Field::make( 'text', 'slide_address', 'Адрес' )
 									->set_width( 40 ),
 								Field::make( 'text', 'slide_link', 'Ссылка' )
 									->set_width( 50 ),
@@ -101,16 +103,16 @@
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-home.php' )
 			->add_fields( [
-					Field::make( 'image', 'aside_banner',  'Баннер' )
+					Field::make( 'image', 'aside_banner', 'Баннер' )
 						->set_value_type( 'url' )
 						->set_width( 50 ),
 					Field::make( 'text', 'aside_banner_link', 'Ссылка баннера' )
 						->set_width( 50 ),
 					Field::make( 'complex', 'discount_articles', 'Список акций недели' )
 						->add_fields( 'discount_article', [
-								Field::make( 'select', 'first_new_id', 'Выберите первую новость' )
+								Field::make( 'select', 'first_new_id', 'Выберите акцию' )
 									->add_options( 'discount_selecting' )
-									->set_width( 50 )
+									->set_width( 50 ),
 							]
 						),
 				]
@@ -147,6 +149,7 @@
 		}
 		return $news_list;
 	}
+	
 	function discount_selecting(){
 		$my_query   = new WP_Query();
 		$query_news = $my_query->query( [
@@ -157,8 +160,8 @@
 					'taxonomy' => 'category',
 					'field'    => 'slug',
 					'terms'    => 'on-sale',
-				]
-			]
+				],
+			],
 		] );
 		
 		$news_list = [];

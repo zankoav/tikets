@@ -17,19 +17,20 @@
 				Field::make( 'image', 'crb_footer_logo_img', 'Логотип в подвале' )
 					->set_value_type( 'url' )
 					->set_width( 50 ),
+				Field::make( 'separator', 'crb_contact_data_op_sep', __( 'Контактная информаця' ) ),
 				Field::make( 'text', 'crb_phone_vel', 'Номер телефон(velcom)' )
 					->set_width( 50 ),
 				Field::make( 'text', 'crb_phone_mts', 'Номер телефон(МТС)' )
 					->set_width( 50 ),
 				Field::make( 'text', 'crb_email', 'Email' ),
-				Field::make( 'text', 'crb_address', __( 'Address' ) ),
+				Field::make( 'text', 'crb_address', 'Аднес' ),
 				Field::make( 'text', 'crb_unp', 'УНП' ),
 				
-				Field::make( 'separator', 'partnership_mail_op_sep',  'Email для формы партнерства'  ),
+				Field::make( 'separator', 'partnership_mail_op_sep',  'Email для форм'  ),
 				Field::make( 'text', 'partnership_mail',  'Email'  )
 					->set_help_text( 'Email, на который будут отправляться письма' ),
 				
-				Field::make( 'separator', 'programm_page_banner_op_sep', __( 'Баннер на страницах категории' ) ),
+				Field::make( 'separator', 'programm_page_banner_op_sep', __( 'Баннер на страницах категорий' ) ),
 				Field::make( 'image', 'prod_cat_banner_img', 'Баннер' )
 					->set_value_type( 'url' )
 					->set_width( 50 ),
@@ -39,7 +40,7 @@
 				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
 				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
 				
-				Field::make( 'separator', 'crb_question_link_op_sep', __( 'Страница для задания вопросов' ) ),
+				Field::make( 'separator', 'crb_question_link_op_sep', __( 'Страница для задания вопроса' ) ),
 				Field::make( 'select', 'question_link', 'Выберите страницы' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),

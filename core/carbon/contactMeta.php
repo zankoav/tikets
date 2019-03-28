@@ -5,7 +5,7 @@
 
 	add_action( 'carbon_fields_register_fields', 'crb_attach_contacts_meta' );
 	function crb_attach_contacts_meta(){
-		Container::make( 'post_meta', 'Контактая информация')
+		Container::make( 'post_meta', 'Контактная информация')
 			->where( 'post_type', '=', 'page' )
 			->where( 'post_template', '=', 'template-contacts.php' )
 			->add_fields( [

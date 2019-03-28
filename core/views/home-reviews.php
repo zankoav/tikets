@@ -1,7 +1,8 @@
 <?php
 	
 	$reviews = carbon_get_post_meta(get_the_ID(),'crb_reviews');
-	
+	$crb_show_reviews = carbon_get_post_meta(get_the_ID(),'crb_show_reviews');
+	if ($crb_show_reviews ):
 	?>
 <div class="reviews">
 	<div class="container">
@@ -45,3 +46,4 @@
 		</div>
 	</div>
 </div>
+<?php endif;

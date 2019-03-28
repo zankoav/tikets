@@ -10,7 +10,7 @@
 			->where( 'term_taxonomy', '=', 'product_cat' )
 			->add_fields( [
 				Field::make( 'color', 'circle_color', 'Выберите цвет' )
-					->set_palette( [ '#FF0000', '#00FF00', '#0000FF' ] ),
+//					->set_palette( [ '#FF0000', '#00FF00', '#0000FF' ] ),
 			] );
 	}
 	
