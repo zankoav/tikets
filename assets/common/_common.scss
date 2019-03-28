@@ -20,6 +20,10 @@ body {
     flex-direction : column;
     min-height     : 100vh;
 
+    &__h_100vh {
+        height : 100vh;
+    }
+
     header {
         flex-shrink : 0;
     }
