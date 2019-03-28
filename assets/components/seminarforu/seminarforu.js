@@ -23,6 +23,9 @@ $('.seminarforu__list-current').on('click', function (event) {
 $('.seminarforu__item').on('click', function (event) {
     event.preventDefault();
     $list.slideUp();
+    let x = $(this).text();
+    $('.seminarforu__list-current').text($(this).text());
+    console.log(x);
 
     let id = $(this).find('.seminarforu__item-link').data('id');
 
