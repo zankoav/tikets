@@ -49,7 +49,7 @@
 				Field::make( 'select', 'public_offer_link', 'Выберите страницы' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
-				Field::make( 'separator', 'crb_cashless_page_link_op_sep', __( 'Страница атрибутов безналичного рассчёта' ) ),
+				Field::make( 'separator', 'crb_cashless_page_link_op_sep', __( 'Страница атрибутов безналичного расчёта' ) ),
 				Field::make( 'select', 'cashless_page_link', 'Выберите страницы' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
