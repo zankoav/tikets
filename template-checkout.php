@@ -23,7 +23,7 @@
 	$wsb_cancel_return_url = carbon_get_theme_option( 'wsb_cancel_return_url' );
 	$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
 	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
-	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
+	$cashless_page_link     = carbon_get_theme_option( 'cashless_page_link' );
 	
 	$main_speaker = carbon_get_post_meta( $productID, 'main_speaker' );
 	
@@ -192,7 +192,7 @@
 						<div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20">
 							<a class="promokod__button-chekout" href="">Оплатить</a>
 							<a class="promokod__button-chekout-pay"
-							   href="<?= esc_url(get_permalink( $public_offer_link ))  ;?>">Оплатить
+							   href="<?= esc_url(get_permalink( $cashless_page_link ))  ;?>">Оплатить
 							</a>
 							
 						</div>
