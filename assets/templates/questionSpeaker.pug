@@ -1,0 +1,14 @@
+include ./../mixins
+doctype html
+html
+    +head()
+    body(class="body_overflow_hidden")
+        +loader('loader__spinner_egg')
+        .app.app__h_100vh
+            +header()
+            main.main
+                .container
+                    +title('Задать вопрос спикеру','title_grey title_default mt-20 mt-sm-40', 'h1')
+                    .mt-30.mb-30
+                        +question-speaker()
+            +footer()

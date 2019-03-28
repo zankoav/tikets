@@ -25,19 +25,24 @@
 				Field::make( 'text', 'crb_address', __( 'Address' ) ),
 				Field::make( 'text', 'crb_unp', 'УНП' ),
 				
-				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
-				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
-				
 				Field::make( 'separator', 'partnership_mail_op_sep',  'Email для формы партнерства'  ),
 				Field::make( 'text', 'partnership_mail',  'Email'  )
 					->set_help_text( 'Email, на который будут отправляться письма' ),
 				
 				Field::make( 'separator', 'programm_page_banner_op_sep', __( 'Баннер на страницах категории' ) ),
 				Field::make( 'image', 'prod_cat_banner_img', 'Баннер' )
-					->set_value_type( 'url' ),
-				Field::make( 'text', 'prod_cat_banner_link', 'Ссылка банера' ),
+					->set_value_type( 'url' )
+					->set_width( 50 ),
+				Field::make( 'text', 'prod_cat_banner_link', 'Ссылка банера' )
+					->set_width( 50 ),
 				
-				//Field::make( 'oembed', 'crb_oembed', __( 'oEmbed' ) )
+				Field::make( 'separator', 'crb_404_link_op_sep', __( 'Страница 404' ) ),
+				Field::make( 'text', 'crb_404_link', 'Ссылка на странице 404' ),
+				
+				Field::make( 'separator', 'crb_question_link_op_sep', __( 'Страница для задания вопросов' ) ),
+				Field::make( 'select', 'question_link', 'Выберите страницы' )
+					->add_options( 'page_selecting' )
+					->set_required( true ),
 			] );
 		
 		// Add second options page under 'Basic Options'

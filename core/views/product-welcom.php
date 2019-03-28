@@ -22,25 +22,25 @@
 							<div class="welcome__clear">
 							</div>
 						</div>
-						<div class="welcome__opportunity-list">
-							<a class="welcome__opportunity" href="#">
-								<img class="welcome__opportunity-image pb-10"
-									 src="/wp-content/themes/tikets/src/icons/Star.455496.svg" alt="Star" title=""/>
-								<span class="welcome__opportunity-text">Добавить в избранное</span>
-							</a>
-							<a class="welcome__opportunity" href="#">
-								<img class="welcome__opportunity-image pb-10"
-									 src="/wp-content/themes/tikets/src/icons/calendar.a80e12.svg" alt="calendar"
-									 title=""/>
-								<span class="welcome__opportunity-text">Добавить в календарь</span>
-							</a>
-							<a class="welcome__opportunity" href="#">
-								<img class="welcome__opportunity-image pb-10"
-									 src="/wp-content/themes/tikets/src/icons/printing-tool.bd4350.svg"
-									 alt="printing-tool" title=""/>
-								<span class="welcome__opportunity-text">Печать</span>
-							</a>
-						</div>
+<!--						<div class="welcome__opportunity-list">-->
+<!--							<a class="welcome__opportunity" href="#">-->
+<!--								<img class="welcome__opportunity-image pb-10"-->
+<!--									 src="/wp-content/themes/tikets/src/icons/Star.455496.svg" alt="Star" title=""/>-->
+<!--								<span class="welcome__opportunity-text">Добавить в избранное</span>-->
+<!--							</a>-->
+<!--							<a class="welcome__opportunity" href="#">-->
+<!--								<img class="welcome__opportunity-image pb-10"-->
+<!--									 src="/wp-content/themes/tikets/src/icons/calendar.a80e12.svg" alt="calendar"-->
+<!--									 title=""/>-->
+<!--								<span class="welcome__opportunity-text">Добавить в календарь</span>-->
+<!--							</a>-->
+<!--							<a class="welcome__opportunity" href="#">-->
+<!--								<img class="welcome__opportunity-image pb-10"-->
+<!--									 src="/wp-content/themes/tikets/src/icons/printing-tool.bd4350.svg"-->
+<!--									 alt="printing-tool" title=""/>-->
+<!--								<span class="welcome__opportunity-text">Печать</span>-->
+<!--							</a>-->
+<!--						</div>-->
 					</div>
 				</div>
 				<div class="col-12 col-sm-5 pt-sm-40">

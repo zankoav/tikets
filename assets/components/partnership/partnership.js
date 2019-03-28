@@ -11,16 +11,19 @@ $('#partnership__form').submit(function (event) {
 
     if (name.length === 0) {
         console.log('username', Validator.ERROR_EMPTY_FIELD);
+        $('.partnership__response').text('Поле обязательно для заполнения');
         return;
     }
 
     if (message.length === 0) {
         console.log('usermessage', Validator.ERROR_EMPTY_FIELD);
+        $('.partnership__response').text('Поле обязательно для заполнения');
         return;
     }
 
     if (!Validator.email(email)) {
         console.log('useremail', Validator.ERROR_EMAIL_FIELD);
+        $('.partnership__response').text('Некорректный e-mail');
         return;
     }
 
@@ -45,6 +48,7 @@ $('#partnership__form').submit(function (event) {
             if(resp.status === 0) {
                 $('.partnership__response').text(resp.text);
             }
+            jQuery('#partnership__form')[0].reset();
         },
         error: function (x, y, z) {
             console.log(x);

@@ -2,6 +2,7 @@
 	if (!defined( 'ABSPATH' )) exit();
 	
 	$spikers_list = carbon_get_post_meta( get_the_ID(), 'spikers_list' );
+	$question_page = get_permalink(carbon_get_theme_option('question_link'));
 ?>
 <div class="tabs__content tabs__content_active">
 	<div class="about-spiker">
@@ -30,6 +31,16 @@
 										<div class="editor-content">
 											<?= wpautop($desc); ?>
 										</div>
+										<a class="about-spiker__askquestion"
+										   href="<?= esc_url($question_page.'?seminar='.get_the_title().'&speaker='.$name)?>"
+										   target="_blank">
+											<img class="about-spiker__askquestion-image"
+												 src="/wp-content/themes/tikets/src/icons/message.dc084b.svg"
+												 alt="message" title=""/>
+											<div class="about-spiker__askquestion-text">Задать вопрос
+												спикеру
+											</div>
+										</a>
 									</div>
 								</div>
 							</div>
