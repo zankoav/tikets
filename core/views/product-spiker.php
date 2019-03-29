@@ -32,7 +32,7 @@
 											<?= wpautop($desc); ?>
 										</div>
 										<a class="about-spiker__askquestion"
-										   href="<?= esc_url($question_page.'?seminar='.get_the_title().'&speaker='.$name)?>"
+										   href="<?= esc_url($question_page.'?seminar='.get_the_ID().'&speaker='.$name)?>"
 										   target="_blank">
 											<img class="about-spiker__askquestion-image"
 												 src="/wp-content/themes/tikets/src/icons/message.dc084b.svg"

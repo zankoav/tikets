@@ -61,7 +61,7 @@
 									
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
-										<div class="vip__price"><?= $price; ?></div>
+										<div class="vip__price"><?= $price; ?> руб.</div>
 										<a class="orange-button orange-button__vip"
 										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
@@ -94,7 +94,7 @@
 									</ul>
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
-										<div class="vip__price"><?= $price; ?></div>
+										<div class="vip__price"><?= $price; ?>  руб.</div>
 										<a class="orange-button orange-button__vip"
 										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
@@ -131,7 +131,7 @@
 									</ul>
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
-										<div class="business__price"><?= $price; ?></div>
+										<div class="business__price"><?= $price; ?> руб.</div>
 										<a class="orange-button orange-button__vip"
 										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>
@@ -164,7 +164,7 @@
 									</ul>
 									<?php if ($displayPrice == 'yes'): ?>
 										<!--start second option-->
-										<div class="platinum__price"><?= $price; ?></div>
+										<div class="platinum__price"><?= $price; ?> руб.</div>
 										<a class="orange-button orange-button__vip"
 										   href="<?= esc_url($checkoutLink.'?seminar='.get_the_ID().'&tariff='.$tariff_id)?>">
 											записаться</a>

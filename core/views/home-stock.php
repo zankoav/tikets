@@ -2,6 +2,7 @@
 	$aside_banner      = carbon_get_post_meta( get_the_ID(), 'aside_banner' );
 	$aside_banner_link = carbon_get_post_meta( get_the_ID(), 'aside_banner_link' );
 	$discount_articles = carbon_get_post_meta( get_the_ID(), 'discount_articles' );
+//	var_dump($discount_articles );
 ?>
 
 
@@ -26,11 +27,9 @@
 							$postId = $item[ 'first_new_id' ];
 							$current_post = get_post( $postId );
 							$desc = carbon_get_post_meta( $postId, 'post_short_desc' );
-							$attachment_url = get_the_post_thumbnail_url( $postId );
 							?>
 							<div class="stock__slide swiper-slide">
-								<img class="stock__image" src="<?= $attachment_url; ?>"
-									 alt="people" title=""/>
+                                <?= get_the_post_thumbnail($postId,'on_sale',['class'=> 'stock__image'])?>
 								<div class="stock__envelope pt-20">
 									<div class="stock__title"><?= $current_post->post_title; ?></div>
 									<div class="stock__description pt-05 pb-10"><?= $desc; ?></div>
