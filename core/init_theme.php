@@ -17,11 +17,14 @@ function zankoav_theme_init() {
 	 */
 	add_theme_support( 'post-thumbnails' );
 
-//		add_image_size( 'partner', 140, 70, false );
-//		add_image_size( 'project-card-m', 300, 200, true );
 	add_image_size( 'tikets-main-speaker-lg', 900, 600, true );
 	add_image_size( 'tikets-main-speaker-md', 644, 430, true );
 	add_image_size( 'tikets-main-speaker-m', 440, 294, true );
+    add_image_size( 'partner_logo_lg', 208, 92, true );
+    add_image_size( 'partner_logo_hd', 174, 80, true );
+    add_image_size( 'partner_logo_md', 136, 60, true );
+    add_image_size( 'partner_logo_sm', 108, 50, true );
+    add_image_size( 'partner_logo_m', 114, 50, true );
 	
 	
 	/**
