@@ -21,10 +21,8 @@ function zankoav_theme_init() {
 	add_image_size( 'tikets-main-speaker-md', 644, 430, true );
 	add_image_size( 'tikets-main-speaker-m', 440, 294, true );
     add_image_size( 'partner_logo_lg', 208, 92, true );
-    add_image_size( 'partner_logo_hd', 174, 80, true );
-    add_image_size( 'partner_logo_md', 136, 60, true );
-    add_image_size( 'partner_logo_sm', 108, 50, true );
     add_image_size( 'partner_logo_m', 114, 50, true );
+    add_image_size( 'on_sale', 350, 206, true );
 	
 	
 	/**

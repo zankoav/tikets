@@ -4,10 +4,10 @@
 	 */
 	get_header();
 	
-	$programName = $_GET[ 'seminar' ];
+	$programId   = $_GET['seminar' ];
 	$speakerName = $_GET[ 'speaker' ];
 	
-	if (empty( $programName ) || empty( $speakerName )) {
+	if (empty( $programId ) || empty( $speakerName )) {
 		global $wp_query;
 		$wp_query->set_404();
 		status_header( 404 );
@@ -20,7 +20,17 @@
 		<?php get_template_part( '/core/views/headerView' );?>
 		<main class="main">
 			<div class="container">
-				<h1 class="title title_grey title_default mt-20 mt-sm-40">Задать вопрос спикеру</h1>
+				<h1 class="title title_grey title_default mt-20 mt-sm-40">Вопрос спикеру</h1>
+
+                <?php
+//                    $post = get_post($programId);
+//                    var_dump($post->post_title);
+//                    var_dump($speakerName);
+                    ?>
+                <p class="pay-type__program-description" style="margin-top:2rem;">
+                    Авторизуйтесь, чтобы воспользоваться
+                    скидкой по программе лояльности
+                </p>
 				<div class="mt-30 mb-30">
 					<div class="question-speaker">
 						<form id="question-speaker__form" method="POST" action="/">
@@ -44,7 +54,7 @@
 								</div>
 								<div class="question-speaker__response">
 								</div>
-								<input class="input" type="hidden" name="programName" value="<?=$programName;?>">
+								<input class="input" type="hidden" name="programName" value="<?=$programId;?>">
 								<input class="input" type="hidden" name="speakerName" value="<?=$speakerName;?>">
 								<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-10">
 									<div class="question-speaker__button">

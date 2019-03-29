@@ -24,7 +24,7 @@
 
                                             <a class="partners__link"
                                                href="<?= $flag ? esc_url($url) : get_permalink($query_partner['id']); ?>">
-                                                <?php echo get_the_post_thumbnail($query_partner['id'],'partner_logo_lg',['class'=> 'partners__img'])?>
+                                                <?= get_the_post_thumbnail($query_partner['id'],'partner_logo_lg',['class'=> 'partners__img'])?>
                                             </a>
                                         </div>
                                     <?php endforeach; ?>
