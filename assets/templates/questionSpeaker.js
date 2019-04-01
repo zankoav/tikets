@@ -11,3 +11,4 @@ import './../components/main/main';
 import './../components/orange-button/orange-button';
 import './../components/form/form';
 import './../components/question-speaker/question-speaker';
+import './../components/preloader/preloader';

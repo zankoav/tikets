@@ -102,11 +102,8 @@
 
     &__image {
         display : inline-block;
-        width   : 75%;
-
-        @include sm {
-            width : 60%;
-        }
+        width   : 100%;
+        height  : auto;
     }
 }
 
