@@ -50,12 +50,11 @@
     &__options-item-label{
         display: block;
         position: relative;
-        margin-bottom: 12px;
+        margin-bottom: 28px;
         cursor: pointer;
         user-select: none;
         display: flex;
         align-items: center;
-        padding-bottom: 16px;
     }
 
     &__options-item-label-text{
@@ -73,8 +72,8 @@
         position: absolute;
         opacity: 0;
         cursor: pointer;
-        height: 0;
-        width: 0;
+        height: 100%;
+        width: 100%;
         &:checked + span:after{
             display:block;
         }

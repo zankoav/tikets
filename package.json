@@ -2,7 +2,7 @@
     "name": "zankoav",
     "version": "0.0.1",
     "scripts": {
-        "wp": "set NODE_ENV=2  && webpack --mode production",
+        "wp": "NODE_ENV=wp-production webpack --mode production",
         "build": "set NODE_ENV=1 && webpack --mode production",
         "dev": "set NODE_ENV=0 && webpack-dev-server --open --mode development"
     },
