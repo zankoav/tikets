@@ -8,4 +8,5 @@ import './../components/header/header';
 import './../components/footer/footer';
 import './../components/realty/realty';
 import './../components/banner/banner';
+import './../components/orange-button/orange-button';
 

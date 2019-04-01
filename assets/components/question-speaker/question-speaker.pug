@@ -12,9 +12,12 @@ mixin question-speaker()
                         +textarea("usermessage" , "CООБЩЕНИЕ")
                 +e.textarea_oh
                     +textarea("message")
-                +e.response
+                .col-9.col-offset-3
+                    +e.response
                 +input("hidden","programName").program-name program-name
                 +input("hidden","speakerName").speaker-name speaker-name
                 .col-12.col-sm-6.col-offset-sm-2.pt-sm-10
                     +e.button
                         +button('Записаться','button__color_red',"submit","userbutton")
+                .col-12
+                    +e.message Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aperiam earum esse fugit impedit ipsam iste repellendus rerum sequi veritatis! Enim et laudantium maxime omnis quibusdam sapiente sunt voluptatem. Praesentium.
