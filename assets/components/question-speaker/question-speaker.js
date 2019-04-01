@@ -54,7 +54,7 @@ $('#question-speaker__form').submit(function (event) {
         url: tikets_ajax.url,
         data: data,
         beforeSend: function () {
-            $('.preloader').addClass('preloader_active');
+            $('.preloader').show();
         },
         success: function (response) {
             console.log(response);
@@ -66,12 +66,11 @@ $('#question-speaker__form').submit(function (event) {
                 $('.question-speaker__response').text(resp.text);
             }
             $('#question-speaker__form')[0].reset();
-            $('.preloader').removeClass('preloader_active');
+            $('.preloader').hide();
         }
         ,
         error: function (x, y, z) {
             console.log(x);
-            $('.preloader').removeClass('preloader_active');
             $('.question-speaker__response').text('ОШИБКА!');
         }
     })
