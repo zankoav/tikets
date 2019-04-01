@@ -33,16 +33,28 @@
 	$variations_select = [];
 	$currentTariff     = [];
 	foreach($variations as $variation) {
+        $buff_variation = '';
+        foreach ($variation[ "attributes" ] as $item) {
+            $buff_variation = $item;
+//            var_dump($buff_variation );
+            break;
+        }
 		$variations_select[] = [
-			'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
+			'variation'    => $buff_variation,
 			'$price'       => $variation[ 'display_regular_price' ],
 			'variation_id' => (int)$variation[ 'variation_id' ],
 		];
 
 //set current tariff
 		if (!empty( $tariffID ) && $variation[ 'variation_id' ] == $tariffID) {
+            $buff_variation = '';
+            foreach ($variation[ "attributes" ] as $item) {
+                $buff_variation = $item;
+//                var_dump($buff_variation );
+                break;
+            }
 			$currentTariff = [
-				'variation'    => $variation[ "attributes" ][ "attribute_pa_tip-bileta" ],
+				'variation'    => $buff_variation ,
 				'$price'       => $variation[ 'display_regular_price' ],
 				'variation_id' => (int)$variation[ 'variation_id' ],
 			];
