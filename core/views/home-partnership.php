@@ -32,8 +32,10 @@
 					<div class="partnership__textarea partnership__textarea_oh">
 						<textarea class="textarea" name="message" placeholder=""></textarea>
 					</div>
-					<div class="partnership__response">
-					</div>
+                    <div class="col-9 col-offset-3">
+                        <div class="partnership__response">
+                        </div>
+                    </div>
 					<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-10">
 						<div class="partnership__button">
 							<button class="button button__color_red" type="submit" name="userbutton">Записаться</button>
@@ -42,5 +44,8 @@
 				</div>
 			</form>
 		</div>
+        <div class="preloader">
+            <div class="preloader__spinner preloader__spinner_egg"></div>
+        </div>
 	</div>
 </div>

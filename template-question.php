@@ -66,8 +66,7 @@
 				</div>
 			</div>
             <div class="preloader">
-                <div class="preloader__content">
-                </div>
+                <div class="preloader__spinner preloader__spinner_egg"></div>
             </div>
 		</main>
 		<?php get_template_part( '/core/views/footerView' ); ?>
