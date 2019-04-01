@@ -206,7 +206,6 @@
 							<a class="promokod__button-chekout-pay"
 							   href="<?= esc_url(get_permalink( $cashless_page_link ))  ;?>">Оплатить
 							</a>
-							
 						</div>
 						<div class="col-12 col-sm-11">
 							<p class="promokod__description">
@@ -218,6 +217,9 @@
 				</div>
 			</form>
 		</div>
+        <div class="preloader">
+            <div class="preloader__spinner preloader__spinner_egg"></div>
+        </div>
 	</div>
 </main>
 <?php get_template_part( '/core/views/footerView' );

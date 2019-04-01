@@ -3,11 +3,7 @@
 $GREY_MIDDLE : #979797;
 $ORANGE : #fbbe49;
 $RED_LIGHT : #f85c5d;
-
-.form {
-
-}
-
+$RED: #F80000;
 .input {
     border        : 1px solid $GREY_MIDDLE;
     border-radius : 3px;
@@ -17,10 +13,15 @@ $RED_LIGHT : #f85c5d;
     font-weight   : 800;
     font-size     : 18px;
     width         : 100%;
+    outline       : none;
 
     &::placeholder {
         color          : $RED_LIGHT;
         text-transform : lowercase;
+    }
+
+    &_error {
+        border: 1px solid $RED;
     }
 }
 
@@ -29,7 +30,6 @@ $RED_LIGHT : #f85c5d;
     border-radius    : 3px;
     box-shadow       : 0 4px 4px rgba(0, 0, 0, 0.25);
     padding          : 1rem;
-
     background-color : $ORANGE;
     font-family      : 'Open Sans', sans-serif;
     font-size        : 18px;
@@ -45,7 +45,7 @@ $RED_LIGHT : #f85c5d;
 }
 
 .textarea {
-
+    outline       : none;
     border        : 1px solid $GREY_MIDDLE;
     border-radius : 3px;
     padding       : 1rem;
@@ -60,6 +60,10 @@ $RED_LIGHT : #f85c5d;
         color          : $RED_LIGHT;
         text-transform : lowercase;
 
+    }
+
+    &_error {
+        border: 1px solid $RED;
     }
 }
 

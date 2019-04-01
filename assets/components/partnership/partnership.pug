@@ -18,7 +18,9 @@ mixin partnership()
                             +textarea("usermessage" , "CООБЩЕНИЕ")
                     +e.textarea_oh
                         +textarea("message")
-                    +e.response
+                    .col-9.col-offset-3
+                        +e.response
                     .col-12.col-sm-6.col-offset-sm-2.pt-sm-10
                         +e.button
                             +button('Записаться','button__color_red',"submit","userbutton")
+        +preloader()

@@ -117,11 +117,9 @@ $RED : #F85C5D;
         width         : 100%;
 
         @include sm {
-            display        : flex;
-            flex-direction : column;
-            padding        : 1rem;
-            top            : initial;
-            margin-left    : 2rem;
+            padding     : 1rem;
+            top         : initial;
+            margin-left : 2rem;
         }
 
         @include md {
@@ -299,13 +297,21 @@ $RED : #F85C5D;
         }
     }
 
+    &__cover {
+        display : none;
+
+        &_active {
+            display : block;
+        }
+    }
+
     &__text {
-        color       : $GREY_DARK;
-        font-family : 'Open Sans', sans-serif;
-        font-size   : 16px;
-        line-height : 24px;
-        display     : none;
-        padding-top : 1.5rem;
+        color          : $GREY_DARK;
+        font-family    : 'Open Sans', sans-serif;
+        font-size      : 16px;
+        line-height    : 24px;
+        padding-top    : 1.5rem;
+        padding-bottom : 1rem;
 
         @include sm {
             padding-top : 2rem;
@@ -319,8 +325,8 @@ $RED : #F85C5D;
             padding-top : 4rem;
         }
 
-        &_active {
-            display : block;
+        @include hd {
+            padding-bottom : 2rem;
         }
     }
 }
