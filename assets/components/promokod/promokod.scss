@@ -155,4 +155,15 @@
     &__price {
         display : inline;
     }
+
+    &__link{
+        padding-left: 4px;
+        font-size: 14px;
+        line-height: 19px;
+        color: #565656;
+        text-decoration: underline;
+        @include md{
+            font-size: 20px;
+        }
+    }
 }
