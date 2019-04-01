@@ -44,6 +44,8 @@
 				Field::make( 'select', 'question_link', 'Выберите страницы' )
 					->add_options( 'page_selecting' )
 					->set_required( true ),
+                Field::make( 'textarea', 'text_before_form', 'Текс до формы' ),
+                Field::make( 'textarea', 'text_after_form', 'Текс полсе формы' ),
 				
 				Field::make( 'separator', 'crb_public_offer_link_op_sep', __( 'Страница для Публичной оферты' ) ),
 				Field::make( 'select', 'public_offer_link', 'Выберите страницы' )
