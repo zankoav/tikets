@@ -49,7 +49,7 @@ $('#partnership__form').submit(function (event) {
         url: tikets_ajax.url,
         data: data,
         beforeSend: function () {
-            $('.preloader').show();
+            $('.preloader').addClass('preloader_active');
         },
         success: function (response) {
             console.log(response);
@@ -61,10 +61,11 @@ $('#partnership__form').submit(function (event) {
                 $('.partnership__response').text(resp.text);
             }
             $('#partnership__form')[0].reset();
-            $('.preloader').hide();
+            $('.preloader').removeClass('preloader_active');
         },
         error: function (x, y, z) {
             console.log(x);
+            $('.preloader').removeClass('preloader_active');
             $('.partnership__response').text('ОШИБКА!');
         }
     });

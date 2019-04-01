@@ -147,12 +147,17 @@ function sendingMail(data) {
         data: data,
         method: 'post',
         dataType: 'json',
+        beforeSend: function () {
+            $('.preloader').addClass('preloader_active');
+        },
         success: function (response) {
             console.log(response);
             autoSubmit(response);
+            $('.preloader').removeClass('preloader_active');
         },
         error: function (x) {
             console.log(x);
+            $('.preloader').removeClass('preloader_active');
             alert('Error connection.\n Please try again later.');
         }
     });
