@@ -12,3 +12,4 @@ $('.pay-type__options-item-input').on('change', function () {
         $(".promokod__button-chekout-pay").css("display","block");
     }
 });
+
