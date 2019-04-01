@@ -10,3 +10,4 @@ import './../components/points/points';
 import './../components/promokod/promokod';
 import './../components/pay-type/pay-type';
 import './../components/form/form';
+import './../components/preloader/preloader';
