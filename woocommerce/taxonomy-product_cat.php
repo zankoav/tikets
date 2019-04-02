@@ -1,12 +1,12 @@
 <?php
-	
+
 	if (!defined( 'ABSPATH' )) {
 		exit; // Exit if accessed directly
 	}
 	get_header();
-	
+
 	$query_obj = get_queried_object();
-	
+
 	$prod_cat_banner_img     = carbon_get_theme_option( 'prod_cat_banner_img');
 	$prod_cat_banner_link     = carbon_get_theme_option( 'prod_cat_banner_link');
 ?>
@@ -24,7 +24,7 @@
 								$prod_address     = carbon_get_post_meta( get_the_ID(), 'prod_address' );
 								$prod_date_time   = carbon_get_post_meta( get_the_ID(), 'prod_date_time' );
 								$main_speaker_img = carbon_get_post_meta( get_the_ID(), 'main_speaker_img' );
-								
+
 								$dateTimeToStr = '';
 								if (!empty( $prod_date_time )) {
 									$dateTime = new DateTime( $prod_date_time );
@@ -41,11 +41,13 @@
 									if (!empty( $time ))
 										$dateTimeToStr .= ", " . $time;
 								}
-								
+
 								?>
                                 <div class="realty__item">
                                     <div class="realty__speaker">
-                                        <img class="realty__image" src="<?= $main_speaker_img; ?>" alt="realty" title=""/>
+                                        <?php if (!empty($main_speaker_img)):?>
+                                            <img class="realty__image" src="<?= $main_speaker_img; ?>" alt="realty" title=""/>
+                                        <?php endif;?>
                                     </div>
                                     <div class="realty__content">
                                         <div class="realty__shell">
