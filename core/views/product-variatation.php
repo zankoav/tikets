@@ -34,7 +34,7 @@
 <div class="tabs__content">
 	<div class="tariffs">
 		<div class="container">
-			<div class="tariffs__inner">
+			<div class="tariffs__inner mt-20 mb-20 mt-lg-40 mb-lg-40">
 				<h2 class="title title_grey">тарифы</h2>
 				<div class="row">
 					<div class="col-12 col-sm-10 col-offset-sm-2">
@@ -44,7 +44,6 @@
 				<div class="row">
 					<div class="col-11 col-sm-5">
 						<?php
-							
 							if (!empty( $standard_ticket )):
 								$benefits = explode( ";", trim( $standard_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $standard_ticket[ "_display_price" ];

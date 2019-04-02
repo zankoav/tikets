@@ -21,7 +21,9 @@
 							</div>
 						<?php } ?>
 						<div class="news-type-1__text-wrapp">
-							<h3 class="news__title news__title_red"><?= $first_news->post_title; ?></h3>
+                            <a href="<?= get_permalink($first_news_id); ?>">
+                                <h3 class="news__title news__title_red"><?= $first_news->post_title; ?></h3>
+                            </a>
 							<p class="news-type-1__description"><?= $desc; ?></p>
 						</div>
 					</div>
@@ -32,7 +34,9 @@
 						$desc = carbon_get_post_meta( $second_news_id, 'post_short_desc' );
 						?>
 						<div class="red-news">
-							<h3 class="news__title"><?= $second_news->post_title; ?></h3>
+                            <a href="<?= get_permalink($second_news_id);?>">
+                                <h3 class="news__title"><?= $second_news->post_title; ?></h3>
+                            </a>
 							<p class="red-news__description"><?= $desc; ?></p>
 						</div>
 					<?php endif; ?>
@@ -49,7 +53,10 @@
 						<?php if (!empty( $attachment_id )) { ?>
 							<img class="news-type-2__image mb-20" src="<?= $attach_src; ?>" alt="type-2" title=""/>
 						<?php } ?>
-						<h3 class="news__title news__title_red"><?= $third_news->post_title; ?></h3>
+                        <a href="<?= get_permalink($third_news_id);?>">
+                            <h3 class="news__title news__title_red"><?= $third_news->post_title; ?></h3>
+                        </a>
+
 						<p class="news-type-2__description mt-20"><?= $desc; ?></p>
 					</div>
 				<?php endif; ?>
