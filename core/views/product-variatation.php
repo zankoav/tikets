@@ -44,7 +44,6 @@
 				<div class="row">
 					<div class="col-11 col-sm-5">
 						<?php
-							
 							if (!empty( $standard_ticket )):
 								$benefits = explode( ";", trim( $standard_ticket[ "_ticket_benefits" ] ) );
 								$displayPrice = $standard_ticket[ "_display_price" ];

@@ -1,10 +1,19 @@
+.partners__wrapper {
+    display           : -webkit-box;
+    display           : -ms-flexbox;
+    display           : flex;
+    -webkit-box-align : center;
+    -ms-flex-align    : center;
+    align-items       : center
+}
+
 .partners__img {
     width   : 100%;
     display : block
 }
 
 .partners__button-next, .partners__button-prev {
-    background-image : url(/wp-content/themes/tikets/src/icons/right.d54d7b.svg);
+    background-image : url(/wp-content/themes/tikets/src/icons/right.77c73c.svg);
     width            : 22px;
     height           : 28px;
     background-size  : contain;
@@ -27,7 +36,7 @@
         width  : 52px;
         height : 42px;
         right  : 1.5rem;
-        top    : calc(50% - 21px)
+        top    : calc(50% - 19px)
     }
 }
 
@@ -36,7 +45,7 @@
         width  : 71px;
         height : 72px;
         right  : 0;
-        top    : calc(50% - 36px)
+        top    : calc(50% - 50px)
     }
 }
 
@@ -51,7 +60,7 @@
 }
 
 .partners__button-prev {
-    background-image : url(/wp-content/themes/tikets/src/icons/left.0a3b69.svg);
+    background-image : url(/wp-content/themes/tikets/src/icons/left.44947d.svg);
     left             : 1rem
 }
 
@@ -384,7 +393,7 @@
     display         : block;
     width           : 100%;
     height          : 100%;
-    background      : url(/wp-content/themes/tikets/src/icons/plus.da1461.svg) 50% 50% no-repeat;
+    background      : url(/wp-content/themes/tikets/src/icons/plus.89a6fd.svg) 50% 50% no-repeat;
     background-size : 90%
 }
 
@@ -623,9 +632,6 @@
     .programm__item-content-text {
         padding-top : 2rem
     }
-}
-
-.tariffs__inner {
 }
 
 .tariffs__description {
@@ -1049,7 +1055,7 @@
     top             : .5rem;
     width           : 2.5rem;
     height          : 2.5rem;
-    background      : url(/wp-content/themes/tikets/src/icons/close.098dee.svg) no-repeat;
+    background      : url(/wp-content/themes/tikets/src/icons/close.6feb9d.svg) no-repeat;
     background-size : contain
 }
 
