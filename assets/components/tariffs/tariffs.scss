@@ -7,13 +7,7 @@ $RED : #f85c5d;
 $ORANGE : #fbbe49;
 
 .tariffs {
-    &__inner {
-        margin     : {
-            top    : 2rem;
-            bottom : 2rem;
-        }
-    }
-
+    
     &__description {
         color       : $GREY_MIDDLE;
         font-family : 'Open Sans', sans-serif;
