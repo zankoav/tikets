@@ -43,32 +43,28 @@
 								}
 								
 								?>
-								<div class="realty__item">
-									<div class="realty__speaker">
-										<img class="realty__image"
-											 src="<?= $main_speaker_img; ?>"
-											 title=""/>
-									</div>
-									<div class="realty__content">
-										<div class="realty__shell">
-											<div class="realty__envelope">
-												<div class="realty__name"><?= $main_speaker; ?></div>
-												<a href="<?= get_permalink(); ?>" class="realty__description">
-													<?= get_the_title(); ?>
-												</a>
-											</div>
-											<div class="realty__wrapper">
-												<div class="realty__date"><?= $dateTimeToStr; ?></div>
-												<div class="realty__address"><?= $prod_address; ?></div>
-											</div>
-											<img class="realty__plus"
-												 src="/wp-content/themes/tikets/src/icons/PlusIcon.1aca68.svg"
-												 alt="plus"
-												 title=""/>
-										</div>
-										<div class="realty__text"><?= get_the_content(); ?></div>
-									</div>
-								</div>
+                                <div class="realty__item">
+                                    <div class="realty__speaker">
+                                        <img class="realty__image" src="<?= $main_speaker_img; ?>" alt="realty" title=""/>
+                                    </div>
+                                    <div class="realty__content">
+                                        <div class="realty__shell">
+                                            <div class="realty__envelope">
+                                                <div class="realty__name"><?= $main_speaker; ?>
+                                                </div>
+                                                <div class="realty__description"><?= get_the_title(); ?></div>
+                                            </div>
+                                            <div class="realty__wrapper">
+                                                <div class="realty__date"><?= $dateTimeToStr; ?></div>
+                                                <div class="realty__address"><?= $prod_address; ?></div>
+                                            </div><img class="realty__plus" src="/wp-content/themes/tikets/src/icons/PlusIcon.1aca68.svg" alt="plus" title=""/>
+                                        </div>
+                                        <div class="realty__cover">
+                                            <div class="realty__text"><?= get_the_content(); ?></div>
+                                            <a class="orange-button " href="<?= get_permalink(); ?>">подробнее</a>
+                                        </div>
+                                    </div>
+                                </div>
 							<?php endwhile; endif; ?>
 						</div>
 					</div>
