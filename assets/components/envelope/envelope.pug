@@ -7,6 +7,6 @@ mixin envelope()
                 +e.content
                     +e.title введите e-mail
                     +e.input
-                        +input-type-2("text", "useremail",null)
+                        +input-type-2("email", "EMAIL",null)
                     +e.response
-                    +e.button Записаться
+                    +e.input(class='envelope__button' type='submit' value="Записаться") Записаться
