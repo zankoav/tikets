@@ -60,6 +60,14 @@
 						<p class="news-type-2__description mt-20"><?= $desc; ?></p>
 					</div>
 				<?php endif; ?>
+                <div class="envelope">
+                    <div class="envelope__inner"><img class="envelope__img" src="/wp-content/themes/tikets/src/icons/envelope.e9ab12.svg" alt="envelope" title=""/>
+                        <div class="envelope__text">подпишись на рассылку</div>
+                        <form id="envelope__form" method="POST" action="/">
+                            <?= do_shortcode('[mc4wp_form id="340"]');?>
+                        </form>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
