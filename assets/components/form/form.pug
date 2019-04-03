@@ -4,6 +4,12 @@ mixin input(typeInput,nameInput,placeholderInput)
     - var placeholderMod = placeholderInput ? placeholderInput : ''
     input(class=`input` type=`${typeMod}` name=`${nameMod}` placeholder=`${placeholderMod}`)
 
+mixin input-type-2(typeInput,nameInput,placeholderInput)
+    - var typeMod = typeInput ? typeInput : ''
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    input(class=`input-type-2` type=`${typeMod}` name=`${nameMod}` placeholder=`${placeholderMod}`)
+
 mixin button(text, colorButton,typeButton,nameButton)
     - var colorMod = colorButton ? colorButton : ''
     - var typeMod = typeButton ? typeButton : ''
