@@ -57,7 +57,6 @@ $('#question-speaker__form').submit(function (event) {
             $('.preloader').addClass('preloader_active');
         },
         success: function (response) {
-            console.log(response);
             let resp = JSON.parse(response);
             if (resp.status === 1) {
                 $('.question-speaker__response').text(resp.text);
@@ -70,7 +69,6 @@ $('#question-speaker__form').submit(function (event) {
         }
         ,
         error: function (x, y, z) {
-            console.log(x);
             $('.preloader').removeClass('preloader_active');
             $('.question-speaker__response').text('ОШИБКА!');
         }

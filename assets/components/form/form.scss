@@ -3,7 +3,7 @@
 $GREY_MIDDLE : #979797;
 $ORANGE : #fbbe49;
 $RED_LIGHT : #f85c5d;
-$RED: #F80000;
+$RED : #F80000;
 .input {
     border        : 1px solid $GREY_MIDDLE;
     border-radius : 3px;
@@ -21,7 +21,7 @@ $RED: #F80000;
     }
 
     &_error {
-        border: 1px solid $RED;
+        border : 1px solid $RED;
     }
 }
 
@@ -63,7 +63,7 @@ $RED: #F80000;
     }
 
     &_error {
-        border: 1px solid $RED;
+        border : 1px solid $RED;
     }
 }
 
