@@ -25,6 +25,36 @@ $RED : #F80000;
     }
 }
 
+.input-type-2 {
+    border        : 1px solid $GREY_MIDDLE;
+    border-radius : 3px;
+    height        : 30px;
+    box-shadow    : 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family   : 'Open Sans', sans-serif;
+    font-weight   : 800;
+    font-size     : 18px;
+    width         : 100%;
+    outline       : none;
+
+    @include sm {
+        height : 40px;
+    }
+
+    @include md {
+        height : 51px;
+    }
+
+
+    &::placeholder {
+        color          : $RED_LIGHT;
+        text-transform : lowercase;
+    }
+
+    &_error {
+        border : 1px solid $RED;
+    }
+}
+
 .button {
     border           : 1px solid $ORANGE;
     border-radius    : 3px;
