@@ -1,0 +1,74 @@
+mixin input(typeInput,nameInput,placeholderInput)
+    - var typeMod = typeInput ? typeInput : ''
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    input(class=`input` type=`${typeMod}` name=`${nameMod}` placeholder=`${placeholderMod}`)
+
+mixin input-type-2(typeInput,nameInput,placeholderInput)
+    - var typeMod = typeInput ? typeInput : ''
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    input(class=`input-type-2` type=`${typeMod}` name=`${nameMod}` placeholder=`${placeholderMod}`)
+
+mixin button(text, colorButton,typeButton,nameButton)
+    - var colorMod = colorButton ? colorButton : ''
+    - var typeMod = typeButton ? typeButton : ''
+    - var nameMod = nameButton ? nameButton : ''
+    button(class= `button ${colorMod}` type=`${typeMod}` name=`${nameMod}`)= text
+
+
+mixin textarea(nameInput,placeholderInput)
+    - var nameMod = nameInput ? nameInput : ''
+    - var placeholderMod = placeholderInput ? placeholderInput : ''
+    textarea(class=`textarea` name=`${nameMod}` placeholder=`${placeholderMod}`)
+
+mixin checkout-form-input(title, typeInput,nameInput, isRequired)
+    - var typeMod = typeInput ? typeInput : 'text'
+    - var nameMod = nameInput ? nameInput : ''
+    +b.checkout-form-group.row
+        .col-12.col-sm-3.col-offset-sm-1.col-hd-2
+            +e.LABEL.label.mb-05.mb-sm-00(for=nameMod)=title
+        .col-12.col-sm-8.col-hd-9
+            - if (isRequired)
+                +e.INPUT.input(id=nameMod, type=`${typeMod}`, name=nameMod, required)
+            - else
+                +e.INPUT.input(id=nameMod, type=`${typeMod}`, name=nameMod)
+            +e.message
+
+
+mixin checkout-form-textarea(title,nameInput)
+    - var nameMod = nameInput ? nameInput : ''
+    +b.checkout-form-group.row
+        .col-12.col-sm-3.col-offset-sm-1.col-hd-2
+            +e.LABEL.label.mb-05.mb-sm-00(for=nameMod)=title
+        .col-12.col-sm-8.col-hd-9
+            +e.TEXTAREA.textarea(id=nameMod, name=nameMod, rows="4")
+        +e.message
+
+mixin checkout-form-promokod(title,nameInput)
+    - var typeMod = typeInput ? typeInput : 'text'
+    - var nameMod = nameInput ? nameInput : ''
+    +b.checkout-form-group.row
+        .col-12.col-sm-3.col-offset-sm-1.col-hd-2
+            +e.LABEL.label.mb-05.mb-sm-00(for=nameMod)=title
+        .col-12.col-sm-5.col-hd-7
+            - if (isRequired)
+                +e.INPUT.input(id=nameMod, type=`${typeMod}`, name=nameMod, required)
+            - else
+                +e.INPUT.input(id=nameMod, type=`${typeMod}`, name=nameMod)
+            +e.message
+        .col-7.col-offset-5.col-offset-sm-0.col-sm-3.col-hd-2
+            +e.apply.mt-10.mt-sm-00(href='#') Применить
+
+mixin checkout-form-select(title,nameSelect)
+    - var nameMod = nameSelect ? nameSelect : ''
+    +b.checkout-form-group.row
+        .col-12.col-sm-3.col-offset-sm-1.col-hd-2
+            +e.LABEL.label.mb-05.mb-sm-00(for=nameMod)=title
+        .col-12.col-sm-8.col-hd-9
+            +e.SELECT.select(id=nameMod, name=nameMod)
+                option(value='1', data-price='100') Standart
+                option(value='2', data-price='200') Vip
+                option(value='3', data-price='300.60') Business
+                option(value='4', data-price='400.99') Platinum
+        +e.message
