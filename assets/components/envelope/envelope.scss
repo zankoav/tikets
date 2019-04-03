@@ -1,0 +1,109 @@
+@import "./../../common/constants";
+
+$GREY_MIDDLE : #6A747D;
+$ORANGE : #FBBE49;
+$GREY_LIGHT : #A8A8A8;
+
+.envelope {
+
+    @include sm {
+        margin-top : 32rem;
+    }
+
+
+    &__inner {
+        position : relative;
+    }
+
+    &__img {
+        width  : 243px;
+        height : auto;
+    }
+
+
+    &__title {
+        color          : $WHITE;
+        font-family    : 'Open Sans', sans-serif;
+        font-size      : 16px;
+        font-weight    : 800;
+        line-height    : 32px;
+        text-transform : uppercase;
+        padding-bottom : .5rem;
+
+        @include sm {
+            font-size      : 20px;
+            padding-bottom : 1rem;
+        }
+
+        @include md {
+            font-size : 24px;
+        }
+    }
+
+    &__content {
+
+    }
+
+
+    &__input {
+        width          : 60%;
+        padding-bottom : .5rem;
+
+        @include sm {
+            width : 80%;
+        }
+    }
+
+
+    &__response {
+        font-family  : 'Open Sans', sans-serif;
+        font-weight  : 800;
+        font-size    : 18px;
+        width        : 100%;
+        padding-left : 1rem;
+    }
+
+    &__button {
+        width       : 50%;
+        cursor      : pointer;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 14px;
+        line-height : 14px;
+        text-align  : center;
+        color       : $GREY_MIDDLE;
+        background  : linear-gradient(180deg, #F8F9F9 0%, #EFF0F0 100%);
+        border      : 1px solid $GREY_LIGHT;
+        padding     : .5rem 1rem;
+        text-shadow : 0px 2px 4px rgba(0, 0, 0, 0.162959);
+
+        @include sm {
+            font-size   : 18px;
+            line-height : 19px;
+            width       : 70%;
+        }
+    }
+
+    &__text {
+        color          : $ORANGE;
+        font-family    : 'Open Sans', sans-serif;
+        font-size      : 16px;
+        line-height    : 16px;
+        font-weight    : 800;
+        text-transform : uppercase;
+
+        @include sm {
+            font-size   : 26px;
+            line-height : 26px;
+        }
+
+        @include md {
+            font-size   : 39px;
+            line-height : 32px;
+        }
+    }
+}
+
+#envelope__form {
+    position : absolute;
+    top      : 24%;
+}

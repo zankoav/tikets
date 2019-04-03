@@ -1,0 +1,12 @@
+mixin envelope()
+    +b.envelope
+        +e.inner
+            +e.img(src=require("./../images/envelope.svg"), alt="envelope")
+            +e.text подпишись на рассылку
+            form(id="envelope__form" method='POST' action='/')
+                +e.content
+                    +e.title введите e-mail
+                    +e.input
+                        +input("text", "useremail",null)
+                    +e.response
+                    +e.button Записаться

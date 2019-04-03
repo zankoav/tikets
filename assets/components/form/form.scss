@@ -1,0 +1,169 @@
+@import "./../../common/constants";
+
+$GREY_MIDDLE : #979797;
+$ORANGE : #fbbe49;
+$RED_LIGHT : #f85c5d;
+$RED : #F80000;
+.input {
+    border        : 1px solid $GREY_MIDDLE;
+    border-radius : 3px;
+    padding       : 1rem;
+    box-shadow    : 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family   : 'Open Sans', sans-serif;
+    font-weight   : 800;
+    font-size     : 18px;
+    width         : 100%;
+    outline       : none;
+
+    &::placeholder {
+        color          : $RED_LIGHT;
+        text-transform : lowercase;
+    }
+
+    &_error {
+        border : 1px solid $RED;
+    }
+}
+
+.button {
+    border           : 1px solid $ORANGE;
+    border-radius    : 3px;
+    box-shadow       : 0 4px 4px rgba(0, 0, 0, 0.25);
+    padding          : 1rem;
+    background-color : $ORANGE;
+    font-family      : 'Open Sans', sans-serif;
+    font-size        : 18px;
+    font-weight      : 800;
+    text-align       : center;
+    text-transform   : uppercase;
+    line-height      : 1;
+    width            : 100%;
+
+    &__color_red {
+        color : $RED_LIGHT;
+    }
+}
+
+.textarea {
+    outline       : none;
+    border        : 1px solid $GREY_MIDDLE;
+    border-radius : 3px;
+    padding       : 1rem;
+    box-shadow    : 0 4px 4px rgba(0, 0, 0, 0.25);
+    font-family   : 'Open Sans', sans-serif;
+    font-weight   : 800;
+    font-size     : 18px;
+    width         : 100%;
+    height        : 100%;
+
+    &::placeholder {
+        color          : $RED_LIGHT;
+        text-transform : lowercase;
+
+    }
+
+    &_error {
+        border : 1px solid $RED;
+    }
+}
+
+.checkout__form {
+
+    .wrapp-overflow {
+        position : relative;
+        overflow : hidden;
+    }
+
+    & .textarea[name='message'] {
+        position : absolute;
+        width    : 2px;
+        height   : 2px;
+        left     : -4px;
+        top      : -4px;
+        padding  : 0;
+    }
+}
+
+.checkout-form-group {
+    margin-bottom : 1rem;
+
+    &_error {
+
+        .checkout-form-group {
+            &__message {
+                display : block;
+            }
+
+            &__input, &__textarea {
+                border-color : $RED;
+            }
+        }
+    }
+
+    &__label {
+        font-size   : 20px;
+        line-height : 24px;
+        color       : #8d9bb0;
+        font-weight : 800;
+        display     : block;
+
+        @include md {
+            font-size : 26px;
+        }
+    }
+
+    &__input, &__textarea, &__select {
+        border             : 1px dashed #8d9bb0;
+        background         : transparent;
+        border-radius      : 12px;
+        padding            : .5rem;
+        display            : block;
+        width              : 100%;
+        font-size          : 20px;
+        color              : #8d9bb0;
+        font-weight        : 800;
+        -webkit-appearance : none;
+
+        @include sm {
+            padding : .75rem;
+        }
+
+        @include md {
+            font-size : 26px;
+            padding   : 1rem;
+        }
+
+        &:focus {
+            outline : none;
+        }
+    }
+
+    &__apply {
+        padding          : 12px 0 11px;
+        background-color : $ORANGE;
+        color            : $WHITE;
+        text-transform   : uppercase;
+        font-weight      : 800;
+        font-size        : 20px;
+        line-height      : 19px;
+        text-align       : center;
+        display          : block;
+        border-radius    : 3px;
+
+        @include md {
+            padding   : 21px 0 21px;
+            font-size : 26px;
+        }
+    }
+
+    &__message {
+        color      : $RED;
+        font-size  : 12px;
+        margin-top : .5rem;
+        display    : none;
+
+        @include sm {
+            font-size : 16px;
+        }
+    }
+}
