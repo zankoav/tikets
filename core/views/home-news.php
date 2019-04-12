@@ -2,6 +2,7 @@
     $first_news_id  = carbon_get_post_meta(get_the_ID(), 'first_new_id');
     $second_news_id = carbon_get_post_meta(get_the_ID(), 'second_new_id');
     $third_news_id  = carbon_get_post_meta(get_the_ID(), 'third_new_id');
+    $shortcode_form  = carbon_get_theme_option('shortcode_form');
 ?>
 
 <div class="news mb-40 pb-md-20 mt-40 mt-sm-20 mt-md-40">
@@ -66,10 +67,9 @@
                     <div class="envelope__inner">
                         <img class="envelope__img" src="/wp-content/themes/tikets/src/icons/envelope.e9ab12.svg"
                              alt="envelope" title=""/>
-                        <div class="envelope__text">подпишись на рассылку
-                        </div>
+                        <div class="envelope__text">подпишись на рассылку</div>
                         <form id="envelope__form" method="POST" action="/">
-                            <?= do_shortcode('[mc4wp_form id="340"]'); ?>
+                            <?= do_shortcode($shortcode_form); ?>
                         </form>
                     </div>
                 </div>
