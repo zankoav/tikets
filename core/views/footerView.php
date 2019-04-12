@@ -47,7 +47,7 @@
 					<div class="footer__address footer__address_text">Режим работы: 9:00-18:00
 					</div>
 					<img class="footer__address footer__address_image"
-						 src="/wp-content/themes/tikets/src/icons/logo-payment-system.d23a68.png" alt="Payment" title=""/>
+                         src="/wp-content/themes/tikets/src/icons/logo-payment-system.d23a70.png" alt="Payment" title=""/>
 				</div>
 			</div>
 		</div>

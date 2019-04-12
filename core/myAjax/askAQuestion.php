@@ -1,6 +1,4 @@
 <?php
-
-//    var_dump($spikers_list[0]["spiker_name"]);
 	add_action( 'wp_ajax_questionSpeaker', 'questionSpeaker' );
 	add_action( 'wp_ajax_nopriv_questionSpeaker', 'questionSpeaker' );
 	
