@@ -20,6 +20,8 @@ import './../components/orange-button/orange-button';
 import './../components/stock/stock';
 import './../components/button-with-balls/button-with-balls';
 import "./../components/points/points";
+import  './../components/envelope/envelope';
+
 
 
 

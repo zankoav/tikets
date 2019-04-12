@@ -1,9 +1,0 @@
-mixin button-with-balls(text,mod,firstColor,secondColor,thirdColor)
-    - var textColorMod = mod ? mod : ''
-    - var firstColorMod = firstColor ? firstColor : ''
-    - var secondColorMod = secondColor ? secondColor : ''
-    - var thirdColorMod = thirdColor ? thirdColor : ''
-    +b(class = `button-with-balls ${textColorMod}`)= text
-        +e.SPAN(class = `ball ${firstColorMod}`)
-        +e.SPAN(class = `ball ${secondColorMod}`)
-        +e.SPAN(class = `ball ${thirdColorMod}`)
