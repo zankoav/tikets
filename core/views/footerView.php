@@ -53,7 +53,7 @@
 		</div>
 		<div class="footer__copyright pt-10 pt-sm-20">
 			<div class="footer__copyright footer__copyright_text">
-				© <?= date('Y');?>. Все права защищены. УНП 805090058
+				© <?= date('Y');?>. Все права защищены. УНП <?= $unp; ?>
 			</div>
 			<a class="footer__copyright footer__copyright_development" href="https://mastak.by/">
 				<span class="footer__copyright footer__copyright_development-text">Разработка сайта</span>
