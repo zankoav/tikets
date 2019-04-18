@@ -5,7 +5,6 @@
 	get_header();
 	
 	$option_link = carbon_get_theme_option('crb_404_link');
-	var_dump($option_link);
 ?>
 
 <?php get_template_part( '/core/views/headerView' ); ?>
