@@ -210,7 +210,7 @@
 						<div class="col-12 col-sm-11">
 							<p class="promokod__description">
 								Нажимая на кнопку “Оплатить”, Вы принимаете условия
-								<a href="<?= get_permalink( $public_offer_link ) ?>">Публичной оферты</a>
+								<a href="<?= esc_url( $public_offer_link ) ?>" target="_blank">Публичной оферты</a>
 							</p>
 						</div>
 					</div>

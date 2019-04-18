@@ -3,7 +3,10 @@
 	$variations = $product->get_available_variations();
 	foreach($variations as $variation) {
 		foreach($variation[ "attributes" ] as $attribute) {
-			if ($attribute == "busines"){
+			if ($attribute == "busines" || $attribute == "business"){
+			    if (!empty($business_ticket) && $attribute == "busines"){
+			        continue;
+                }
 				$business_ticket = $variation;
 			}
 			if ($attribute == "vip"){
