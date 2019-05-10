@@ -46,6 +46,8 @@
 	require_once __DIR__ . '/core/myAjax/becomePartner.php';
 	require_once __DIR__ . '/core/myAjax/askAQuestion.php';
 	require_once __DIR__ . '/core/webpayRespons.php';
+    require_once __DIR__ . '/core/myAjax/checkCoupone.php';
+    require_once __DIR__ . '/core/myAjax/getDiscontByCount.php';
 	
 	
 	//----get permalink to checkout page

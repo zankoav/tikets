@@ -77,19 +77,7 @@
 				</div>
 			</div>
 			<form class="checkout__form" action="/" method="post" data-program-id="<?= $productID; ?>">
-                <?php
-                    $args = array(
-                        'posts_per_page'   => -1,
-                        'orderby'          => 'title',
-                        'order'            => 'asc',
-                        'post_type'        => 'shop_coupon',
-                        'post_status'      => 'publish',
-                    );
 
-                    $coupons = get_posts( $args );
-                    $metaCoupon = get_post_meta($coupons[0]->ID);
-                    var_dump($metaCoupon );
-                ?>
                 <div class="checkout-form-group row">
                     <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
                         <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Промокод</label>
@@ -100,8 +88,8 @@
                         </div>
                     </div>
                         <a class="promokod__button-chekout" href="" id="check_coupone">check-coupone</a>
-
                 </div>
+
 				<div class="checkout-form-group row">
 					<div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
 						<label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Телефон</label>
