@@ -1,5 +1,30 @@
 mixin header()
     +b.HEADER.header
+        +e.menu-height
+            .container
+                +e.UL.menu-list.menu-list-height
+                    +e.menu-item.menu-item-height
+                        a(href="#") О компании
+                        +e.UL.sub-menu-list.sub-menu-list-height
+                            +e.sub-menu-item.sub-menu-item-height._active
+                                a(href="#") О компании
+                            +e.sub-menu-item.sub-menu-item-height
+                                a(href="#") Календарь семинаров
+                            +e.sub-menu-item.sub-menu-item-height
+                                a(href="#") Магазин
+                    +e.menu-item.menu-item-height
+                        a(href="#") Календарь семинаров
+                    +e.menu-item.menu-item-height
+                        a(href="#") Магазин
+                +e.search-and-login
+                    +e.search(href="#")
+                        +e.search-title Поиск
+                        +e.search-icon._mobile(src=require('./../images/search-mobile.svg'), alt='Search')
+                        +e.search-icon(src=require('./../images/search.svg'), alt='Search')
+                    +e.login(href="#")
+                        +e.login-title Личный кабинет
+                        +e.login-icon._mobile(src=require('./../images/login-mobile.svg'), alt='Login')
+                        +e.login-icon(src=require('./../images/login.svg'), alt='Login')
         .container
             +e.inner.row
                 .col-5.col-sm-2.col-md-3.col-hd-2
@@ -22,6 +47,17 @@ mixin header()
                                     a(href="#") Календарь семинаров
                                 +e.menu-item
                                     a(href="#") Магазин
+                            +e.UL.menu-list.menu-cat
+                                +e.menu-item._active
+                                    a(href="#") HoReCa
+                                +e.menu-item
+                                    a(href="#") Бизнес
+                                +e.menu-item
+                                    a(href="#") Дизайн
+                                +e.menu-item
+                                    a(href="#") Психология и коучинг
+                                +e.menu-item
+                                    a(href="#") Медицина красота и здоровье
                             +e.search-and-login
                                 +e.search(href="#")
                                     +e.search-title Поиск

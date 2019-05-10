@@ -36,6 +36,7 @@ $ORANGE : #FBBE49;
 
         @include lg {
             width : 276px;
+            padding-top: 20rem;
         }
 
         @include hd {
@@ -91,6 +92,7 @@ $ORANGE : #FBBE49;
 
         @include lg {
             transform : translateY(-210px);
+            margin-top: -20rem;
         }
     }
 

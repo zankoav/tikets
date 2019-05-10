@@ -27,6 +27,11 @@ mixin footer()
                         +e.contacts_text
                             +e.contacts_text-image(src=require('./../images/email.png'), alt='Velcom')
                             a(href="tel:info@spplaw.by") info@spplaw.by
+                        +e.contacts_text
+                            a(href="tel:info@spplaw.by")
+                                +e.soc(src=require('./../images/soc2.png'), alt='Velcom')
+                            a(href="tel:info@spplaw.by")
+                                +e.soc(src=require('./../images/soc3.png'), alt='Velcom')
                 .col-12.col-sm-3.pt-10.pt-sm-00
                     +e.address
                         +e.title.pt-05.pb-05.pt-sm-00.pb-sm-00 Адрес

@@ -212,3 +212,59 @@ function promokod() {
 
     $promokod.on('focus', clearFocus);
 }
+
+
+
+
+$('#form2').submit(function (event) {
+    event.preventDefault();
+    let name = $(this).find("[name*='name']").val();
+    let komp = $(this).find("[name*='komp']").val();
+    let col = $(this).find("[name*='col']").val();
+
+    if (name.length === 0) {
+        console.log('name', Validator.ERROR_EMPTY_FIELD);
+        $(this).find("[name*='name']").addClass('input_error');
+        return;
+    } else {
+        $(this).find("[name*='name']").removeClass('input_error');
+    }
+
+    if (name.length === 0) {
+        console.log('komp', Validator.ERROR_EMPTY_FIELD);
+        $(this).find("[name*='komp']").addClass('input_error');
+        return;
+    } else {
+        $(this).find("[name*='komp']").removeClass('input_error');
+    }
+
+
+    if (name.length === 0) {
+        console.log('col', Validator.ERROR_EMPTY_FIELD);
+        $(this).find("[name*='col']").addClass('input_error');
+        return;
+    } else {
+        $(this).find("[name*='col']").removeClass('input_error');
+    }
+
+
+
+    let data = {
+        action: 'sendForm',
+        name: name,
+        komp: komp,
+        col: col
+    };
+
+    $.ajax({
+        type: 'POST',
+        url: kompSendMail.url,
+        data: data,
+        success: function (response) {
+            console.log(response);
+            let resp = JSON.parse(response);
+            $('#form2')[0].reset();
+
+        }
+    });
+});

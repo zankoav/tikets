@@ -11,3 +11,4 @@ import './../components/promokod/promokod';
 import './../components/pay-type/pay-type';
 import './../components/form/form';
 import './../components/preloader/preloader';
+import './../components/types/types';

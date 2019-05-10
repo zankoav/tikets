@@ -13,14 +13,6 @@ html
                     .row
                         .col-12.col-md-10.col-lg-8.col-hd-7
                             +sub-title('Как улучшить маркетинг в компании за 3 рабочих недели', 'mb-20 mb-40')
-                    +e.FORM.form(action='/', method='post', data-program-id="10")
-                        +checkout-form-input('Телефон','text', 'user-phone', true)
-                        +checkout-form-input('Имя','text', 'user-name', true)
-                        +checkout-form-input('Email','email', 'user-email', true)
-                        +checkout-form-select('Тариф','user-tariff')
-                        +checkout-form-textarea('Комментарий', 'user-comment')
-                        .wrapp-overflow
-                            +textarea("message")
-                        +promokod()
+                    +types()
                 +preloader('preloader__spinner_egg')
         +footer()
