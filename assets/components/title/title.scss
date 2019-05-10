@@ -10,12 +10,12 @@ $GREY : #e4e9ee;
     font-weight    : 800;
 
     @include sm {
-        font-size : 72px;
+        font-size : 54px;
     }
 
     @include md {
         letter-spacing : -.5rem;
-        font-size      : 114px;
+        font-size      : 90px;
     }
 
     &_white {
@@ -23,7 +23,7 @@ $GREY : #e4e9ee;
     }
 
     &_grey {
-        color : $GREY;
+        color : #d3d5d8;
     }
 
     &_red {

@@ -1,0 +1,274 @@
+@import "./../../common/constants";
+
+
+select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+}
+
+.wrapp-overflow {
+    position: relative;
+    overflow: hidden;
+    display: none;
+}
+
+.checkout-form-group{
+    &__select{
+
+        background-image:
+                linear-gradient(45deg, transparent 50%, gray 50%),
+                linear-gradient(135deg, gray 50%, transparent 50%),
+                linear-gradient(to right, #ccc, #ccc);
+        background-position:
+                calc(100% - 20px) calc(1em + 2px),
+                calc(100% - 15px) calc(1em + 2px),
+                calc(100% - 1.5em) 0.5em;
+        background-size:
+                5px 5px,
+                5px 5px,
+                1px 1.5em;
+        background-repeat: no-repeat;
+
+    }
+}
+
+.types {
+
+    &__button-chekout {
+        background-color : $ORANGE;
+        display          : block;
+        padding          : 10px 0;
+        text-align       : center;
+        border-radius    : 3px;
+        text-transform   : uppercase;
+        color            : $RED;
+        font-weight      : 800;
+        font-size        : 20px;
+        line-height      : 19px;
+
+        @include md {
+            font-size : 26px;
+            padding   : 28px 0 27px;
+        }
+    }
+
+    &__link{
+        padding-left: 4px;
+        font-size: 14px;
+        line-height: 19px;
+        color: #565656;
+        text-decoration: underline;
+
+        @include md{
+            font-size: 20px;
+        }
+    }
+
+    &__description {
+        font-size   : 14px;
+        line-height : 19px;
+        color       : #565656;
+        margin-bottom: 4rem;
+
+        @include sm {
+            text-align : right;
+            font-size  : 16px;
+        }
+
+        @include md {
+            font-size : 20px;
+        }
+    }
+
+
+
+    &__form {
+        margin-top:4rem;
+    }
+
+    &__wrapper-list {
+        border        : 1px dashed #a9b4c3;
+        border-radius : 4px;
+        overflow      : hidden;
+        position      : relative;
+
+        @include sm {
+            border        : none;
+            border-radius : 0;
+            overflow      : initial;
+        }
+
+        &_active {
+            .types__button {
+                transform : rotate(45deg);
+            }
+        }
+    }
+
+    &__button {
+        position         : absolute;
+        width            : 2rem;
+        height           : 2rem;
+        border-radius    : 50%;
+        background-color : $ORANGE;
+        right            : 1rem;
+        top              : 7px;
+        z-index          : 1;
+        display          : flex;
+        align-items      : center;
+        justify-content  : center;
+        transition       : .4s;
+        overflow         : hidden;
+
+        @include sm {
+            display : none;
+        }
+
+        &:after {
+            content         : '';
+            display         : block;
+            width           : 100%;
+            height          : 100%;
+            background      : url('./../../images/plus.svg') 50% 50% no-repeat;
+            background-size : 90%;
+        }
+    }
+
+    &__list {
+        position       : relative;
+        display        : flex;
+        flex-direction : column;
+
+        @include sm {
+            flex-direction : row;
+        }
+
+        &:after {
+            @include sm {
+                content          : '';
+                position         : absolute;
+                width            : 100%;
+                height           : 2px;
+                background-color : #f85c5d;
+                bottom           : 0;
+            }
+        }
+
+        &_active {
+            .types__list-tab {
+                display : block;
+            }
+        }
+
+    }
+
+    &__list-tab {
+        display : none;
+
+        @include sm {
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            flex            : 1;
+            margin-left     : -1px;
+        }
+
+        &:first-child {
+
+            .types__tab-button {
+                border-top : none;
+
+                @include sm {
+                    border-top : 1px dashed #a9b4c3;
+                }
+
+            }
+
+            @include sm {
+                margin-left : 4px;
+            }
+
+        }
+
+        &:last-child {
+            @include sm {
+                margin-right : 4px;
+            }
+        }
+
+        &_active + & {
+            .types__tab-button {
+                border-top : none;
+
+                @include sm {
+                    border-top : 1px dashed #a9b4c3;
+                }
+            }
+        }
+
+        &_active {
+            display : block;
+            .types__tab-button {
+                background-color : #f85c5d;
+                color            : $WHITE;
+                border-top       : none;
+                font-weight      : 700;
+
+                @include sm {
+                    border : none;
+                }
+            }
+        }
+
+    }
+
+    &__content {
+        display   : none;
+        animation : fadeIn .6s ease-out;
+
+        &_active {
+            display : block;
+        }
+    }
+
+    &__tab-button {
+        display     : block;
+        font-size   : 14px;
+        line-height : 1;
+        color       : #565656;
+        padding     : 1rem 2rem;
+        border-top  : 1px dashed #a9b4c3;
+        transition  : .4s;
+
+        @include sm {
+            height                  : 46px;
+            text-align              : center;
+            border                  : 1px dashed #a9b4c3;
+            border-bottom           : none;
+            border-top-left-radius  : 12px;
+            border-top-right-radius : 12px;
+            width                   : 100%;
+            font-size               : 13px;
+            padding                 : 1rem 0;
+        }
+
+        @include md {
+            font-size : 16px;
+            height    : 49px;
+        }
+
+        @include lg {
+            font-size : 20px;
+            height    : 53px;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity : 0;
+    }
+    100% {
+        opacity : 100;
+    }
+}

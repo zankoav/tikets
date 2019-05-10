@@ -98,32 +98,23 @@ $ORANGE : #fbbe49;
     border        : 2px solid $ORANGE;
     border-radius : 24px;
     padding       : 2.5rem 1rem 2rem;
-    margin-top    : 1rem;
-    transform     : translateX(24px);
+    margin-top       : 1rem;
 
     @include sm {
-        margin-top : 2rem;
-        transform  : translateX(64px);
+        margin-top : initial;
     }
 
     @include md {
         padding-left : 2rem;
-        transform    : translateX(80px);
     }
 
     @include lg {
-        margin-top : 4rem;
         padding    : {
             top    : 4rem;
             left   : 4rem;
             bottom : 4rem;
         }
     ;
-        transform  : translateX(100px);
-    }
-
-    @include hd {
-        transform : translateX(116px);
     }
 
     &__title {
@@ -256,17 +247,14 @@ $ORANGE : #fbbe49;
     border-radius    : 24px;
     padding          : 2rem 1rem;
     margin           : 1rem 0 2rem;
-    transform        : translateX(24px);
 
     @include sm {
         margin-top    : 2rem;
         margin-bottom : initial;
-        transform     : translateX(-64px);
     }
 
     @include md {
         padding-left : 2rem;
-        transform    : translateX(-84px);
     }
 
     @include lg {
@@ -277,12 +265,8 @@ $ORANGE : #fbbe49;
             bottom : 4rem;
         }
     ;
-        transform  : translateX(-104px);
     }
 
-    @include hd {
-        transform : translateX(-118px);
-    }
 
     &__title {
         color            : $GREY_LIGHT;

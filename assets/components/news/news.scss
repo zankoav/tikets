@@ -83,6 +83,7 @@
         text-align    : right;
         position      : relative;
         margin-bottom : 2rem;
+        width: 100%;
 
         &:after {
             content          : '';
@@ -98,12 +99,31 @@
         @include sm {
             text-align : center;
         }
+
+        @include md{
+            width: 70%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @include lg{
+            width: 70%;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 
     &__image {
         display : inline-block;
         width   : 100%;
         height  : auto;
+        width: 100%;
+
+        @include md{
+            width: 60%;
+        }
     }
 }
 
@@ -112,9 +132,17 @@
     padding       : 1rem 1rem 2rem;
     border        : 2px dashed #cdd6de;
     margin-top    : 2rem;
+    width: 100%;
 
     @include sm {
         padding : 1rem 1rem 4rem;
+    }
+
+    @include md{
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__image {
