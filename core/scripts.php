@@ -6,9 +6,7 @@
  * Time: 4:30 PM
  */
 
-if (!defined('ABSPATH')) {
-    exit();
-}
+if (!defined('ABSPATH')) { exit(); }
 
 add_action('template_redirect', function () {
 
@@ -25,6 +23,7 @@ add_action('template_redirect', function () {
         }
         elseif (is_page_template('template-checkout.php')) {
 	        wp_enqueue_script('checkout', Assets::getJs('checkout'), false, null, true);
+            wp_enqueue_script('checkCouponejs', BASE_URL ."/core/myAjax/checkCouponejs.js", false, null, true);
         }
         elseif (is_page_template('template-question.php')) {
 	        wp_enqueue_script('questionSpeaker', Assets::getJs('questionSpeaker'), false, null, true);
