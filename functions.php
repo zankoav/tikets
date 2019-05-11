@@ -51,7 +51,7 @@
 	
 	
 	//----get permalink to checkout page
-function getCheckoutPermaLink(){
+    function getCheckoutPermaLink(){
 	$checkout_args = [
 		'post_type' => 'page',
 		'meta_key' => '_wp_page_template',
@@ -71,7 +71,7 @@ function getCheckoutPermaLink(){
 		return get_permalink($checkout_page[0]->ID);
 	}
 
-function getMonthNameRu($index){
+    function getMonthNameRu($index){
 	$monthNames = [
 		'января',
 		'февраля',

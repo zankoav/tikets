@@ -6,22 +6,7 @@
 
     <div class="header__menu-height">
         <div class="container">
-            <ul class="header__menu-list menu-list-height">
-                <li class="header__menu-item menu-item-height"><a href="#">О компании</a>
-                    <ul class="header__sub-menu-list sub-menu-list-height">
-                        <li class="header__sub-menu-item sub-menu-item-height sub-menu-item-height_active"><a href="#">О компании</a>
-                        </li>
-                        <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Календарь семинаров</a>
-                        </li>
-                        <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Магазин</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="header__menu-item menu-item-height"><a href="#">Календарь семинаров</a>
-                </li>
-                <li class="header__menu-item menu-item-height"><a href="#">Магазин</a>
-                </li>
-            </ul>
+            <?php get_template_part( "/core/views/desktopTopMenu" ); ?>
             <div class="header__search-and-login"><a class="header__search" href="#">
                     <div class="header__search-title">Поиск
                     </div><img class="header__search-icon header__search-icon_mobile" src="/wp-content/themes/tikets/src/icons/search-mobile.f5e714.svg" alt="Search" title=""/><img class="header__search-icon" src="/wp-content/themes/tikets/src/icons/search.a0811e.svg" alt="Search" title=""/></a><a class="header__login" href="#">
@@ -42,20 +27,7 @@
 				<nav class="header__navigation">
 					<div class="header__menu">
 						<?php get_template_part( "/core/views/mainMenu" ); ?>
-
-                        <ul class="header__menu-list menu-cat">
-                            <li class="header__menu-item header__menu-item_active"><a href="#">HoReCa</a>
-                            </li>
-                            <li class="header__menu-item"><a href="#">Бизнес</a>
-                            </li>
-                            <li class="header__menu-item"><a href="#">Дизайн</a>
-                            </li>
-                            <li class="header__menu-item"><a href="#">Психология и коучинг</a>
-                            </li>
-                            <li class="header__menu-item"><a href="#">Медицина красота и здоровье</a>
-                            </li>
-                        </ul>
-
+                        <?php get_template_part( "/core/views/desktopMainMenu" ); ?>
 						<div class="header__search-and-login">
 							<a class="header__search" href="#">
 								<div class="header__search-title">Поиск
