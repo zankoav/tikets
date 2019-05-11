@@ -16,7 +16,6 @@
 	function change_class_tag_li($classes, $item, $args){
 		if ($args->theme_location === 'main_menu') {
 			if ($item->menu_item_parent == 0) {
-//				var_dump($classes);
 				$classes[] = 'header__menu-item';
 				if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes )) {
 					$classes[] = 'header__menu-item_active';
@@ -28,13 +27,36 @@
 				}
 			}
 			
-		} elseif ($args->theme_location === 'right_menu') {
+		}
+        elseif ($args->theme_location === 'desktop_top_menu')
+        {
+            if ($item->menu_item_parent == 0) {
+
+                $classes[] = 'header__menu-item';
+                $classes[] = 'menu-item-height';
+
+                if (in_array( 'current-menu-item', $classes ) || in_array( 'current-menu-parent', $classes )) {
+                    $classes[] = 'header__menu-item_active';
+                }
+            } else {
+                $classes[] = 'header__sub-menu-item';
+                $classes[] = 'sub-menu-item-height';
+                if (in_array( 'current-menu-item', $classes )) {
+                    $classes[] = 'sub-menu-item-height_active';
+                }
+            }
+
+        }
+		elseif ($args->theme_location === 'right_menu')
+        {
 			$classes[] = 'header__categories-item';
 			
 			if (in_array( 'current-menu-item', $classes )) {
 				$classes[] = 'header__categories-item_active';
 			}
-		} elseif ($args->theme_location === 'footer_menu') {
+		}
+		elseif ($args->theme_location === 'footer_menu')
+        {
 			$classes[] = 'footer__menu';
 			$classes[] = 'footer__menu_list-item ';
 			
@@ -42,6 +64,15 @@
 				$classes[] = 'footer__menu_active';
 			}
 		}
+		elseif ($args->theme_location === 'desktop_main_menu')
+        {
+            $classes[] = 'header__menu-item';
+            //            $classes[] = 'footer__menu_list-item ';
+
+            if (in_array( 'current-menu-item', $classes )) {
+                $classes[] = 'header__menu-item_active';
+            }
+        }
 		return $classes;
 	}
 	
