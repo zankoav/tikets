@@ -3,6 +3,34 @@
 	$logo = carbon_get_theme_option( 'crb_logo_img' ) ;
 ?>
 <header class="header">
+
+    <div class="header__menu-height">
+        <div class="container">
+            <ul class="header__menu-list menu-list-height">
+                <li class="header__menu-item menu-item-height"><a href="#">О компании</a>
+                    <ul class="header__sub-menu-list sub-menu-list-height">
+                        <li class="header__sub-menu-item sub-menu-item-height sub-menu-item-height_active"><a href="#">О компании</a>
+                        </li>
+                        <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Календарь семинаров</a>
+                        </li>
+                        <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Магазин</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="header__menu-item menu-item-height"><a href="#">Календарь семинаров</a>
+                </li>
+                <li class="header__menu-item menu-item-height"><a href="#">Магазин</a>
+                </li>
+            </ul>
+            <div class="header__search-and-login"><a class="header__search" href="#">
+                    <div class="header__search-title">Поиск
+                    </div><img class="header__search-icon header__search-icon_mobile" src="/wp-content/themes/tikets/src/icons/search-mobile.f5e714.svg" alt="Search" title=""/><img class="header__search-icon" src="/wp-content/themes/tikets/src/icons/search.a0811e.svg" alt="Search" title=""/></a><a class="header__login" href="#">
+                    <div class="header__login-title">Личный кабинет
+                    </div><img class="header__login-icon header__login-icon_mobile" src="/wp-content/themes/tikets/src/icons/login-mobile.17d2d1.svg" alt="Login" title=""/><img class="header__login-icon" src="/wp-content/themes/tikets/src/icons/login.bf9d84.svg" alt="Login" title=""/></a>
+            </div>
+        </div>
+    </div>
+
 	<div class="container">
 		<div class="header__inner row">
 			<div class="col-5 col-sm-2 col-md-3 col-hd-2">
@@ -13,9 +41,21 @@
 			<div class="col-7 col-sm-10 col-md-9 col-hd-10">
 				<nav class="header__navigation">
 					<div class="header__menu">
-						
 						<?php get_template_part( "/core/views/mainMenu" ); ?>
-						
+
+                        <ul class="header__menu-list menu-cat">
+                            <li class="header__menu-item header__menu-item_active"><a href="#">HoReCa</a>
+                            </li>
+                            <li class="header__menu-item"><a href="#">Бизнес</a>
+                            </li>
+                            <li class="header__menu-item"><a href="#">Дизайн</a>
+                            </li>
+                            <li class="header__menu-item"><a href="#">Психология и коучинг</a>
+                            </li>
+                            <li class="header__menu-item"><a href="#">Медицина красота и здоровье</a>
+                            </li>
+                        </ul>
+
 						<div class="header__search-and-login">
 							<a class="header__search" href="#">
 								<div class="header__search-title">Поиск

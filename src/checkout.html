@@ -4,12 +4,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>checkout title</title>
-  <link href="/src/css/common.584fb173fd245f130580.min.css" rel="stylesheet"><link href="/src/css/checkout.584fb173fd245f130580.min.css" rel="stylesheet"></head>
+  <link href="/src/css/common.4d563a69e4d2c4a6c037.min.css" rel="stylesheet"><link href="/src/css/checkout.4d563a69e4d2c4a6c037.min.css" rel="stylesheet"></head>
   <body class="body_overflow_hidden app">
     <div class="loader">
       <div class="loader__spinner loader__spinner_egg"></div>
     </div>
     <header class="header">
+      <div class="header__menu-height">
+        <div class="container">
+          <ul class="header__menu-list menu-list-height">
+            <li class="header__menu-item menu-item-height"><a href="#">О компании</a>
+              <ul class="header__sub-menu-list sub-menu-list-height">
+                <li class="header__sub-menu-item sub-menu-item-height sub-menu-item-height_active"><a href="#">О компании</a>
+                </li>
+                <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Календарь семинаров</a>
+                </li>
+                <li class="header__sub-menu-item sub-menu-item-height"><a href="#">Магазин</a>
+                </li>
+              </ul>
+            </li>
+            <li class="header__menu-item menu-item-height"><a href="#">Календарь семинаров</a>
+            </li>
+            <li class="header__menu-item menu-item-height"><a href="#">Магазин</a>
+            </li>
+          </ul>
+          <div class="header__search-and-login"><a class="header__search" href="#">
+            <div class="header__search-title">Поиск
+            </div><img class="header__search-icon header__search-icon_mobile" src="/wp-content/themes/tikets/src/icons/search-mobile.f5e714.svg" alt="Search" title=""/><img class="header__search-icon" src="/wp-content/themes/tikets/src/icons/search.a0811e.svg" alt="Search" title=""/></a><a class="header__login" href="#">
+            <div class="header__login-title">Личный кабинет
+            </div><img class="header__login-icon header__login-icon_mobile" src="/wp-content/themes/tikets/src/icons/login-mobile.17d2d1.svg" alt="Login" title=""/><img class="header__login-icon" src="/wp-content/themes/tikets/src/icons/login.bf9d84.svg" alt="Login" title=""/></a>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <div class="header__inner row">
           <div class="col-5 col-sm-2 col-md-3 col-hd-2"><a class="header__logo-link" href="/"><img class="header__logo-img" src="/wp-content/themes/tikets/src/icons/logo.ef168d.png" alt="Seminar4U" title=""/></a>
@@ -31,6 +57,18 @@
                   <li class="header__menu-item"><a href="#">Календарь семинаров</a>
                   </li>
                   <li class="header__menu-item"><a href="#">Магазин</a>
+                  </li>
+                </ul>
+                <ul class="header__menu-list menu-cat">
+                  <li class="header__menu-item header__menu-item_active"><a href="#">HoReCa</a>
+                  </li>
+                  <li class="header__menu-item"><a href="#">Бизнес</a>
+                  </li>
+                  <li class="header__menu-item"><a href="#">Дизайн</a>
+                  </li>
+                  <li class="header__menu-item"><a href="#">Психология и коучинг</a>
+                  </li>
+                  <li class="header__menu-item"><a href="#">Медицина красота и здоровье</a>
                   </li>
                 </ul>
                 <div class="header__search-and-login"><a class="header__search" href="#">
@@ -65,117 +103,194 @@
               <p class="sub-title mb-20 mb-40">Как улучшить маркетинг в компании за 3 рабочих недели</p>
             </div>
           </div>
-          <form class="checkout__form" action="/" method="post" data-program-id="10">
-            <div class="checkout-form-group row">
-              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Телефон
-                </label>
+          <div class="types">
+            <div class="container">
+              <div class="types__wrapper-list"><a class="types__button" href="#"></a>
+                <ul class="types__list">
+                  <li class="types__list-tab" data-content="0"><a class="types__tab-button" href="#">Физическое лицо</a>
+                  </li>
+                  <li class="types__list-tab types__list-tab_active" data-content="1"><a class="types__tab-button" href="#">Юридическое лицо</a>
+                  </li>
+                </ul>
               </div>
-              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-phone" type="text" name="user-phone" required="required"/>
-                <div class="checkout-form-group__message">
-                </div>
-              </div>
-            </div>
-            <div class="checkout-form-group row">
-              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">Имя
-                </label>
-              </div>
-              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-name" type="text" name="user-name" required="required"/>
-                <div class="checkout-form-group__message">
-                </div>
-              </div>
-            </div>
-            <div class="checkout-form-group row">
-              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-email">Email
-                </label>
-              </div>
-              <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-email" type="email" name="user-email" required="required"/>
-                <div class="checkout-form-group__message">
-                </div>
-              </div>
-            </div>
-            <div class="checkout-form-group row">
-              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-tariff">Тариф
-                </label>
-              </div>
-              <div class="col-12 col-sm-8 col-hd-9">
-                <select class="checkout-form-group__select" id="user-tariff" name="user-tariff">
-                  <option value="1" data-price="100">Standart</option>
-                  <option value="2" data-price="200">Vip</option>
-                  <option value="3" data-price="300.60">Business</option>
-                  <option value="4" data-price="400.99">Platinum</option>
-                </select>
-              </div>
-              <div class="checkout-form-group__message">
-              </div>
-            </div>
-            <div class="checkout-form-group row">
-              <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-comment">Комментарий
-                </label>
-              </div>
-              <div class="col-12 col-sm-8 col-hd-9"><textarea class="checkout-form-group__textarea" id="user-comment" name="user-comment" rows="4"></textarea>
-              </div>
-              <div class="checkout-form-group__message">
-              </div>
-            </div>
-            <div class="wrapp-overflow">
-              <textarea class="textarea" name="message" placeholder=""></textarea>
-            </div>
-            <div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
-              <div class="row">
-                <div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
-                  <div class="promokod__counter">
-                    <div class="promokod__iterator">
-                      <div class="promokod__results-count"><a class="promokod__minus" href="#">&ndash;</a>
-                        <div class="promokod__result">1
-                        </div><a class="promokod__add" href="#">+</a>
-                      </div>
-                      <div class="promokod__iterator-subtitle">Билет
-                      </div>
+              <div class="types__content types__content types__content_active">
+                <form class="types__form" action="/" method="post" data-program-id="10">
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-phone">Телефон
+                      </label>
                     </div>
-                    <div class="promokod__counter-description">на сумму
-                      <div class="promokod__price">100,20
-                      </div>рублей
-                    </div>
-                  </div>
-                  <div class="pay-type">
-                    <div class="pay-type__program">
-                      <p class="pay-type__program-title">Программа лояльности
-                      </p>
-                      <p class="pay-type__program-description">Авторизуйтесь, чтобы воспользоваться скидкой по программе лояльности
-                      </p>
-                    </div>
-                    <div class="pay-type__options">
-                      <p class="pay-type__options-title">Способ оплаты
-                      </p>
-                      <div class="pay-type__options-item">
-                        <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="1"/><span class="pay-type__options-item-check"></span>
-                          <label class="pay-type__options-item-label-text">Онлайн-оплата картой
-                          </label>
-                        </label>
-                        <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="2"/><span class="pay-type__options-item-check"></span>
-                          <label class="pay-type__options-item-label-text">Безналичный платеж
-                          </label>
-                        </label>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-phone" type="text" name="user-phone" required="required"/>
+                      <div class="checkout-form-group__message">
                       </div>
                     </div>
                   </div>
-                </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">Фио
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-name" type="text" name="user-name" required="required"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-email">Email
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="user-email" type="email" name="user-email" required="required"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-tariff">Тариф
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9">
+                      <select class="checkout-form-group__select" id="user-tariff" name="user-tariff">
+                        <option value="1" data-price="100">Standart</option>
+                        <option value="2" data-price="200">Vip</option>
+                        <option value="3" data-price="300.60">Business</option>
+                        <option value="4" data-price="400.99">Platinum</option>
+                      </select>
+                    </div>
+                    <div class="checkout-form-group__message">
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-comment">Комментарий
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><textarea class="checkout-form-group__textarea" id="user-comment" name="user-comment" rows="4"></textarea>
+                    </div>
+                    <div class="checkout-form-group__message">
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-promokod">Промокод
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-5 col-hd-7"><input class="checkout-form-group__input" id="user-promokod" type="text" name="user-promokod"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                    <div class="col-7 col-offset-5 col-offset-sm-0 col-sm-3 col-hd-2"><a class="checkout-form-group__apply mt-10 mt-sm-00" href="#">Применить</a>
+                    </div>
+                  </div>
+                  <div class="wrapp-overflow">
+                    <textarea class="textarea" name="message" placeholder=""></textarea>
+                  </div>
+                  <div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
+                    <div class="row">
+                      <div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
+                        <p class="promokod__program-description">"Акции и скидки"
+                        </p>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
+                        <div class="promokod__counter">
+                          <div class="promokod__iterator">
+                            <div class="promokod__results-count"><a class="promokod__minus" href="#">&ndash;</a>
+                              <div class="promokod__result">1
+                              </div><a class="promokod__add" href="#">+</a>
+                            </div>
+                            <div class="promokod__iterator-subtitle">Билет
+                            </div>
+                          </div>
+                          <div class="promokod__counter-description">на сумму
+                            <div class="promokod__price">100,20
+                            </div>рублей
+                          </div>
+                        </div>
+                        <div class="pay-type">
+                          <div class="pay-type__program">
+                            <p class="pay-type__program-title">Программа лояльности
+                            </p>
+                            <p class="pay-type__program-description">Авторизуйтесь, чтобы воспользоваться скидкой по программе лояльности
+                            </p>
+                          </div>
+                          <div class="pay-type__options">
+                            <p class="pay-type__options-title">Способ оплаты
+                            </p>
+                            <div class="pay-type__options-item">
+                              <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="1"/><span class="pay-type__options-item-check"></span>
+                                <label class="pay-type__options-item-label-text">Онлайн-оплата картой
+                                </label>
+                              </label>
+                              <label class="pay-type__options-item-label"><input class="pay-type__options-item-input" name="type" type="radio" id="2"/><span class="pay-type__options-item-check"></span>
+                                <label class="pay-type__options-item-label-text">Безналичный платеж
+                                </label>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20"><a class="promokod__button-chekout" href="#">Оплатить</a><a class="promokod__button-chekout-pay" href="#">Оплатить</a>
+                      </div>
+                      <div class="col-12 col-sm-11">
+                        <p class="promokod__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия<a class="promokod__link" href="#">Публичной оферты</a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </form>
               </div>
-              <div class="row">
-                <div class="col-12 col-offset-sm-5 col-sm-6 mb-10 mb-md-20"><a class="promokod__button-chekout" href="#">Оплатить</a><a class="promokod__button-chekout-pay" href="#">Оплатить</a>
-                </div>
-                <div class="col-12 col-sm-11">
-                  <p class="promokod__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия<a class="promokod__link" href="#">Публичной оферты</a>
-                  </p>
+              <div class="types__content">
+                <form class="types__form" action="/" method="post" data-program-id="10" id="form2">
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="name">Фио
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="name" type="text" name="name" required="required"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="komp">Название компнаии
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="komp" type="text" name="komp" required="required"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="checkout-form-group row">
+                    <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                      <label class="checkout-form-group__label mb-05 mb-sm-00" for="col">Количество билетов
+                      </label>
+                    </div>
+                    <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="col" type="text" name="col" required="required"/>
+                      <div class="checkout-form-group__message">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="wrapp-overflow">
+                    <textarea class="textarea" name="message" placeholder=""></textarea>
+                  </div>
+                </form>
+                <div class="row">
+                  <div class="col-12 col-offset-sm-6 col-sm-6 mb-10 mb-md-20"><a class="types__button-chekout" href="#">Оплатить</a>
+                  </div>
+                  <div class="col-12 col-sm-12">
+                    <p class="types__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия<a class="types__link" href="#">Публичной оферты</a>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
-          </form>
+          </div>
         </div>
         <div class="preloader">
           <div class="preloader__spinner preloader__spinner_egg"></div>
@@ -211,6 +326,8 @@
               </div>
               <div class="footer__contacts footer__contacts_text"><img class="footer__contacts footer__contacts_text-image" src="/wp-content/themes/tikets/src/icons/email.84b8e5.png" alt="Velcom" title=""/><a href="tel:info@spplaw.by">info@spplaw.by</a>
               </div>
+              <div class="footer__contacts footer__contacts_text"><a href="tel:info@spplaw.by"><img class="footer__soc" src="/wp-content/themes/tikets/src/icons/soc2.55bd9c.png" alt="Velcom" title=""/></a><a href="tel:info@spplaw.by"><img class="footer__soc" src="/wp-content/themes/tikets/src/icons/soc3.1f77b8.png" alt="Velcom" title=""/></a>
+              </div>
             </div>
           </div>
           <div class="col-12 col-sm-3 pt-10 pt-sm-00">
@@ -220,7 +337,7 @@
               <div class="footer__address footer__address_text">Республика Беларусь, 220034, г. Минск, ул. Фрунзе, 3, комн. 203.
               </div>
               <div class="footer__address footer__address_text">Режим работы: 9:00-18:00
-              </div><img class="footer__address footer__address_image" src="/wp-content/themes/tikets/src/icons/logo-payment-system.d23a70.png" alt="Payment" title=""/>
+              </div><img class="footer__address footer__address_image" src="/wp-content/themes/tikets/src/icons/logo-payment-system.d23a68.png" alt="Payment" title=""/>
             </div>
           </div>
         </div>
@@ -230,5 +347,5 @@
         </div>
       </div>
     </footer>
-  <script type="text/javascript" src="/src/js/common.584fb173fd245f130580.min.js"></script><script type="text/javascript" src="/src/js/checkout.584fb173fd245f130580.min.js"></script></body>
+  <script type="text/javascript" src="/src/js/common.4d563a69e4d2c4a6c037.min.js"></script><script type="text/javascript" src="/src/js/checkout.4d563a69e4d2c4a6c037.min.js"></script></body>
 </html>
