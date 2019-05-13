@@ -12,8 +12,11 @@ mixin main-slider()
 mixin main-slide()
     +b.slide.swiper-slide
         .container
-            .row
-                .col-12.col-sm-5.col-lg-6.col-hd-5
+            .row.sl
+                +e.order-1.col-12.col-sm-7.col-lg-6.col-hd-7.text_image
+                    +e.img-wrapper
+                        +e.img(src=require('./../images/mann2.png'))
+                .col-12.col-sm-5.col-lg-6.col-hd-5.text_content
                     .pl-sm-10.pl-md-20.pl-lg-40
                         +e.autor.my-10.my-sm-20.mt-md-40 Игорь Манн
                         +e.H1.title.mb-10.mb-md-20 как улучшить маркетинг в компании за 3 рабочих недели
@@ -23,9 +26,5 @@ mixin main-slide()
                                 +e.mounth Марта
                                 +e.year 2019
                         +e.P.location.mb-10.mb-hd-20 Минск, Рокоссовского, 158, гостиница "Салют"
-                        +e.button-wrapper.mb-10.pb-10
-                            +orange-button('Подробнее', 'orange-button__type_1')
-                +e.order-1.col-12.col-sm-7.col-lg-6.col-hd-7
-                    +e.img-wrapper
-                        +e.img(src=require('./../images/mann.png'))
+
 

@@ -33,6 +33,7 @@ let entries = {
     contacts: './contacts.js',
     questionSpeaker: './questionSpeaker.js',
     checkout: './checkout.js',
+    news: './news.js',
 };
 
 let pugs = {
@@ -62,6 +63,9 @@ let pugs = {
     },
     questionSpeaker: {
         title: "question speaker title"
+    },
+    news: {
+        title: "news title"
     }
 };
 

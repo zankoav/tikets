@@ -1,0 +1,188 @@
+@import "./../../common/constants";
+
+$GREY_LIGHT : #E4E9EE;
+$GREY : #CACFDD;
+$GREY_MIDDLE : #565656;
+$RED : #F85C5D;
+$ORANGE : #FBBE49;
+
+.news-all {
+    overflow      : hidden;
+    margin-bottom : 3rem;
+
+    @include sm {
+        margin-bottom : 4rem;
+    }
+
+    @include md {
+        margin-bottom : -5rem;
+    }
+
+    @include lg {
+        margin-bottom : -10rem;
+    }
+
+    &__banner {
+        width : 244px;
+
+        @include sm {
+            display : none;
+        }
+
+        @include md {
+            display : block;
+            width   : 220px;
+        }
+
+        @include lg {
+            width : 276px;
+            padding-top: 20rem;
+        }
+
+        @include hd {
+            width : 328px;
+        }
+    }
+
+    &__text {
+        color          : $GREY_LIGHT;
+        font-family    : 'Open Sans', sans-serif;
+        font-size      : 40px;
+        font-weight    : 800;
+        line-height    : 1;
+        text-transform : lowercase;
+
+        @include sm {
+            font-size      : 72px;
+            letter-spacing : -8px;
+        }
+
+        @include md {
+            font-size   : 114px;
+            line-height : 90px;
+        }
+
+        &_mr-l {
+            margin-left : 4rem;
+
+            @include sm {
+                margin-left : 5.5rem;
+            }
+
+            @include md {
+                margin-left : 8.5rem;
+            }
+
+            @include lg {
+                margin-left : 9.75rem;
+            }
+        }
+    }
+
+    &__container {
+        margin-top: 2rem;
+        margin-bottom: 12rem;
+    }
+
+    &__slide{
+        margin-bottom: 2rem;
+    }
+
+    &__wrapper {
+
+        @include sm {
+            flex-wrap : wrap;
+        }
+
+        @include md {
+            justify-content : space-between;
+        }
+
+        @include lg {
+            justify-content : flex-end;
+        }
+    }
+
+
+
+    &__image {
+        box-shadow    : 0 3px 15px rgba(126, 192, 236, 0.566916);
+        border-radius : 8px 8px 0 0;
+    }
+
+    &__title {
+        color            : $WHITE;
+        font-family      : 'Open Sans', sans-serif;
+        font-size        : 20px;
+        font-weight      : bold;
+        line-height      : 40px;
+        text-transform   : uppercase;
+        display          : inline;
+        background-color : $RED;
+        padding          : .25rem;
+    }
+
+    &__description {
+        color       : $GREY_MIDDLE;
+        font-family : 'Open Sans', sans-serif;
+        font-size   : 16px;
+        line-height : 22px;
+    }
+
+    &__pagination-wrapper {
+        display         : flex;
+        justify-content : center;
+        width           : 100%;
+        bottom          : 0;
+    }
+
+    &__pagination {
+        width   : 100%;
+        outline : none;
+
+        @include sm {
+            display : none;
+        }
+
+        .swiper-pagination-bullet {
+            border-radius : 0;
+            opacity       : 1;
+            padding       : .5rem;
+            width         : 3rem;
+            height        : 1.25rem;
+            background    : transparent;
+
+            &:after {
+                content          : '';
+                display          : block;
+                width            : 2rem;
+                height           : .25rem;
+                background-color : $ORANGE;
+            }
+
+            &:focus {
+                outline : none;
+            }
+        }
+
+        .swiper-pagination-bullet-active {
+            &:after {
+                background-color : $RED;
+            }
+        }
+    }
+}
+
+@keyframes animationBall {
+    0% {
+        transform : translateY(0);
+    }
+
+    50% {
+        transform : translateY(-8px);
+    }
+
+    100% {
+        transform : translateY(0);
+    }
+}
