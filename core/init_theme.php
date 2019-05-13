@@ -23,6 +23,7 @@ function zankoav_theme_init() {
     add_image_size( 'partner_logo_lg', 208, 92, true );
     add_image_size( 'partner_logo_m', 114, 50, true );
     add_image_size( 'on_sale', 350, 206, true );
+    add_image_size( 'news_in_archive', 391, 209, true );
 	
 	
 	/**

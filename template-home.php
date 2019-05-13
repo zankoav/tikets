@@ -14,7 +14,7 @@
 		<?php get_template_part( '/core/views/home', 'slider' ) ?>
 		<?php get_template_part( '/core/views/home', 'benefits' ); ?>
 		<?php get_template_part( '/core/views/home', 'stock' ) ?>
-		<?php get_template_part( '/core/views/home', 'seminarforu' ) ?>
+		<?php //get_template_part( '/core/views/home', 'seminarforu' ) ?>
 		<?php get_template_part( '/core/views/home', 'reviews' ) ?>
 		<?php get_template_part( '/core/views/home', 'news' ) ?>
 		<?php get_template_part( '/core/views/home', 'partnership' ) ?>

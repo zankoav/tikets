@@ -28,6 +28,9 @@
 			else if ( is_page_template( 'template-question.php' ) ) {
 				wp_enqueue_style( 'questionSpeaker', Assets::getCss( 'questionSpeaker' ), false, null );
 			}
+            else if ( is_page_template( 'template-news.php' ) ) {
+                wp_enqueue_style( 'news_tik', Assets::getCss( 'news' ), false, null );
+            }
 			else if ( is_singular( 'product') ) {
 				wp_enqueue_style( 'program', Assets::getCss( 'program' ), false, null );
 			}

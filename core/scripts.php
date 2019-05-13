@@ -29,6 +29,9 @@ add_action('template_redirect', function () {
         elseif (is_page_template('template-question.php')) {
 	        wp_enqueue_script('questionSpeaker', Assets::getJs('questionSpeaker'), false, null, true);
         }
+        elseif (is_page_template('template-news.php')) {
+            wp_enqueue_script('news_tik', Assets::getJs('news'), false, null, true);
+        }
         elseif (is_singular('product')) {
             wp_enqueue_script('program', Assets::getJs('program'), false, null, true);
         }

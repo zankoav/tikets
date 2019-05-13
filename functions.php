@@ -48,6 +48,7 @@
 	require_once __DIR__ . '/core/webpayRespons.php';
     require_once __DIR__ . '/core/myAjax/checkCoupone.php';
     require_once __DIR__ . '/core/myAjax/getDiscontByCount.php';
+    require_once __DIR__ . '/core/myAjax/tiketsOrderForeCorp.php';
 	
 	
 	//----get permalink to checkout page

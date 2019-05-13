@@ -265,31 +265,47 @@
                                     <label class="checkout-form-group__label mb-05 mb-sm-00" for="name">Фио
                                     </label>
                                 </div>
-                                <div class="col-12 col-sm-8 col-hd-9">
-                                    <input class="checkout-form-group__input" id="name" type="text" name="name"
-                                           required="required"/>
+                                <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="name" type="text" name="name" required="required"/>
                                     <div class="checkout-form-group__message">
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout-form-group row">
                                 <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="komp">Название
-                                        компнаии
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="komp">Название организации
                                     </label>
                                 </div>
-                                <div class="col-12 col-sm-8 col-hd-9">
-                                    <input class="checkout-form-group__input" id="komp" type="text" name="komp" required="required"/>
+                                <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="komp" type="text" name="komp" required="required"/>
                                     <div class="checkout-form-group__message">
                                     </div>
                                 </div>
                             </div>
                             <div class="checkout-form-group row">
                                 <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="col">Количество билетов</label>
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="phone">Телефон
+                                    </label>
                                 </div>
-                                <div class="col-12 col-sm-8 col-hd-9">
-                                    <input class="checkout-form-group__input" id="col" type="text" name="col" required="required"/>
+                                <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="phone" type="text" name="phone" required="required"/>
+                                    <div class="checkout-form-group__message">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-form-group row">
+                                <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="email">Email
+                                    </label>
+                                </div>
+                                <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="email" type="email" name="email" required="required"/>
+                                    <div class="checkout-form-group__message">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="checkout-form-group row">
+                                <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="col">Количество билетов
+                                    </label>
+                                </div>
+                                <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="col" type="text" name="col" required="required"/>
                                     <div class="checkout-form-group__message">
                                     </div>
                                 </div>
@@ -304,14 +320,14 @@
                             </div>
                             <div class="col-12 col-sm-12">
                                 <p class="types__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия
-                                    <a class="types__link" href="#">Публичной оферты</a>
+                                    <a class="types__link" href="<?= esc_url( $public_offer_link ) ?>">Публичной оферты</a>
                                 </p>
                             </div>
                         </div>
                     </div>
+                    <button class="bit_item"></button>
                 </div>
             </div>
-
 		</div>
         <div class="preloader">
             <div class="preloader__spinner preloader__spinner_egg"></div>
