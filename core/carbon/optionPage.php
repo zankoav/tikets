@@ -24,7 +24,13 @@
                     ->set_width(50),
                 Field::make('text', 'crb_email', 'Email'),
                 Field::make('text', 'crb_address', 'Аднес'),
+                Field::make('text', 'crb_work_time', 'Режим работы'),
                 Field::make('text', 'crb_unp', 'УНП'),
+                Field::make('separator', 'crb_soc_links_op_sep', __('Социальные сети')),
+                Field::make('text', 'crb_vk_link', 'Вконтакте'),
+                Field::make('text', 'crb_insta_link', 'Instagram'),
+                Field::make('text', 'crb_fb_link', 'FaceBook'),
+                Field::make('text', 'crb_youtube_link', 'Youtube'),
             ])
             ->add_tab(__('Формы'), [
                 Field::make('separator', 'partnership_mail_op_sep', 'Email для форм'),

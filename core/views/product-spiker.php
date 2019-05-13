@@ -35,7 +35,7 @@
 										   href="<?= esc_url($question_page.'?seminar='.get_the_ID().'&speaker='.$name)?>"
 										   target="_blank">
 											<img class="about-spiker__askquestion-image"
-												 src="/wp-content/themes/tikets/src/icons/message.dc084b.svg"
+												 src="/wp-content/themes/tikets/src/icons/message.30369b.svg"
 												 alt="message" title=""/>
 											<div class="about-spiker__askquestion-text">Задать вопрос
 												спикеру

@@ -5,7 +5,7 @@
 	<div class="partnership">
 		<div class="container">
 			<div class="partnership__inner">
-				<h2 class="title title_grey">ПАРТНЕРСТВО</h2>
+				<h2 class="title title_grey">Партнерство</h2>
 				<div class="mt-20 mb-20 mt-sm-40 mb-sm-40 pt-md-15">
 					<?php foreach($partnership as $item) : ?>
 						<a class="partnership__download pb-05 pb-sm-10" href="<?= esc_url( $item[ 'link_file' ] ) ?>">
@@ -38,7 +38,7 @@
                     </div>
 					<div class="col-12 col-sm-6 col-offset-sm-2 pt-sm-10">
 						<div class="partnership__button">
-							<button class="button button__color_red" type="submit" name="userbutton">Записаться</button>
+							<button class="button button__color_red" type="submit" name="userbutton">Стать партнером</button>
 						</div>
 					</div>
 				</div>
