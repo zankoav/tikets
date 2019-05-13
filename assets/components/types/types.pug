@@ -22,7 +22,9 @@ mixin types()
             +e.content
                 +e.FORM.form(action='/', method='post', data-program-id="10" id="form2")
                     +checkout-form-input('Фио','text', 'name', true)
-                    +checkout-form-input('Название компнаии','text', 'komp', true)
+                    +checkout-form-input('Название организации','text', 'komp', true)
+                    +checkout-form-input('Телефон','text', 'phone', true)
+                    +checkout-form-input('Email','email', 'email', true)
                     +checkout-form-input('Количество билетов','text', 'col', true)
                     .wrapp-overflow
                         +textarea("message")
@@ -32,3 +34,4 @@ mixin types()
                     .col-12.col-sm-12
                         +e.P.description Нажимая на кнопку “Оплатить”, Вы принимаете условия
                             +e.link(href="#") Публичной оферты
+            button.bit_item

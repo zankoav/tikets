@@ -2,6 +2,7 @@
 
 .main-slider {
     position : relative;
+    margin-top: 1rem;
 
     .swiper-pagination-bullet {
         transition    : .4s;
@@ -20,6 +21,23 @@
         }
     }
 
+    position: relative;
+    &:after {
+        content          : '';
+        position         : absolute;
+        height           : 52px;
+        width            : 70%;
+        background-image : url("../../images/sh.png");
+        bottom           : -52px;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+    }
+
     &__bullet_active.swiper-pagination-bullet {
         transform : scale(1.5);
         color     : $ORANGE;
@@ -29,6 +47,13 @@
         width  : 100%;
         bottom : -38px;
     }
+
+
+
+
+}
+
+.sl{
 
 }
 
@@ -49,7 +74,7 @@
     }
 
     &__title {
-        color          : $ORANGE;
+        color          : #fff;
         font-size      : 29px;
         line-height    : 1;
         font-weight    : 800;
@@ -63,16 +88,22 @@
 
     &__img-wrapper {
         max-width : initial;
-        margin    : 0 -12px;
+        margin    : 0 -0px;
         overflow  : hidden;
         position  : relative;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-bottom-left-radius: 0px;
 
         @include sm {
-            margin : 0 -20px;
+            margin : 0 -.5rem;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+
         }
 
         @include md {
-            margin : 0 -24px;
+            margin : 0 -1rem;
         }
 
         @include lg {
@@ -80,15 +111,7 @@
             overflow : initial;
         }
 
-        &:after {
-            content          : '';
-            position         : absolute;
-            height           : 2px;
-            width            : 100%;
-            background-color : $ORANGE;
-            bottom           : 0;
-            left             : 10%;
-        }
+
     }
 
     &__img {
@@ -172,4 +195,38 @@
             }
         }
     }
+}
+
+.text_image{
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.text_content{
+    background-color: #FBBE49;
+    position: relative;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 12px;
+    border-bottom-left-radius: 12px;
+
+    @include sm{
+        border-top-right-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-bottom-left-radius: 0px;
+    }
+
+    &:before{
+
+        background-image: url("../../images/dob.svg");
+        width: 5px;
+        position: absolute;
+        height: 100%;
+        left: -2.5px;
+        content: none;
+
+        @include sm{
+            content: '';
+        }
+    }
+
 }

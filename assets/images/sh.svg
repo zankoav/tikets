@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1113px" height="76px" viewBox="0 0 1113 76" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="1127" height="87"></rect>
+        <filter x="-14.4%" y="-137.5%" width="128.7%" height="375.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feGaussianBlur stdDeviation="24.3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+        <filter x="-15.2%" y="-137.5%" width="130.4%" height="375.0%" filterUnits="objectBoundingBox" id="filter-4">
+            <feGaussianBlur stdDeviation="24.3" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Welcome" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="B-Main-Desktop" transform="translate(-64.000000, -656.000000)">
+            <g id="Group-5" transform="translate(52.000000, 656.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Mask" fill-rule="nonzero"></g>
+                <g mask="url(#mask-2)" id="Group-6" opacity="0.439522879">
+                    <g transform="translate(70.212460, -61.886598)">
+                        <g>
+                            <polygon id="Rectangle-Copy-2" fill="#000000" fill-rule="nonzero" filter="url(#filter-3)" transform="translate(741.846210, 39.795506) rotate(3.000000) translate(-741.846210, -39.795506) " points="488.008689 13.3844176 995.69376 13.2885428 995.683731 66.2065942 487.99866 66.302469"></polygon>
+                            <polygon id="Rectangle-Copy-14" fill="#000000" fill-rule="nonzero" filter="url(#filter-4)" transform="translate(240.953574, 40.523084) scale(-1, 1) rotate(3.000000) translate(-240.953574, -40.523084) " points="1.06839077 14.1093605 480.848786 14.0187553 480.838757 66.9368067 1.05836131 67.0274119"></polygon>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
