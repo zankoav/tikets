@@ -8,7 +8,7 @@
 		$form_email   = empty( $_POST[ 'email' ] ) ? '' : esc_attr( $_POST[ 'email' ] );
         $form_phone    = empty( $_POST[ 'phone' ] ) ? '' : esc_attr( $_POST[ 'phone' ] );
         $form_tarif    = empty( $_POST[ 'tarif' ] ) ? '' : esc_attr( $_POST[ 'tarif' ] );
-        $programId    = empty( $_POST[ '$programId' ] ) ? '' : esc_attr( $_POST[ '$programId' ] );
+        $tarifId    = empty( $_POST[ 'tarifId' ] ) ? '' : esc_attr( $_POST[ 'tarifId' ] );
 
 		
 		if (!filter_var( $form_email, FILTER_VALIDATE_EMAIL )) {
@@ -21,7 +21,7 @@
 		}
 		if (empty($programId)){
 
-            $response[ 'programId' ] = $programId;
+            $response[ 'programId' ] = $tarifId;
             $response[ 'status' ] = 0;
             $response[ 'text' ]   = "program Id is empty";
             echo json_encode( $response , JSON_UNESCAPED_UNICODE);
@@ -29,7 +29,7 @@
             $programId = 188;
         }
 
-		$post = get_post($programId);
+		$post = get_post($tarifId);
 
 		$msg = "<p><strong>От: </strong><span>" . $form_name . "</span></p>
 			<p><strong>Телефон: </strong><span>" . $form_phone . "</span></p> 

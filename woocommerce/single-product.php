@@ -79,6 +79,7 @@
                 </div>
                 <form class="tarifs-contact-form__form" action="/" method="POST"><a class="tarifs-contact-form__close-form" href="#"></a>
                     <input type="hidden" name="tariff-name">
+                    <input type="hidden" name="tariff-id">
                     <textarea name="message"></textarea>
                     <div class="tarifs-contact-form__form-title">Оставить заявку
                     </div>

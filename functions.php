@@ -14,6 +14,7 @@
 //date_default_timezone_set("Europe/Minsk");
 
 
+    require_once __DIR__ . '/core/themaFunc.php';
 	require_once __DIR__ . '/utils/Assets.php';
 	require_once __DIR__ . '/utils/SingletonOptions.php';
 
@@ -47,6 +48,7 @@
 	require_once __DIR__ . '/core/myAjax/askAQuestion.php';
 	require_once __DIR__ . '/core/webpayRespons.php';
     require_once __DIR__ . '/core/myAjax/checkCoupone.php';
+    require_once __DIR__ . '/core/myAjax/checkTicketCost.php';
     require_once __DIR__ . '/core/myAjax/getDiscontByCount.php';
     require_once __DIR__ . '/core/myAjax/tiketsOrderForeCorp.php';
 	
