@@ -126,18 +126,27 @@ function changeTotalPrice() {
     else {
         if (discountBuff.status === 1){
 
-            for(let i=0; i<arrayDiscount.length; i++){
-                if ((ticketCount >= +arrayDiscount[i].quantity_from) && (ticketCount <= +arrayDiscount[i].quantity_to)){
-                    let total = ticketCount * parseFloat(currentPrice) - +arrayDiscount[i].discount;
-                    $totalPrice.html(total.toFixed(2) + ' ');
-                    break;
-                }
+            if(arrayDiscount.length>0){
+                for(let i=0; i<arrayDiscount.length; i++){
+                    if ((ticketCount >= +arrayDiscount[i].quantity_from) && (ticketCount <= +arrayDiscount[i].quantity_to)){
+                        let total = ticketCount * parseFloat(currentPrice) - +arrayDiscount[i].discount;
+                        $totalPrice.html(total.toFixed(2) + ' ');
+                        break;
+                    }
 
-                else{
-                    let total = ticketCount * parseFloat(currentPrice);
-                    $totalPrice.html(total.toFixed(2) + ' ');
+                    else{
+                        let total = ticketCount * parseFloat(currentPrice);
+                        $totalPrice.html(total.toFixed(2) + ' ');
+                    }
                 }
             }
+
+            else{
+                let total = ticketCount * parseFloat(currentPrice);
+                $totalPrice.html(total.toFixed(2) + ' ');
+            }
+
+
         }
 
         else{
@@ -367,6 +376,7 @@ function tryToSendData(event) {
     let comment = $comment.val();
     let tariffId = $('.checkout-form-group__select').find(":selected").val();
     let spam = $spam.val();
+    let userPromocode = $("#user-promokod").val();
 
     if (phone.length === 0) {
         let $parent = $phone.parent().parent();
@@ -433,13 +443,14 @@ function tryToSendData(event) {
         message: spam,
         phone: phone,
         comment: comment,
+        userPromocode: userPromocode,
         action: 'createOrder'
     });
 }
 
 
 function sendingMail(data) {
-    console.log('send data', data);
+    console.log('send data:', data);
 
     $.ajax(tikets_ajax.url, {
         data: data,
@@ -449,7 +460,7 @@ function sendingMail(data) {
             $('.preloader').addClass('preloader_active');
         },
         success: function (response) {
-            console.log(response);
+            // console.log(response);
             autoSubmit(response);
             $('.preloader').removeClass('preloader_active');
         },
@@ -464,8 +475,16 @@ function sendingMail(data) {
 function autoSubmit(data) {
     let form = document.createElement("form");
     form.method = "POST";
-    console.log("check: " + data['w_t']);
-    form.action = "https://securesandbox.webpay.by/";
+
+    console.log(data);
+    console.log("check test: " + data.wsb_test);
+
+    if (+data.wsb_test === 1 ){
+        form.action = "https://securesandbox.webpay.by/";
+    } else if (+data.wsb_test === 0){
+        form.action = "https://billing.webpay.by";
+    }
+
 
     for(let key in data){
         let element = document.createElement("input");
