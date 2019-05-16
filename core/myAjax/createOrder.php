@@ -7,6 +7,8 @@
     add_action('wp_ajax_createOrder', 'createOrder');
     add_action('wp_ajax_nopriv_createOrder', 'createOrder');
     function createOrder() {
+
+        //get data fom front
         $form_data = [
             'customer_name' => empty($_POST['name']) ? '' : esc_attr($_POST['name']),
             'item_quantity' => empty($_POST['ticketCount']) ? '' : esc_attr($_POST['ticketCount']),
@@ -16,6 +18,7 @@
             'phone'         => empty($_POST['phone']) ? '' : esc_attr($_POST['phone']),
             'userPromocode' => empty($_POST['userPromocode']) ? '' : esc_attr($_POST['userPromocode']),
         ];
+
         //error if wrong email
         if (!filter_var($form_data['wsb_email'], FILTER_VALIDATE_EMAIL)) {
             $response['status']  = 0;
@@ -24,6 +27,8 @@
             wp_die();
             return;
         }
+
+        //error if one of fields is empty
         foreach ($form_data as $key => $form_datum) {
             if ($key ==  'userPromocode'){
                 continue;
@@ -38,6 +43,18 @@
         }
 
         $orderInfo     = createOrderEntity($form_data);
+
+        //add discount
+        $discountInfo = [];
+        if (!empty($orderInfo["discount"])){
+            $discountInfo = getOrderDiscount($orderInfo,$form_data["userPromocode"]);
+        } elseif (!empty($orderInfo["discount"])){
+            $discountInfo = getOrderDiscount($orderInfo);
+        }
+        if (count($discountInfo) > 0){
+            $wsb_discount_name  = $discountInfo["name"];
+            $wsb_discount_price  = $discountInfo["total"];
+        }
         $product       = wc_get_product($form_data['product_id']);
         $wsb_order_num = $orderInfo['orderId'];
         $wsb_total     = $orderInfo['totalPrice'];
@@ -77,6 +94,12 @@
             'wsb_cancel_return_url'        => get_permalink($wsb_cancel_return_url),
             'wsb_notify_url'               => get_permalink($wsb_notify_url),
         ];
+        if (count($discountInfo) > 0){
+//            $wsb_discount_name  = $discountInfo["name"];
+//            $wsb_discount_price  = $discountInfo["total"];
+            $response["wsb_discount_name"] = $wsb_discount_name;
+            $response["wsb_discount_price"] = $wsb_discount_price;
+        }
 
         echo json_encode($response);
         wp_die();
@@ -97,7 +120,6 @@
             'postcode'   => '',
             'country'    => '',
         ];
-
 
         $product_id        = (int)$form_data['product_id'];
         $order             = wc_create_order();
@@ -128,81 +150,94 @@
             $order->calculate_totals();
             $order->update_status('pending');
         }
-        //
+
+//add discount if coupon exist
+//in coupon don't exit check discount by quantity
+        $discountByCount = "";
         if (!empty($form_data["userPromocode"]) && productHasCoupon($form_data["userPromocode"], $product_id)) {
             $order->apply_coupon($form_data["userPromocode"]);
-
         } else {
             $tiket_id         = $product_id;
             $variatetionsIds  = getVariatetionsIds($tiket_id);
             $product_quantity = $quantity;
 
             $tiket          = get_post($tiket_id);
+
+//check discount by quantity
             $count_discount = carbon_get_post_meta($tiket_id, "quantity_discount");
+            if (!empty($count_discount)){
+                $max_quantity = $count_discount[0]["quantity_to"];
+                $min_quantity = $count_discount[0]["quantity_from"];
+                $max_discount = $count_discount[0]["discount"];
+                foreach ($count_discount as $discount) {
+                    if ($discount["quantity_from"] < $min_quantity) {
+                        $min_quantity = $discount["quantity_from"];
+                    }
+                    if ($discount["quantity_to"] > $max_quantity) {
+                        $max_quantity = $discount["quantity_to"];
+                    }
+                    if ($max_discount < $discount["$discount"]) {
+                        $max_discount = $discount["$discount"];
+                    }
+                }
 
-            $max_quantity = $count_discount[0]["quantity_to"];
-            $min_quantity = $count_discount[0]["quantity_from"];
-            $max_discount = $count_discount[0]["discount"];
-            foreach ($count_discount as $discount) {
-                if ($discount["quantity_from"] < $min_quantity) {
-                    $min_quantity = $discount["quantity_from"];
-                }
-                if ($discount["quantity_to"] > $max_quantity) {
-                    $max_quantity = $discount["quantity_to"];
-                }
-                if ($max_discount < $discount["$discount"]) {
-                    $max_discount = $discount["$discount"];
-                }
-            }
-
-            $carrent_disc = 0;
-            $carrent_item = [];
-            foreach ($count_discount as $discount) {
-                if ($product_quantity >= $discount["quantity_from"] && $product_quantity <= $discount["quantity_to"]) {
-                    $carrent_disc = $discount["discount"];
-                    $carrent_item = $discount;
-                    break;
-                }
-                if ($product_quantity >= $discount["quantity_from"] && empty($discount["quantity_to"])) {
-                    if ($max_quantity < $product_quantity) {
+                $carrent_disc = 0;
+                $carrent_item = [];
+                foreach ($count_discount as $discount) {
+                    if ($product_quantity >= $discount["quantity_from"] && $product_quantity <= $discount["quantity_to"]) {
                         $carrent_disc = $discount["discount"];
                         $carrent_item = $discount;
                         break;
                     }
+                    if ($product_quantity >= $discount["quantity_from"] && empty($discount["quantity_to"])) {
+                        if ($max_quantity < $product_quantity) {
+                            $carrent_disc = $discount["discount"];
+                            $carrent_item = $discount;
+                            break;
+                        }
+                    }
                 }
-            }
-            $coupon_code = str_replace(" ", "_", $tiket->post_title) . "_" . $carrent_item["quantity_from"] . "_" . $carrent_item["quantity_to"] . "_" . $carrent_disc;
-            $couponExist = wc_get_coupon_id_by_code($coupon_code);
-            if (empty($couponExist)) {
-                $amount        = $carrent_disc;
-                $discount_type = 'fixed_cart';
+                $coupon_code = str_replace(" ", "_", $tiket->post_title) . "_" . $carrent_item["quantity_from"] . "_" . $carrent_item["quantity_to"] . "_" . $carrent_disc;
 
-                $coupon        = array(
-                    'post_title'   => $coupon_code,
-                    'post_content' => '',
-                    'post_status'  => 'publish',
-                    'post_author'  => 1,
-                    'post_type'    => 'shop_coupon'
-                );
-                $new_coupon_id = wp_insert_post($coupon);
-                update_post_meta($new_coupon_id, 'discount_type', $discount_type);
-                update_post_meta($new_coupon_id, 'coupon_amount', $amount);
-                update_post_meta($new_coupon_id, 'individual_use', 'yes');
-                update_post_meta($new_coupon_id, 'product_ids', $tiket_id . ',' . implode(",", $variatetionsIds));
-                update_post_meta($new_coupon_id, 'exclude_product_ids', '');
-                update_post_meta($new_coupon_id, 'usage_limit', '');
-                update_post_meta($new_coupon_id, 'expiry_date', '');
-                update_post_meta($new_coupon_id, 'apply_before_tax', 'yes');
-                //    update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
-            }
+                //передать код купона, в результат
+                $discountByCount = $coupon_code;
 
-            $order->apply_coupon($coupon_code);
+                $couponExist = wc_get_coupon_id_by_code($coupon_code);
+                if (empty($couponExist)) {
+                    $amount        = $carrent_disc;
+                    $discount_type = 'fixed_cart';
+
+                    $coupon        = array(
+                        'post_title'   => $coupon_code,
+                        'post_content' => '',
+                        'post_status'  => 'publish',
+                        'post_author'  => 1,
+                        'post_type'    => 'shop_coupon'
+                    );
+                    $new_coupon_id = wp_insert_post($coupon);
+                    update_post_meta($new_coupon_id, 'discount_type', $discount_type);
+                    update_post_meta($new_coupon_id, 'coupon_amount', $amount);
+                    update_post_meta($new_coupon_id, 'individual_use', 'yes');
+                    update_post_meta($new_coupon_id, 'product_ids', $tiket_id . ',' . implode(",", $variatetionsIds));
+                    update_post_meta($new_coupon_id, 'exclude_product_ids', '');
+                    update_post_meta($new_coupon_id, 'usage_limit', '');
+                    update_post_meta($new_coupon_id, 'expiry_date', '');
+                    update_post_meta($new_coupon_id, 'apply_before_tax', 'yes');
+                    //    update_post_meta( $new_coupon_id, 'free_shipping', 'no' );
+                }
+                $order->apply_coupon($coupon_code);
+            }
         }
 
-        return [
+        $result = [
             'orderId'        => $order->get_id(),
             'totalPrice'     => $order->get_total(),
             '$variationName' => $variationName,
             'price'          => $price,
-        ];
+        ] ;
+        if (!empty($discountByCount)){
+            $result['discount'] = $discountByCount;
+        }
+
+        return $result;
     }
