@@ -44,17 +44,6 @@
 
         $orderInfo     = createOrderEntity($form_data);
 
-        //add discount
-        $discountInfo = [];
-        if (!empty($orderInfo["discount"])){
-            $discountInfo = getOrderDiscount($orderInfo,$form_data["userPromocode"]);
-        } elseif (!empty($orderInfo["discount"])){
-            $discountInfo = getOrderDiscount($orderInfo);
-        }
-        if (count($discountInfo) > 0){
-            $wsb_discount_name  = $discountInfo["name"];
-            $wsb_discount_price  = $discountInfo["total"];
-        }
         $product       = wc_get_product($form_data['product_id']);
         $wsb_order_num = $orderInfo['orderId'];
         $wsb_total     = $orderInfo['totalPrice'];
@@ -94,9 +83,15 @@
             'wsb_cancel_return_url'        => get_permalink($wsb_cancel_return_url),
             'wsb_notify_url'               => get_permalink($wsb_notify_url),
         ];
-        if (count($discountInfo) > 0){
-//            $wsb_discount_name  = $discountInfo["name"];
-//            $wsb_discount_price  = $discountInfo["total"];
+        //add discount
+//            'orderId'
+//            'totalPrice'
+//            '$variationName'
+//            'price'
+//            'discount'
+        if (!empty($orderInfo["discount"])){
+            $wsb_discount_name  = $orderInfo["discount"];
+            $wsb_discount_price  = $orderInfo["price"] * $orderInfo["quantity"] - $orderInfo["totalPrice"] ;
             $response["wsb_discount_name"] = $wsb_discount_name;
             $response["wsb_discount_price"] = $wsb_discount_price;
         }
@@ -156,6 +151,7 @@
         $discountByCount = "";
         if (!empty($form_data["userPromocode"]) && productHasCoupon($form_data["userPromocode"], $product_id)) {
             $order->apply_coupon($form_data["userPromocode"]);
+            $discountByCount = $form_data["userPromocode"];
         } else {
             $tiket_id         = $product_id;
             $variatetionsIds  = getVariatetionsIds($tiket_id);
@@ -234,6 +230,7 @@
             'totalPrice'     => $order->get_total(),
             '$variationName' => $variationName,
             'price'          => $price,
+            'quantity'          => $quantity,
         ] ;
         if (!empty($discountByCount)){
             $result['discount'] = $discountByCount;
