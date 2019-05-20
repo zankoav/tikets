@@ -48,6 +48,18 @@
         bottom : -38px;
     }
 
+    &__swiper{
+
+        @include lg{
+            max-height: 500px;
+        }
+
+        @include hd{
+            max-height: unset;
+        }
+
+    }
+
 
 
 

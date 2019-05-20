@@ -11,7 +11,7 @@ mixin types()
             +e.content.types__content_active
                 +e.FORM.form(action='/', method='post', data-program-id="10")
                     +checkout-form-input('Телефон','text', 'user-phone', true)
-                    +checkout-form-input('Фио','text', 'user-name', true)
+                    +checkout-form-input('ФИО','text', 'user-name', true)
                     +checkout-form-input('Email','email', 'user-email', true)
                     +checkout-form-select('Тариф','user-tariff')
                     +checkout-form-textarea('Комментарий', 'user-comment')
@@ -21,7 +21,7 @@ mixin types()
                     +promokod()
             +e.content
                 +e.FORM.form(action='/', method='post', data-program-id="10" id="form2")
-                    +checkout-form-input('Фио','text', 'name', true)
+                    +checkout-form-input('ФИО','text', 'name', true)
                     +checkout-form-input('Название организации','text', 'komp', true)
                     +checkout-form-input('Телефон','text', 'phone', true)
                     +checkout-form-input('Email','email', 'email', true)
@@ -30,7 +30,7 @@ mixin types()
                         +textarea("message")
                 .row
                     .col-12.col-offset-sm-6.col-sm-6.mb-10.mb-md-20
-                        +e.button-chekout(href="#") Оплатить
+                        +e.button-chekout(href="#") Заказать
                     .col-12.col-sm-12
                         +e.P.description Нажимая на кнопку “Оплатить”, Вы принимаете условия
                             +e.link(href="#") Публичной оферты

@@ -42,6 +42,10 @@
 
     @include lg {
         padding-right : 7.5rem;
+        width: 70%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     &__description {
