@@ -201,7 +201,7 @@
                 $couponExist = wc_get_coupon_id_by_code($coupon_code);
                 if (empty($couponExist)) {
                     $amount        = $carrent_disc;
-                    $discount_type = 'fixed_cart';
+                    $discount_type = 'percent';
 
                     $coupon        = array(
                         'post_title'   => $coupon_code,

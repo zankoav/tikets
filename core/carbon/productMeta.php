@@ -109,11 +109,14 @@
                 Field::make('complex', 'quantity_discount', 'Список скидок')
                     ->add_fields('discount', [
                         Field::make('text', 'quantity_from', 'От')
-                            ->set_width(30),
+                            ->set_width(30)
+                            ->set_required( true ),
                         Field::make('text', 'quantity_to', 'до')
-                            ->set_width(30),
+                            ->set_width(30)
+                            ->set_required( true ),
                         Field::make('text', 'discount', 'Скидка')
-                            ->set_width(30),
+                            ->set_width(30)
+                            ->set_required( true ),
                     ])->set_layout( "tabbed-horizontal" ),
             ]);
     }
