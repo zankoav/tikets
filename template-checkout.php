@@ -256,7 +256,7 @@
                                     </div>
                                     <div class="col-12 col-sm-11">
                                         <p class="promokod__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия
-                                            <a class="promokod__link" href="<?= esc_url( $public_offer_link ) ?>">Публичной оферты</a>
+                                            <a class="promokod__link" href="<?= esc_url( $public_offer_link ) ?>" target="_blank">Публичной оферты</a>
                                         </p>
                                     </div>
                                 </div>
@@ -326,7 +326,7 @@
                             </div>
                             <div class="col-12 col-sm-12">
                                 <p class="types__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия
-                                    <a class="types__link" href="<?= esc_url( $public_offer_link ) ?>">Публичной оферты</a>
+                                    <a class="types__link" href="<?= esc_url( $public_offer_link ) ?>"  target="_blank">Публичной оферты</a>
                                 </p>
                             </div>
                         </div>
