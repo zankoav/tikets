@@ -197,8 +197,14 @@
                                             <div class="promokod__iterator">
                                                 <div class="promokod__results-count">
                                                     <a class="promokod__minus" href="#">&ndash;</a>
-                                                    <div class="promokod__result">1
-                                                    </div>
+                                                    <div class="promokod__result"
+                                                         style="
+                                                         -webkit-touch-callout: none;
+                                                         -webkit-user-select: none;
+                                                         -khtml-user-select: none;
+                                                         -moz-user-select: none;
+                                                         -ms-user-select: none;
+                                                         user-select: none;">1</div>
                                                     <a class="promokod__add" href="#">+</a>
                                                 </div>
                                                 <div class="promokod__iterator-subtitle">Билет

@@ -147,7 +147,7 @@
         }
 
 //add discount if coupon exist
-//in coupon don't exit check discount by quantity
+//if coupon don't exit check discount by quantity
         $discountByCount = "";
         if (!empty($form_data["userPromocode"]) && productHasCoupon($form_data["userPromocode"], $product_id)) {
             $order->apply_coupon($form_data["userPromocode"]);
@@ -196,7 +196,7 @@
                 $coupon_code = str_replace(" ", "_", $tiket->post_title) . "_" . $carrent_item["quantity_from"] . "_" . $carrent_item["quantity_to"] . "_" . $carrent_disc;
 
                 //передать код купона, в результат
-                $discountByCount = $coupon_code;
+                $discountByCount = "Скидка за покупку больше ". $carrent_item["quantity_from"];
 
                 $couponExist = wc_get_coupon_id_by_code($coupon_code);
                 if (empty($couponExist)) {

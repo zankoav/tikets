@@ -6,7 +6,7 @@
 
 ?>
 <?php get_template_part('/core/views/headerView'); ?>
-<main class="main">>
+<main class="main">
     <div class="home-wrapper">
         <?php get_template_part('/core/views/home', 'slider') ?>
         <?php get_template_part( '/core/views/home', 'benefits' ); ?>
