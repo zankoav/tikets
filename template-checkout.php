@@ -106,7 +106,7 @@
                             </div>
                             <div class="checkout-form-group row">
                                 <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">Фио
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="user-name">ФИО
                                     </label>
                                 </div>
                                 <div class="col-12 col-sm-8 col-hd-9">
@@ -186,7 +186,7 @@
                             </div>
                             <div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
                                 <div class="row">
-                                    <div class="col-12 col-sm-11 col-offset-sm-1 mb-20 mb-lg-40 pb-hd-10">
+                                    <div class="col-12 col-sm-11 col-offset-sm-1">
                                         <p class="promokod__program-description">"Акции и скидки"
                                         </p>
                                     </div>
@@ -268,7 +268,7 @@
                         <form class="types__form" action="/" method="post" data-program-id="<?= $productID; ?>" id="form2">
                             <div class="checkout-form-group row">
                                 <div class="col-12 col-sm-3 col-offset-sm-1 col-hd-2">
-                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="name">Фио
+                                    <label class="checkout-form-group__label mb-05 mb-sm-00" for="name">ФИО
                                     </label>
                                 </div>
                                 <div class="col-12 col-sm-8 col-hd-9"><input class="checkout-form-group__input" id="name" type="text" name="name" required="required"/>
@@ -322,7 +322,7 @@
                         </form>
                         <div class="row">
                             <div class="col-12 col-offset-sm-6 col-sm-6 mb-10 mb-md-20">
-                                <a class="types__button-chekout" href="#">Оплатить</a>
+                                <a class="types__button-chekout" href="#">Заказать</a>
                             </div>
                             <div class="col-12 col-sm-12">
                                 <p class="types__description">Нажимая на кнопку “Оплатить”, Вы принимаете условия
