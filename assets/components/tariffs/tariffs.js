@@ -8,8 +8,9 @@ $('[data-tariff-name]').find('.button-with-balls').on('click', function (event) 
 
     let $parent = $(this).parent();
     let tariffName = $parent.data('tariff-name');
+    let tariffId = $parent.data('tariff-id');
 
-    showContactForm(tariffName);
+    showContactForm(tariffName, tariffId);
 
 });
 
@@ -21,15 +22,17 @@ let $name = $('[name="user-name"]');
 let $email = $('[name="user-email"]');
 let $spam = $('[name="message"]');
 let $tarif = $('[name="tariff-name"]');
+let $tarifId = $('[name="tariff-id"]');
 
 $phone.on('focus', clearFocus);
 $name.on('focus', clearFocus);
 $email.on('focus', clearFocus);
 
-function showContactForm(name) {
+function showContactForm(name, id) {
     $('.tarifs-contact-form__contact-form').addClass('tarifs-contact-form__contact-form_active');
     $('body').addClass('body_overflow_hidden');
     $tarif.val(name);
+    $tarifId.val(id);
 }
 
 function closeContactForm(event) {
@@ -62,6 +65,7 @@ $('.tarifs-contact-form__form-send').on('click', function (event) {
     let email = $email.val();
     let spam = $spam.val();
     let tarif = $tarif.val();
+    let tarifId = $tarifId.val();
 
     if (name.length === 0) {
         let $parent = $name.parent();
@@ -110,6 +114,7 @@ $('.tarifs-contact-form__form-send').on('click', function (event) {
         message: spam,
         phone: phone,
         tarif: tarif,
+        tarifId: tarifId,
         action: 'leaveRequest'
     });
 
@@ -125,7 +130,7 @@ function sendingMail(data) {
         dataType: 'json',
         success: function (response) {
             console.log(response);
-            alert('Success');
+            alert('Письмо отправлено');
             if (response.status === 1) {
                 console.log('Successful');
             } else {

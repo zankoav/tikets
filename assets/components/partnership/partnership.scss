@@ -3,6 +3,11 @@
 $GREY : #565656;
 
 .partnership {
+
+    @include lg{
+        margin-top: -8rem;
+    }
+
     &__download {
         color : $GREY;
 
