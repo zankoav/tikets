@@ -129,8 +129,9 @@ function changeTotalPrice() {
             if(arrayDiscount.length>0){
                 for(let i=0; i<arrayDiscount.length; i++){
                     if ((ticketCount >= +arrayDiscount[i].quantity_from) && (ticketCount <= +arrayDiscount[i].quantity_to)){
-                        let total = ticketCount * parseFloat(currentPrice) - +arrayDiscount[i].discount;
-                        $totalPrice.html(total.toFixed(2) + ' ');
+                        let total = ticketCount * parseFloat(currentPrice) * (+arrayDiscount[i].discount/100);
+                        let total2 = (ticketCount * parseFloat(currentPrice)) - total;
+                        $totalPrice.html(total2.toFixed(2) + ' ');
                         break;
                     }
 
@@ -217,6 +218,7 @@ function promokod() {
                     let $parent = $promokod.parent().parent();
                     $parent.addClass('checkout-form-group_error');
                     $parent.find('.checkout-form-group__message').html(text);
+                    changeTotalPrice();
                     return;
                 }
 
@@ -224,8 +226,11 @@ function promokod() {
                     let $parent = $promokod.parent().parent();
                     $parent.addClass('checkout-form-group_green');
                     $parent.find('.checkout-form-group__message').html(text);
+                    changeTotalPrice();
                     return;
                 }
+
+
 
             },
             error: function (x, y, z) {
@@ -234,6 +239,7 @@ function promokod() {
                     let $parent = $promokod.parent().parent();
                     $parent.addClass('checkout-form-group_error');
                     $parent.find('.checkout-form-group__message').html(Validator.ERROR_EMPTY_PROMOCODE_FIELD);
+                    changeTotalPrice();
                     return;
                 }
             }
@@ -482,7 +488,7 @@ function autoSubmit(data) {
     if (+data.wsb_test === 1 ){
         form.action = "https://securesandbox.webpay.by/";
     } else if (+data.wsb_test === 0){
-        form.action = "https://billing.webpay.by";
+        form.action = "https://payment.webpay.by";
     }
 
 
