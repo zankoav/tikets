@@ -356,11 +356,27 @@ function tryToSendData2(event) {
         type: 'POST',
         url: tikets_ajax.url,
         data: data,
+        beforeSend: function () {
+            $('.preloader').addClass('preloader_active');
+        },
         success: function (response) {
             console.log(response);
             let resp = JSON.parse(response);
             $('#form2')[0].reset();
 
+            if (resp.status === 1) {
+                $('.types__response').text(resp.text);
+            }
+            if (resp.status === 0) {
+                $('.types__response').text(resp.text);
+            }
+            $('#partnership__form')[0].reset();
+            $('.preloader').removeClass('preloader_active');
+        },
+        error: function (x, y, z) {
+            console.log(x);
+            $('.preloader').removeClass('preloader_active');
+            $('.types__response').text('ОШИБКА!');
         }
     });
 
