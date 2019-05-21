@@ -64,8 +64,10 @@
                 Field::make('select', 'cashless_page_link', 'Выберите страницы')
                     ->add_options('page_selecting')
                     ->set_required(true),
-                Field::make('separator', 'crb_public_offer_link_op_sep', __('Ссылка для Публичной оферты')),
-                Field::make('text', 'public_offer_link', 'Вставьте ссылку на файл'),
+                Field::make('separator', 'crb_public_offer_link_op_sep', __('Страница заказа билета')),
+                Field::make('text', 'public_offer_link', 'Ссылка на файл Публичной оферты'),
+                Field::make('text', 'discount_and_sail', 'Ссылка над счётчиком'),
+                Field::make('text', 'discount_and_sail_text', 'Текст ссылки'),
             ]);
 
         // Add second options page under 'Basic Options'

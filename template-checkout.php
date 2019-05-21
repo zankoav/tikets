@@ -24,6 +24,8 @@
 	$wsb_notify_url        = carbon_get_theme_option( 'wsb_notify_url' );
 	$public_offer_link     = carbon_get_theme_option( 'public_offer_link' );
 	$cashless_page_link     = carbon_get_theme_option( 'cashless_page_link' );
+    $discount_and_sail      = carbon_get_theme_option("discount_and_sail");
+    $discount_and_sail_text      = carbon_get_theme_option("discount_and_sail_text");
 	
 	$main_speaker = carbon_get_post_meta( $productID, 'main_speaker' );
 	
@@ -187,8 +189,9 @@
                             <div class="promokod pt-10 pb-10 pt-sm-20 py-md-40">
                                 <div class="row">
                                     <div class="col-12 col-sm-11 col-offset-sm-1">
-                                        <p class="promokod__program-description">"Акции и скидки"
-                                        </p>
+                                        <?php if(!empty($discount_and_sail)){?>
+                                        <a href="<?= esc_url($discount_and_sail); ?>" class="promokod__program-description"><?= $discount_and_sail_text; ?></a>
+                                        <?php }?>
                                     </div>
                                 </div>
                                 <div class="row">
