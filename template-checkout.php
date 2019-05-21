@@ -325,6 +325,10 @@
                         </form>
                         <div class="row">
                             <div class="col-12 col-offset-sm-6 col-sm-6 mb-10 mb-md-20">
+                                <div class="types__response">
+                                </div>
+                            </div>
+                            <div class="col-12 col-offset-sm-6 col-sm-6 mb-10 mb-md-20">
                                 <a class="types__button-chekout" href="#">Заказать</a>
                             </div>
                             <div class="col-12 col-sm-12">
