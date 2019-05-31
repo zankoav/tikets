@@ -3,8 +3,14 @@
 	
 	$spikers_list = carbon_get_post_meta( get_the_ID(), 'spikers_list' );
 	$question_page = get_permalink(carbon_get_theme_option('question_link'));
+
+    $isTargetTarifs = false;
+    $active_tab = "tabs__content_active";
+    if (!empty($_GET["target"]) && $_GET["target"] === "tarifs"){
+        $isTargetTarifs = true;
+    }
 ?>
-<div class="tabs__content tabs__content_active">
+<div class="tabs__content <?= $isTargetTarifs ? "" : $active_tab; ?>">
 	<div class="about-spiker">
 		<div class="container">
 			<div class="about-spiker__inner mt-20 mb-20 mt-lg-40">

@@ -2,6 +2,13 @@
 	if (!defined( 'ABSPATH' )) { exit; }
 	get_header();
 	$checkoutLink = getCheckoutPermaLink();
+
+
+	$isTargetTarifs = false;
+	$active_tab = "tabs__list-tab_active";
+	if (!empty($_GET["target"]) && $_GET["target"] === "tarifs"){
+        $isTargetTarifs = true;
+    }
 ?>
 	<div class="app">
 		<?php get_template_part( '/core/views/headerView' ); ?>
@@ -25,25 +32,25 @@
 								<a class="tabs__button" href="#"></a>
 								<ul class="tabs__list">
 									<li class="tabs__list-tab" data-content="0">
-										<a class="tabs__tab-button" href="#">Программа</a>
+										<a class="tabs__tab-button" href="#">О чем курс</a>
 									</li>
-									<li class="tabs__list-tab tabs__list-tab_active" data-content="1">
+									<li class="tabs__list-tab <?= $isTargetTarifs ? "" : $active_tab; ?>" data-content="1">
 										<a class="tabs__tab-button" href="#">О спикере</a>
 									</li>
 									<li class="tabs__list-tab" data-content="2">
-										<a class="tabs__tab-button" href="#">О чем курс</a>
+										<a class="tabs__tab-button" href="#">Программа</a>
 									</li>
-									<li class="tabs__list-tab" data-content="3">
-										<a class="tabs__tab-button" href="#">Тарифы</a>
+									<li class="tabs__list-tab <?= $isTargetTarifs ? $active_tab : ""; ?>" data-content="3">
+										<a class="tabs__tab-button " href="#">Тарифы</a>
 									</li>
 <!--									<li class="tabs__list-tab" data-content="4">-->
 <!--										<a class="tabs__tab-button" href="#">Онлайн-трансляция</a>-->
 <!--									</li>-->
 								</ul>
 							</div>
-							<?php get_template_part( '/core/views/product', 'program' ); ?>
+                            <?php get_template_part( '/core/views/product', 'about_program' ); ?>
 							<?php get_template_part( '/core/views/product', 'spiker' ); ?>
-							<?php get_template_part( '/core/views/product', 'about_program' ); ?>
+                            <?php get_template_part( '/core/views/product', 'program' ); ?>
 							<?php get_template_part( '/core/views/product', 'variatation' ); ?>
 <!--							<div class="tabs__content">Content Онлайн-трансляция</div>-->
 						</div>

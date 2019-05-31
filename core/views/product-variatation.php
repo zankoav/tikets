@@ -32,8 +32,14 @@
         //		}
     }
     $checkoutLink = getCheckoutPermaLink();
+
+    $isTargetTarifs = false;
+    $active_tab = "tabs__content_active";
+    if (!empty($_GET["target"]) && $_GET["target"] === "tarifs"){
+        $isTargetTarifs = true;
+    }
 ?>
-<div class="tabs__content">
+<div class="tabs__content <?= $isTargetTarifs ? $active_tab : ""; ?>">
     <div class="tariffs mt-20 mb-20 mt-lg-40 mb-lg-40">
         <div class="container">
             <div class="tariffs__inner">
@@ -61,9 +67,11 @@
                                     </ul>
                                     <?php if ($displayPrice == 'yes'): ?>
                                         <div class="vip__price"><?= $price; ?> руб.</div>
-                                        <a class="orange-button orange-button__vip"
-                                           href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
-                                            записаться</a>
+                                        <div class="button-to-checkout">
+                                            <a class="orange-button orange-button__vip"
+                                               href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
+                                                записаться</a>
+                                        </div>
                                     <?php elseif ($displayPrice == 'no'): ?>
                                         <div class="button-with-balls">узнать цену
                                             <span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_red"></span>
@@ -93,9 +101,13 @@
                                     </ul>
                                     <?php if ($displayPrice == 'yes'): ?>
                                         <div class="business__price"><?= $price; ?> руб.</div>
-                                        <a class="orange-button orange-button__vip"
-                                           href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
-                                            записаться</a>
+
+                                        <div class="button-to-checkout">
+                                            <a class="orange-button orange-button__vip"
+                                               href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
+                                                записаться</a>
+                                        </div>
+
                                     <?php elseif ($displayPrice == 'no'): ?>
                                         <div class="button-with-balls button-with-balls__white">узнать цену
                                             <span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_red"></span>
@@ -123,9 +135,11 @@
                                     </ul>
                                     <?php if ($displayPrice == 'yes'): ?>
                                         <div class="vip__price"><?= $price; ?> Br</div>
-                                        <a class="orange-button orange-button__vip"
-                                           href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
-                                            записаться</a>
+                                        <div class="button-to-checkout">
+                                            <a class="orange-button orange-button__vip"
+                                               href="<?= esc_url($checkoutLink . '?seminar=' . get_the_ID() . '&tariff=' . $tariff_id) ?>">
+                                                записаться</a>
+                                        </div>
                                     <?php elseif ($displayPrice == 'no'): ?>
                                         <div class="button-with-balls button-with-balls">узнать цену
                                             <span class="button-with-balls__ball button-with-balls__ball button-with-balls__ball_red"></span>

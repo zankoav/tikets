@@ -6,18 +6,14 @@
 ?>
 <div class="stock">
     <div class="container">
+        <h2 class="title title_orange">Акции месяца</h2>
         <div class="stock__content row">
             <div class="col-12 col-md-3 pb-40 pb-sm-00 col-offset-1 col-offset-md-0">
                 <a href="<?= esc_url($aside_banner_link); ?>">
                     <img class="stock__banner" src="<?= $aside_banner ?>" alt="banner" title=""/>
                 </a>
             </div>
-            <div class="col-6 col-sm-6 col-hd-5 col-offset-3 col-offset-sm-6 col-offset-md-2 col-offset-lg-3 col-offset-hd-4">
-                <div class="stock__text">акции
-                </div>
-                <div class="stock__text stock__text_mr-l">месяца
-                </div>
-            </div>
+            <div class="col-6 col-sm-6 col-hd-5 col-offset-3 col-offset-sm-6 col-offset-md-2 col-offset-lg-3 col-offset-hd-4"></div>
             <div class="col-12 col-md-9 col-offset-md-3 pt-40 pt-sm-00">
                 <div class="stock__container swiper-container">
                     <div class="stock__wrapper swiper-wrapper">

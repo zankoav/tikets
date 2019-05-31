@@ -28,9 +28,9 @@
                         </div>
                         <div class="col-12 col-sm-5 col-lg-6 col-hd-5 text_content">
                             <div class="pl-sm-10 pl-md-20 pl-lg-40">
-                                <div class="slide__autor my-10 my-sm-20 mt-md-20"><?= $main_speaker;?></div>
-                                <h1 class="slide__title mb-10 mb-md-20"><?= $slide_title; ?></h1>
-                                <div class="slide__date-time mb-10 mb-md-20">
+                                <div class="slide__autor my-10 mt-md-20"><?= $main_speaker;?></div>
+                                <h1 class="slide__title"><?= $slide_title; ?></h1>
+                                <div class="slide__date-time mb-10 ">
                                     <div class="slide__day"><?= $slide_day; ?></div>
                                     <div class="slide__date">
                                         <div class="slide__mounth"><?= $slide_month; ?></div>
@@ -39,7 +39,7 @@
                                 </div>
                                 <p class="slide__location mb-10 mb-hd-20"><?= $slide_address; ?></p>
                                 <div class="slide__button-wrapper mb-10 pb-10 mt-20">
-                                    <a class="orange-button white-button" href="<?= esc_url($slide_link);?>">
+                                    <a class="orange-button white-button" href="<?= esc_url($slide_link."?target=tarifs");?>">
                                         Записаться
                                     </a>
                                 </div>
