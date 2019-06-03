@@ -39,7 +39,7 @@
         $isTargetTarifs = true;
     }
 ?>
-<div class="tabs__content <?= $isTargetTarifs ? $active_tab : ""; ?>">
+<div class="tabs__content <?= $isTargetTarifs ? $active_tab : ""; ?>" id="tar">
     <div class="tariffs mt-20 mb-20 mt-lg-40 mb-lg-40">
         <div class="container">
             <div class="tariffs__inner">

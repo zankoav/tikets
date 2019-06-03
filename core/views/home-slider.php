@@ -39,7 +39,7 @@
                                 </div>
                                 <p class="slide__location mb-10 mb-hd-20"><?= $slide_address; ?></p>
                                 <div class="slide__button-wrapper mb-10 pb-10 mt-20">
-                                    <a class="orange-button white-button" href="<?= esc_url($slide_link."?target=tarifs");?>">
+                                    <a class="orange-button white-button" href="<?= esc_url($slide_link."?target=tarifs#tar");?>">
                                         Записаться
                                     </a>
                                 </div>
