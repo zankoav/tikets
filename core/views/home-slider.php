@@ -25,6 +25,8 @@
                                      src="<?= $slide_image; ?>" alt=""
                                      role="presentation"/>
                             </div>
+                            <div class="slide__about">Предстоящие</div>
+                            <div class="slide__about sec">мероприятия</div>
                         </div>
                         <div class="col-12 col-sm-5 col-lg-6 col-hd-5 text_content">
                             <div class="pl-sm-10 pl-md-20 pl-lg-40">
